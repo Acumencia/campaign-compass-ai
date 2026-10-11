@@ -9,10 +9,11 @@ Requirements: **Node.js 22+**. No API keys, ad accounts, paid services or databa
 ```sh
 git clone https://github.com/Acumencia/campaign-compass-ai.git
 cd campaign-compass-ai
+npm ci --ignore-scripts
 npm start
 ```
 
-Open **http://127.0.0.1:4173** in your browser. The app has **zero runtime dependencies**. To run development tests:
+Open **http://127.0.0.1:4173** in your browser. The browser dashboard uses plain JavaScript. The local server uses two small runtime libraries for JWT verification and file locking. To run development checks:
 
 ```sh
 npm ci --ignore-scripts
@@ -20,7 +21,7 @@ npm run check
 node scripts/privacy-check.mjs
 ```
 
-`npm run build` produces seven static assets in `dist/`. Serve that folder with a static HTTP server; opening `index.html` as a `file://` URL will not load modules and CSV reliably. No deployment was requested or configured. The development server binds to loopback and serves only explicitly allowlisted app files.
+`npm run build` produces nine static assets in `dist/`. Serve that folder with a static HTTP server; opening `index.html` as a `file://` URL will not load modules and CSV reliably. Static previews support deterministic demo mode only; ChatGPT sign-in requires the local Node server on Windows. No deployment was requested or configured. The development server binds to loopback and serves only explicitly allowlisted app files.
 
 ## What you can do
 
@@ -34,13 +35,15 @@ node scripts/privacy-check.mjs
 
 ## AI capability: honest scope
 
-The current app is an **AI-assisted build and a prototype of a grounded AI workflow**. Its running copilot uses **clearly labelled deterministic demo mode**, intent routing and templates. It is not a live language model and does not perform open-ended reasoning. No authorized model inference connection was available during this build.
+The app starts in **clearly labelled deterministic demo mode**. It now implements the official local-personal **Continue with ChatGPT** flow, a server-side streaming Responses adapter, and browser transport. The user must personally sign in, review consent, load the available models and select a model before making a model request. See [local sign-in instructions and security boundaries](docs/chatgpt-local-sign-in.md).
 
-The copilot supports campaign briefs, channel comparisons, efficiency questions and anomaly explanations. Every displayed number is computed first, then referenced by a metric ID and filter-context ID. Unsupported questions return an explicit limitation. Filter changes invalidate old answers. Observational differences are not presented as causal findings.
+**Live account eligibility and inference are not yet verified.** OAuth, refresh, model discovery, streaming, usage errors and disconnect have passed synthetic mocked tests. Those tests do not establish real account access. No existing Codex credentials are imported, and no real account grant was created during development.
 
-`server/inference.mjs` and the loopback HTTP server provide a provider-neutral inference contract. The server computes metrics from its own CSV, binds answers to a SHA-256 dataset/filter snapshot, and accepts only exact metric claims. Unknown IDs, changed values, malformed output, extra prose and stale contexts fail validation. Timeouts and provider failures produce explicitly labelled deterministic fallback; cancellation aborts the adapter signal. Client input cannot configure providers or replace authoritative facts.
+The copilot supports campaign briefs, channel comparisons, efficiency questions and anomaly explanations. The model selects from server-computed facts; trusted local text renders the answer. Every displayed number references an exact metric ID and filter context. Unknown IDs, changed values, malformed output, arbitrary prose and stale dataset snapshots are rejected. Failure produces explicitly labelled deterministic fallback when the question is supported. Filter changes, new questions, account/model changes and closing the copilot cancel pending work. See [the inference contract](docs/inference-contract.md).
 
-The new contract is tested with mocks only: **live model inference has not been configured or tested**. `npm start` injects no adapter, and the UI intentionally uses only `DeterministicProvider`. An authorized inference service, a server-side provider adapter and UI transport wiring remain pending. See [the full contract and integration boundaries](docs/inference-contract.md). No keys belong in browser code.
+Credentials created through user-operated sign-in are encrypted with Windows DPAPI in this app's private storage outside the checkout. Browser JavaScript never receives OAuth tokens. Other operating systems retain demo mode and fail closed for secure sign-in. Plan/app limits and existing-credit settings remain controlled by the user in ChatGPT; the app never purchases credits or switches billing paths.
+
+The overview insight card remains deterministic even when the copilot is connected. Observational differences are not causal findings. Budget proposals use explicit constant-CPA assumptions and never execute ad spend.
 
 ## Dataset and definitions
 
@@ -74,7 +77,10 @@ Budget scenarios preserve total period spend, transferring 1–25% of a source c
 index.html / styles.css      Accessible responsive dashboard shell
 src/metrics.mjs              CSV validation, shared filters, metrics and scenarios
 src/assistant.mjs            Deterministic intent routing and grounding validation
-server/inference.mjs         Provider-neutral server contract and cancellation
+server/inference.mjs         Server facts, strict claim validation and cancellation
+server/chatgpt*.mjs          Official OAuth protocol, encrypted storage and lifecycle
+src/chatgpt-client.mjs       Dataset-bound browser API transport
+src/connection-ui.mjs        User-operated account/model/usage controls
 src/app.mjs                  Views, charts, UI state and proposal review
 data/campaigns.csv           Reproducible synthetic dataset
 scripts/generate.mjs        Seeded dataset generator
@@ -88,10 +94,17 @@ submission/                 Documentation content, demo script and completion ch
 
 Automated checks cover calculations, filter consistency, zero/empty/error states, CSV validation, scenario conservation and review, prompt injection-like input, numeric grounding, stale context rejection, model fallback, HTML escaping and server file isolation. DOM checks use jsdom, which does not verify layout, native keyboard focus or real browser behavior.
 
-The current automated suite passes **51 tests**, including mocked server inference and its HTTP boundary; the earlier recorded milestone had 32. Current output is in `evidence/inference-test-results.txt`. The app was also inspected in **the user's browser** at default, 1440-pixel desktop and 390-pixel mobile widths. That inspection found and corrected a clipped mobile metric selector; genuine before/after images are in `evidence/`. Native Escape/focus return, filters, empty states and scenario review were checked. A separate isolated-Chrome Playwright run passes **12 browser checks**, including local proposal download and a dataset-loading error; it was rerun against the updated server (`evidence/inference-browser-qa.json`). Run it with the local server active: `node scripts/browser-qa.mjs` (requires installed Chrome).
+The current suite passes **81 automated tests**, including real JWT signature checks, HTTP session/CSRF boundaries and a Windows DPAPI test using temporary synthetic fixtures. Current output is in `evidence/chatgpt-test-results.txt`; earlier logs remain historical evidence. A separate isolated-Chrome run passes **12 dashboard checks** and **eight mocked connection lifecycle checks**. Run:
 
-See `evidence/development-log.md` and `submission/recording-notes.md` for genuine capture details. These checks are not a complete accessibility audit. Live model inference remains unavailable and unverified.
+```sh
+npm run test:browser            # requires npm start in another terminal and installed Chrome
+npm run test:browser:chatgpt    # starts its own mock-only temporary loopback server
+```
+
+The app was inspected in **the user's browser**, including the new disconnected connection dialog and its 390-pixel mobile layout. Escape returned focus correctly. Earlier inspection found and corrected a clipped mobile metric selector; genuine before/after images are retained. These checks are not a complete accessibility audit.
+
+See `evidence/development-log.md` and `submission/recording-notes.md` for capture details. The existing 3:33 video shows the earlier deterministic UI and 32-test milestone, not this later ChatGPT integration. A live demo refresh must follow user consent and successful real inference.
 
 ## License
 
-No software license is granted by this repository. Public visibility does not imply a permissive license. A licensing decision is reserved for the owner.
+The original project code is licensed under the [MIT License](LICENSE), applied with the owner's explicit approval. Dependencies and third-party services retain their own terms; see [third-party notices](THIRD_PARTY_NOTICES.md).

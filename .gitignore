@@ -13,3 +13,7 @@ evidence/local-*
 submission/recording/
 submission/narration-timing.json
 submission/recording-timeline.json
+connections.dpapi.json
+chatgpt-auth.json
+chatgpt-host.json
+*.credentials.json

@@ -46,5 +46,17 @@
     "capturedAt": "2026-10-11T16:29:32.7863979Z",
     "bytes": 51516,
     "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "08-chatgpt-connection-ready.jpg",
+    "capturedAt": "2026-10-11T18:04:31.356369+00:00",
+    "bytes": 48113,
+    "source": "Actual user's browser screenshot via Codex browser control; disconnected readiness only, no OAuth initiated"
+  },
+  {
+    "file": "09-chatgpt-connection-mobile.jpg",
+    "capturedAt": "2026-10-11T18:04:42.785670+00:00",
+    "bytes": 38356,
+    "source": "Actual user's browser screenshot via Codex browser control; disconnected readiness only, no OAuth initiated"
   }
 ]

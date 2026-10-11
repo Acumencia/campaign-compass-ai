@@ -2,6 +2,7 @@
   "name": "campaign-compass-ai",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "A synthetic campaign intelligence dashboard with evidence-grounded assistance.",
   "type": "module",
   "engines": {
@@ -12,12 +13,17 @@
     "generate": "node scripts/generate.mjs",
     "test": "node --test tests/*.test.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node --check src/app.mjs && node --check src/metrics.mjs && node --check src/assistant.mjs && node --check server/inference.mjs && node --check server.mjs && npm test && npm run build",
+    "check": "node --check src/app.mjs && node --check src/chatgpt-client.mjs && node --check src/connection-ui.mjs && node --check server/inference.mjs && node --check server/chatgpt.mjs && node --check server/chatgpt-protocol.mjs && node --check server/chatgpt-store.mjs && node --check server.mjs && npm test && npm run build",
     "test:browser": "node scripts/browser-qa.mjs",
-    "privacy-check": "node scripts/privacy-check.mjs"
+    "privacy-check": "node scripts/privacy-check.mjs",
+    "test:browser:chatgpt": "node scripts/chatgpt-browser-qa.mjs"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",
     "playwright": "^1.64.0"
+  },
+  "dependencies": {
+    "jose": "6.1.0",
+    "proper-lockfile": "4.1.2"
   }
 }

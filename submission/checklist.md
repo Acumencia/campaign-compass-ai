@@ -10,7 +10,7 @@
 - README, real development log and walkthrough script.
 - Searchable glossary of 21 terms, requested during the user's review.
 - Genuine screenshots from the user's browser, including a mobile issue and its verified fix.
-- 32 automated tests and 12 real isolated-Chrome browser checks pass.
+- 81 automated tests, 12 isolated-Chrome dashboard checks and eight mocked connection lifecycle checks pass.
 - Public Acumencia/campaign-compass-ai repository created; final commit verification is in the handoff.
 
 ## Complete before submitting the course form
@@ -22,7 +22,7 @@
 
 ## Capability disclosures
 
-- Live model access was unavailable; current runtime is visibly labelled deterministic demo.
+- Official local-personal ChatGPT integration is implemented and mock-tested. User-operated sign-in, real eligibility and a completed live model response remain unverified; disconnected runtime is labelled deterministic demo.
 - jsdom tests do not replace visual/keyboard/mobile verification in a real browser.
 - Browser inspection was completed separately; a continuous actual-app video is prepared separately from the script. Verify its final duration in the handoff.
-- No paid services, new credentials, deployment or permissive software license were added.
+- No paid service, real account credential or deployment was added during development. MIT licensing was subsequently authorized by the owner and applied to original project code.

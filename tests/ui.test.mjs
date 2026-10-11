@@ -3,19 +3,21 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM} from 'jsdom';
 import * as metrics from '../src/metrics.mjs';
-import {DeterministicProvider} from '../src/assistant.mjs';
+import {DeterministicProvider,validateResponse} from '../src/assistant.mjs';
 import {TERMS} from '../src/glossary.mjs';
 const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
 const source=readFileSync(new URL('../src/app.mjs',import.meta.url),'utf8').replace(/^import .*;\r?\n/gm,'');
+const clientSource=readFileSync(new URL('../src/chatgpt-client.mjs',import.meta.url),'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'');
+const connectionSource=readFileSync(new URL('../src/connection-ui.mjs',import.meta.url),'utf8').replace(/^export /gm,'');
 const csv=readFileSync(new URL('../data/campaigns.csv',import.meta.url),'utf8');
 async function setup(options={}){
   const dom=new JSDOM(html,{runScripts:'outside-only',url:'http://localhost:4173'});
-  const w=dom.window;w.__metrics=metrics;w.__provider=DeterministicProvider;w.__terms=TERMS;
+  const w=dom.window;w.__metrics=metrics;w.__provider=DeterministicProvider;w.__validate=validateResponse;w.__terms=TERMS;
   w.fetch=async()=>({ok:!options.fail,text:async()=>options.csv||csv});
   // jsdom has no native dialog/focus layout. State-only polyfill; browser checks remain required.
   w.HTMLDialogElement.prototype.showModal=function(){this.setAttribute('open','');};
   w.HTMLDialogElement.prototype.close=function(){this.removeAttribute('open');};
-  await w.eval(`(async()=>{const {DEFAULT_FILTERS,parseCSV,snapshot,scenario,keyOf}=window.__metrics;const DeterministicProvider=window.__provider;const TERMS=window.__terms;${source}\n})()`);
+  await w.eval(`(async()=>{const {DEFAULT_FILTERS,parseCSV,snapshot,scenario,keyOf}=window.__metrics;const DeterministicProvider=window.__provider;const validateResponse=window.__validate;const TERMS=window.__terms;${clientSource}\nconst wireConnectionUI=(()=>{${connectionSource}\nreturn wireConnectionUI;})();${source}\n})()`);
   const $=selector=>w.document.querySelector(selector);
   const select=(id,value)=>{$(id).value=value;$(id).dispatchEvent(new w.Event('change',{bubbles:true}));};
   return {dom,w,$,select};

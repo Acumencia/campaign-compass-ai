@@ -6,7 +6,7 @@ Campaign Compass is a standalone ad campaign performance analyzer created with C
 
 The app includes an overview, platform comparison, searchable campaign details and time series. Date, channel, audience and campaign-goal filters feed one shared metric snapshot. The Decision lab adds a grounded copilot and a human-reviewed budget scenario. A searchable glossary explains 21 terms with definitions, formulas and examples.
 
-The app was built with plain HTML, CSS and JavaScript modules, with a small Node server and no runtime dependencies. The current copilot is clearly labelled deterministic demo mode: it does not call a live model. The project demonstrates an AI-assisted development workflow and the architecture of evidence-grounded assistance. Live model access was unavailable in the build environment.
+The app uses plain HTML, CSS and JavaScript modules with a small Node server. It starts in labelled deterministic demo mode. A later iteration implemented the official local-personal Continue with ChatGPT path, protected Windows storage and streaming inference, using two runtime libraries for JWT validation and file locking. This integration has been tested with mocks; user-operated consent, real eligibility and a completed live response are still pending. The original project code is now MIT licensed with the owner's approval.
 
 ## Dataset
 
@@ -66,7 +66,7 @@ Finally, the existing GitHub connection was verified for the new repository's ow
 
 The source includes deterministic tests for weighted metrics, inclusive filters, invalid dates, zero denominators, empty slices, CSV validation, reproducibility, anomaly evidence, budget conservation, human review, unsupported questions, invented claims, prompt injection-like input, stale contexts, provider failure/timeout, HTML escaping and HTTP file isolation. The final count and result are in `evidence/test-results.txt` and the publication handoff.
 
-The automated suite passed 32 tests at the recording milestone and now passes 51 after the server-contract update described below. The current output is in `evidence/inference-test-results.txt`; the original log is retained as genuine historical evidence. The DOM tests use jsdom and do not establish visual correctness or native keyboard behavior. The app was inspected in the user's browser at default, 1440-pixel desktop and 390-pixel mobile widths. A separate isolated-Chrome run passes 12 checks, including keyboard focus, mobile containment, filters, loading failure and reviewed proposal download; all 12 were rerun against the updated server. A common-secret-pattern scan is included; it is a heuristic, not proof that every possible secret is absent.
+The automated suite passed 32 tests at the recording milestone and now passes 81 after the server-contract and ChatGPT updates described below. The current output is in `evidence/chatgpt-test-results.txt`; the original log is retained as genuine historical evidence. The DOM tests use jsdom and do not establish visual correctness or native keyboard behavior. The app was inspected in the user's browser at default, 1440-pixel desktop and 390-pixel mobile widths. A separate isolated-Chrome run passes 12 checks, including keyboard focus, mobile containment, filters, loading failure and reviewed proposal download; all 12 were rerun against the updated server. Eight additional isolated-Chrome checks cover a fully mocked OAuth/inference lifecycle without contacting OpenAI. A common-secret-pattern scan is included; it is a heuristic, not proof that every possible secret is absent.
 
 ## Lessons learned
 
@@ -106,6 +106,28 @@ After the initial public demo and recording, provider choice and authorized acce
 
 The new SHA-256 snapshot ID binds the complete dataset and filters. Stale identities are rejected before inference, and dataset revisions during a request are rejected before an answer is released. Mocked tests exercise timeout, cancellation, malformed output, invented claims, mutable-evidence attempts, out-of-order responses and explicit fallback. The adapter receives an immutable copy of computed facts and an AbortSignal. It never receives raw campaign rows.
 
-These changes are infrastructure groundwork, not evidence of live AI. The visible app stays in deterministic demo mode, and the API has no configured provider. Actual authorized provider integration, client transport wiring and live verification remain pending. `docs/inference-contract.md` specifies the exact boundary and remaining work.
+At this historical milestone, these changes were infrastructure groundwork, not evidence of live AI. The API had no configured provider, and provider integration, client transport wiring and live verification were pending. The next addendum describes the subsequent implementation. `docs/inference-contract.md` specifies the exact boundary and remaining work.
 
-The existing 3:33 video and development screenshots remain genuine records of the earlier UI and 32-test milestone at commit `c5dee6f908ff60f4d812bf28b81419624b42e260`. The visible dashboard behavior is unchanged. The video does not show or validate these later server additions; use the newer test log and publication handoff for the current suite and commit. This addendum should accompany the video in the Google Doc.
+The existing 3:33 video and development screenshots remain genuine records of the earlier UI and 32-test milestone at commit `c5dee6f908ff60f4d812bf28b81419624b42e260`. That recording predates the new ChatGPT connection controls. The video does not show or validate these later server additions; use the newer test log and publication handoff for the current suite and commit. This addendum should accompany the video in the Google Doc.
+
+## Post-recording update: local ChatGPT connection and approved MIT license
+
+The user chose the open-source, locally running personal-project route from ChatGPT and subsequently approved MIT licensing. Implemented the official public protocol as original project code; the referenced local DevKit package was unavailable from npm and marked private in its repository, so no DevKit source or assets were copied.
+
+The actual follow-up instructions relayed by the originating task were:
+
+> yes, let us open-source and locally running personal projects option from ChatGPT
+
+> yes, please apply MIT to the project.
+
+The server uses dynamic registration with a stable app-owned host identifier, fresh browser-bound state/nonce/PKCE, issued client IDs, signed ID-token validation, protected refresh rotation and revocation. Real credentials would be stored only after user-operated consent, encrypted with Windows DPAPI outside the project. No existing Codex/ChatGPT credentials were read or copied. No real OAuth flow was initiated during implementation.
+
+The UI now exposes ChatGPT connection, account/model selection, first-use explanation, Manage usage, cancellation and disconnect. An eligible connected request sends only the question and server-computed fact registry to the documented streaming Responses endpoint. The server accepts a completed response only after exact metric and snapshot validation. The browser independently verifies its dataset identity. Failure is labelled, and no request can execute ad spend.
+
+All 81 automated tests, 12 isolated-Chrome dashboard checks and eight mocked connection lifecycle checks pass. The real Windows DPAPI fixture initially failed because a Windows PowerShell subprocess inherited PowerShell 7 module paths; setting the helper's standard Windows PowerShell module path fixed that fixture. A separate test harness adjustment loaded the new UI modules before evaluating the existing DOM tests. These were actual observed iterations.
+
+The new disconnected controls were inspected in the user's browser at the default preview width and 390 pixels; genuine screenshots are `08-chatgpt-connection-ready.jpg` and `09-chatgpt-connection-mobile.jpg`. The panel fits horizontally, Escape restores focus and no browser errors were observed. The screenshots show readiness, not completed consent or a model response.
+
+Remaining live step: the user must personally open the local app, choose Continue with ChatGPT and review OpenAI's consent page. Sign-in or a model list does not establish inference eligibility. After approved consent and a successful completed, grounded request, record a refreshed live demo. Until then, retain the earlier genuine 3:33 deterministic video with this clear version disclosure. Do not describe mock results as live AI.
+
+Official protocol and setup references are linked in `docs/chatgpt-local-sign-in.md`. MIT applies to the original project code; it does not grant OpenAI service access or relicense third-party materials. Public Google Doc/video sharing and final course-form submission remain separate actions.
