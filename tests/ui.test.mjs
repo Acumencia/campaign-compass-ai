@@ -1,0 +1,32 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {JSDOM} from 'jsdom';
+import * as metrics from '../src/metrics.mjs';
+import {DeterministicProvider} from '../src/assistant.mjs';
+import {TERMS} from '../src/glossary.mjs';
+const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+const source=readFileSync(new URL('../src/app.mjs',import.meta.url),'utf8').replace(/^import .*;\r?\n/gm,'');
+const csv=readFileSync(new URL('../data/campaigns.csv',import.meta.url),'utf8');
+async function setup(options={}){
+  const dom=new JSDOM(html,{runScripts:'outside-only',url:'http://localhost:4173'});
+  const w=dom.window;w.__metrics=metrics;w.__provider=DeterministicProvider;w.__terms=TERMS;
+  w.fetch=async()=>({ok:!options.fail,text:async()=>options.csv||csv});
+  // jsdom has no native dialog/focus layout. State-only polyfill; browser checks remain required.
+  w.HTMLDialogElement.prototype.showModal=function(){this.setAttribute('open','');};
+  w.HTMLDialogElement.prototype.close=function(){this.removeAttribute('open');};
+  await w.eval(`(async()=>{const {DEFAULT_FILTERS,parseCSV,snapshot,scenario,keyOf}=window.__metrics;const DeterministicProvider=window.__provider;const TERMS=window.__terms;${source}\n})()`);
+  const $=selector=>w.document.querySelector(selector);
+  const select=(id,value)=>{$(id).value=value;$(id).dispatchEvent(new w.Event('change',{bubbles:true}));};
+  return {dom,w,$,select};
+}
+test('all views render and reflect global filter changes',async()=>{const{dom,$,select}=await setup();assert.equal($('#dashboard').hidden,false);assert.match($('#filter-summary').textContent,/336 daily records/);select('#channel','Instagram');assert.match($('#filter-summary').textContent,/84 daily records/);for(const view of ['platforms','campaigns','trends','lab','overview']){$(`[data-view="${view}"]`).click();assert.match($('#filter-summary').textContent,/84 daily records/);assert.ok($('#view-content').textContent.length>100);assert.equal($(`[data-view="${view}"]`).getAttribute('aria-current'),'page');}dom.window.close();});
+test('invalid dates and empty states disable stale dashboard and brief',async()=>{const{dom,$,select}=await setup();select('#start','2027-01-01');assert.equal($('#dashboard').hidden,true);assert.equal($('#brief-button').disabled,true);assert.match($('#error').textContent,/Start date/);$('#reset').click();select('#audience','Prospecting');select('#goal','Traffic');assert.equal($('#empty').hidden,false);assert.equal($('#dashboard').hidden,true);assert.equal($('#brief-button').disabled,true);$('#empty-reset').click();assert.equal($('#dashboard').hidden,false);dom.window.close();});
+test('campaign search narrows the table without corrupting global totals',async()=>{const{dom,$,w}=await setup();$('[data-view="campaigns"]').click();const before=$('#kpis').textContent;$('#search').value='no such campaign';$('#search').dispatchEvent(new w.Event('input'));assert.match($('#campaign-results').textContent,/No campaigns match/);assert.equal($('#kpis').textContent,before);dom.window.close();});
+test('assistant identifies demo mode, gives evidence and clears after context change',async()=>{const{dom,$,select}=await setup();$('#brief-button').click();await new Promise(resolve=>setImmediate(resolve));assert.equal($('#assistant-dialog').open,true);assert.match($('#answer').textContent,/DETERMINISTIC DEMO/);assert.match($('#answer').textContent,/total.spend/);select('#channel','Facebook');assert.match($('#answer').textContent,/Filters changed/);assert.doesNotMatch($('#answer').textContent,/total.spend/);dom.window.close();});
+test('assistant shows unsupported-question errors instead of fake reasoning',async()=>{const{dom,$,w}=await setup();$('#brief-button').click();await new Promise(resolve=>setImmediate(resolve));$('#question').value='Write a poem';$('#ask-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await new Promise(resolve=>setImmediate(resolve));assert.match($('#answer').textContent,/Demo mode understands/);dom.window.close();});
+test('scenario requires human acknowledgment and clears review on edits',async()=>{const{dom,$,w}=await setup();$('[data-view="lab"]').click();$('#scenario-form').dispatchEvent(new w.Event('submit',{cancelable:true}));assert.match($('#scenario-result').textContent,/SIMULATED/);assert.equal($('#export-proposal').disabled,true);$('#review').checked=true;$('#review').dispatchEvent(new w.Event('change'));assert.equal($('#export-proposal').disabled,false);$('#transfer').value='12';$('#transfer').dispatchEvent(new w.Event('input'));assert.equal($('#scenario-result').textContent,'');dom.window.close();});
+test('dataset error surfaces a recoverable status and does not show stale numbers',async()=>{const{dom,$}=await setup({fail:true});assert.match($('#error').textContent,/Dataset could not be loaded/);assert.equal($('#dashboard').hidden,true);assert.equal($('#brief-button').disabled,true);dom.window.close();});
+test('campaign text is escaped at the HTML boundary',async()=>{const malicious=csv.replaceAll('Evergreen essentials','<img src=x onerror=alert(1)>');const{dom,$}=await setup({csv:malicious});$('[data-view="campaigns"]').click();assert.equal($('#campaign-results img'),null);assert.match($('#campaign-results').textContent,/<img src=x/);dom.window.close();});
+test('controls have labels and table/chart alternatives are present',async()=>{const{dom,$,w}=await setup();for(const input of w.document.querySelectorAll('#filters input,#filters select'))assert.ok(input.closest('label'));assert.ok($('.skip'));assert.ok($('svg[role="img"][aria-label]'));assert.ok($('.chart-details table'));assert.ok($('dialog[aria-labelledby]'));assert.ok($('#answer[aria-live="polite"]'));dom.window.close();});
+test('glossary searches definitions and presents an explicit no-match state',async()=>{const{dom,$,w}=await setup();$('#glossary-button').click();assert.equal($('#glossary-dialog').open,true);assert.equal(w.document.querySelectorAll('.glossary-term').length,21);$('#glossary-search').value='ROAS';$('#glossary-search').dispatchEvent(new w.Event('input'));assert.match($('#glossary-terms').textContent,/Return on ad spend/);$('#glossary-search').value='qzxqzx';$('#glossary-search').dispatchEvent(new w.Event('input'));assert.match($('#glossary-terms').textContent,/No matching terms/);$('#close-glossary').click();assert.equal($('#glossary-dialog').open,false);dom.window.close();});

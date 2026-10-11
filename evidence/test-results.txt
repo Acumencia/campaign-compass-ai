@@ -1,0 +1,53 @@
+
+> campaign-compass-ai@1.0.0 check
+> node --check src/app.mjs && node --check src/metrics.mjs && node --check src/assistant.mjs && node --check server.mjs && npm test && npm run build
+
+
+> campaign-compass-ai@1.0.0 test
+> node --test tests/*.test.mjs
+
+Γ£ö supported questions return only computed facts and exact context (1.473ms)
+Γ£ö unknown questions and empty slices fail honestly (0.6735ms)
+Γ£ö question injection cannot change numeric outputs or execute actions (0.7487ms)
+Γ£ö unknown metric IDs, invented numbers and prose fields are rejected (0.3059ms)
+Γ£ö stale filter context is rejected even when numeric values match (0.9089ms)
+Γ£ö deterministic provider accurately identifies its mode (0.1793ms)
+Γ£ö authorized adapter receives only question, facts and context contract (0.3507ms)
+Γ£ö model timeout or invalid claims produce an explicitly labelled fallback (0.3908ms)
+Γ£ö an unresponsive provider is bounded by a timeout (12.9018ms)
+Γ£ö reproducible CSV exactly matches seeded generator (4.4094ms)
+Γ£ö metrics aggregate cents before converting and use weighted ratios (0.2202ms)
+Γ£ö zero denominators are undefined, not Infinity or zero (0.572ms)
+Γ£ö zero conversions with spend yields undefined CPA and negative ad ROI (0.2475ms)
+Γ£ö filters are inclusive and share one snapshot for all view aggregates (11.1433ms)
+Γ£ö impossible audience/goal combination is a clear empty slice (0.4267ms)
+Γ£ö reversed and impossible dates and unknown dimension are rejected (0.6598ms)
+Γ£ö snapshot copies filter inputs and context responds to every dimension (1.4299ms)
+Γ£ö anomaly is detected from observed CPA, with exact evidence (1.546ms)
+Γ£ö budget scenario conserves spend and uses explicit observed CPA assumption (1.8748ms)
+Γ£ö invalid scenario targets and ratios are rejected (2.1772ms)
+Γ£ö schema rejects malformed numbers, funnel and duplicate records (1.0352ms)
+Γ£ö HTTP server serves allowlisted assets, protects private files and rejects mutations (97.7606ms)
+Γ£ö all views render and reflect global filter changes (210.7898ms)
+Γ£ö invalid dates and empty states disable stale dashboard and brief (94.5547ms)
+Γ£ö campaign search narrows the table without corrupting global totals (46.5477ms)
+Γ£ö assistant identifies demo mode, gives evidence and clears after context change (59.7433ms)
+Γ£ö assistant shows unsupported-question errors instead of fake reasoning (34.2081ms)
+Γ£ö scenario requires human acknowledgment and clears review on edits (38.5007ms)
+Γ£ö dataset error surfaces a recoverable status and does not show stale numbers (11.8117ms)
+Γ£ö campaign text is escaped at the HTML boundary (47.777ms)
+Γ£ö controls have labels and table/chart alternatives are present (43.4868ms)
+Γ£ö glossary searches definitions and presents an explicit no-match state (41.3608ms)
+Γä╣ tests 32
+Γä╣ suites 0
+Γä╣ pass 32
+Γä╣ fail 0
+Γä╣ cancelled 0
+Γä╣ skipped 0
+Γä╣ todo 0
+Γä╣ duration_ms 1492.2931
+
+> campaign-compass-ai@1.0.0 build
+> node scripts/build.mjs
+
+Static build complete: 7 allowlisted assets; no secrets or development evidence bundled.

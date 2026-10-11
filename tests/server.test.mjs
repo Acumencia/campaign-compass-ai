@@ -1,0 +1,4 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createServer} from '../server.mjs';
+test('HTTP server serves allowlisted assets, protects private files and rejects mutations',async t=>{const server=createServer();await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));t.after(()=>server.close());const url=`http://127.0.0.1:${server.address().port}`;const response=await fetch(url);assert.equal(response.status,200);assert.match(response.headers.get('content-security-policy'),/connect-src 'self'/);assert.match(await response.text(),/Campaign Compass/);assert.equal((await fetch(url+'/data/campaigns.csv')).status,200);for(const path of ['/evidence/development-log.md','/.env','/package.json','/src/../server.mjs','/%2e%2e%2fserver.mjs','/README.md'])assert.equal((await fetch(url+path)).status,404);assert.equal((await fetch(url,{method:'POST',body:'execute-spend'})).status,405);});

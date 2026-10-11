@@ -1,0 +1,337 @@
+date,campaignId,campaign,channel,audience,goal,spend,impressions,clicks,conversions,revenue
+2026-09-14,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,17398,23898,454,18,107564
+2026-09-14,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,22660,32951,758,35,207076
+2026-09-14,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,27592,42754,1154,64,387238
+2026-09-14,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,20644,27888,488,17,102205
+2026-09-14,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,22730,28379,610,30,185473
+2026-09-14,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,27709,34572,882,49,317456
+2026-09-14,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,17717,23009,368,12,75623
+2026-09-14,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,23510,30444,609,25,167168
+2026-09-14,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,32384,41549,997,50,336063
+2026-09-14,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,21800,22384,325,9,59775
+2026-09-14,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,28491,34246,634,23,166540
+2026-09-14,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,34858,41234,928,48,331798
+2026-09-15,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,18278,26545,504,18,110292
+2026-09-15,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,23845,34505,794,40,231277
+2026-09-15,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,31015,41792,1128,65,378789
+2026-09-15,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,17148,22866,400,13,81041
+2026-09-15,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,23772,32266,694,33,197201
+2026-09-15,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,32538,45395,1158,69,405874
+2026-09-15,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,19957,26281,420,11,75312
+2026-09-15,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,25021,30587,612,23,159825
+2026-09-15,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,29534,35923,862,48,316957
+2026-09-15,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,25454,26241,380,10,73907
+2026-09-15,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,31233,33857,626,25,166241
+2026-09-15,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,31307,35723,804,40,287298
+2026-09-16,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,18218,26443,502,18,107668
+2026-09-16,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24411,34570,795,41,242271
+2026-09-16,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,28654,42824,1156,68,380192
+2026-09-16,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,17500,21035,368,11,68851
+2026-09-16,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,20697,25089,539,25,161761
+2026-09-16,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,26231,37616,959,58,354319
+2026-09-16,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,19581,23939,383,12,80948
+2026-09-16,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,27013,29573,591,24,151011
+2026-09-16,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,29231,33877,813,46,286829
+2026-09-16,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,21031,22441,325,9,62197
+2026-09-16,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,29718,30205,559,22,145624
+2026-09-16,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,32535,35803,806,40,266180
+2026-09-17,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,18554,27019,513,20,111301
+2026-09-17,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,23025,31143,716,33,187259
+2026-09-17,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,30258,45797,1237,68,375523
+2026-09-17,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,21299,26147,458,16,102686
+2026-09-17,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,26490,37454,805,35,205619
+2026-09-17,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,29095,36185,923,47,288994
+2026-09-17,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,21004,23044,369,11,70636
+2026-09-17,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,29239,34150,683,25,161480
+2026-09-17,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,33829,38867,933,50,343577
+2026-09-17,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,20257,23271,337,9,66610
+2026-09-17,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,31274,32706,605,24,176487
+2026-09-17,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,35742,38287,861,43,315633
+2026-09-18,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,15943,23386,444,16,89312
+2026-09-18,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,19333,27256,627,33,191266
+2026-09-18,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,26762,37778,1020,62,365376
+2026-09-18,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18607,26076,456,15,89789
+2026-09-18,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,21067,28876,621,26,164584
+2026-09-18,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,30530,40659,1037,53,313431
+2026-09-18,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,20629,23244,372,12,79753
+2026-09-18,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,26039,30176,604,26,175088
+2026-09-18,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,29550,38607,927,47,295141
+2026-09-18,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,24084,26664,387,10,73243
+2026-09-18,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,25246,26593,492,18,129075
+2026-09-18,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,31825,37864,852,40,289052
+2026-09-19,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,19637,30029,571,21,125556
+2026-09-19,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,23896,34344,790,36,198163
+2026-09-19,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,33699,50957,1376,83,467277
+2026-09-19,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,19328,24830,435,15,91718
+2026-09-19,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,29632,37978,817,39,250539
+2026-09-19,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,35215,47576,1213,63,390058
+2026-09-19,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,21795,26720,428,14,96724
+2026-09-19,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,32897,43247,865,36,225680
+2026-09-19,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,35296,42936,1030,58,383503
+2026-09-19,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,26731,30101,436,11,79574
+2026-09-19,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,34511,36950,684,25,166262
+2026-09-19,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,38806,44856,1009,44,305409
+2026-09-20,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,20223,31694,602,22,129813
+2026-09-20,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24303,34251,788,37,221315
+2026-09-20,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,31976,44485,1201,70,402525
+2026-09-20,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,19626,28625,501,16,97017
+2026-09-20,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,23183,33699,725,31,196916
+2026-09-20,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,32954,42265,1078,59,375601
+2026-09-20,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,20625,23568,377,12,83405
+2026-09-20,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,30039,39442,789,29,185873
+2026-09-20,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,37279,46172,1108,56,360461
+2026-09-20,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,23915,28210,409,10,72022
+2026-09-20,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,32348,37400,692,27,186336
+2026-09-20,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,41271,49848,1122,53,380708
+2026-09-21,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,15000,22697,431,16,91766
+2026-09-21,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,23775,37001,851,39,239401
+2026-09-21,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,26651,40006,1080,63,367952
+2026-09-21,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18366,22792,399,13,79704
+2026-09-21,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,26464,35745,769,32,204263
+2026-09-21,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,28461,36596,933,55,322353
+2026-09-21,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,19411,24981,400,12,80557
+2026-09-21,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,26291,28685,574,24,160477
+2026-09-21,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,34537,40306,967,54,336471
+2026-09-21,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,23588,26597,386,10,67670
+2026-09-21,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,25363,26675,493,18,125797
+2026-09-21,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,29922,33499,754,34,237593
+2026-09-22,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,19022,27359,520,19,107902
+2026-09-22,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24125,38575,887,39,236119
+2026-09-22,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,31181,47069,1271,83,506176
+2026-09-22,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18422,22170,388,13,79548
+2026-09-22,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,24955,32727,704,30,182073
+2026-09-22,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,32295,41406,1056,58,366732
+2026-09-22,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,20674,23761,380,12,75502
+2026-09-22,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,28477,33918,678,27,171458
+2026-09-22,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,34005,44208,1061,52,350894
+2026-09-22,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,25278,26087,378,10,73999
+2026-09-22,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,29436,34083,631,25,181052
+2026-09-22,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,33501,39400,887,45,316624
+2026-09-23,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,16762,23219,441,16,91066
+2026-09-23,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,19897,29380,676,36,199413
+2026-09-23,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,29636,48143,1300,81,477854
+2026-09-23,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,16993,24141,422,15,90460
+2026-09-23,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,24367,32454,698,28,180040
+2026-09-23,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,29600,39595,1010,61,388486
+2026-09-23,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,17822,19482,312,10,66763
+2026-09-23,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,28204,33270,665,28,187501
+2026-09-23,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,31109,34191,821,44,290042
+2026-09-23,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,22504,23249,337,9,66721
+2026-09-23,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,24082,26286,486,17,113602
+2026-09-23,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,32787,38385,864,39,276114
+2026-09-24,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,19331,28960,550,20,109073
+2026-09-24,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,22429,33135,762,40,219343
+2026-09-24,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,30019,45946,1241,79,461345
+2026-09-24,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,20292,26797,469,17,102404
+2026-09-24,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,20826,30175,649,30,185638
+2026-09-24,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,28218,35192,897,46,276068
+2026-09-24,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,22253,27934,447,15,98004
+2026-09-24,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,23018,27590,552,22,137833
+2026-09-24,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,27586,33716,809,41,283713
+2026-09-24,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,20177,20299,294,7,48640
+2026-09-24,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,29363,32324,598,24,172082
+2026-09-24,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,35374,41055,924,43,289459
+2026-09-25,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,15610,24296,462,19,108584
+2026-09-25,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,21111,31102,715,33,188962
+2026-09-25,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,23919,33851,914,60,336361
+2026-09-25,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,21380,29965,524,17,108199
+2026-09-25,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,26528,35114,755,31,191715
+2026-09-25,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,32170,46655,1190,68,446459
+2026-09-25,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,21845,25544,409,11,76017
+2026-09-25,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,28981,32079,642,24,152040
+2026-09-25,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,29110,35514,852,42,278905
+2026-09-25,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,20661,22659,329,8,56657
+2026-09-25,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,26587,28249,523,18,119368
+2026-09-25,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,36240,40703,916,48,340363
+2026-09-26,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,17894,25129,477,17,92937
+2026-09-26,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24476,33037,760,34,194028
+2026-09-26,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,29462,44267,1195,77,463453
+2026-09-26,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18974,23055,403,13,76612
+2026-09-26,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,26840,38241,822,38,241589
+2026-09-26,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,30052,38519,982,50,311747
+2026-09-26,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,25108,33069,529,17,109355
+2026-09-26,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,27147,35520,710,27,186681
+2026-09-26,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,33115,35979,863,48,303602
+2026-09-26,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,27954,32380,470,13,94312
+2026-09-26,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,32826,33395,618,23,170381
+2026-09-26,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,32087,33767,760,35,256618
+2026-09-27,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,16936,23357,444,15,91127
+2026-09-27,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,26189,37564,864,44,255847
+2026-09-27,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,34651,54969,1484,82,451825
+2026-09-27,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,21052,28408,497,17,109491
+2026-09-27,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,23447,29978,645,32,206091
+2026-09-27,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,33068,40392,1030,53,313715
+2026-09-27,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,22370,29215,467,15,101968
+2026-09-27,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,25322,29657,593,27,180636
+2026-09-27,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,33646,37808,907,49,322061
+2026-09-27,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,23897,25514,370,9,62080
+2026-09-27,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,34367,35972,665,24,167074
+2026-09-27,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,37437,39491,889,45,322705
+2026-09-28,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,16738,25893,492,20,113356
+2026-09-28,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24628,35298,812,42,250047
+2026-09-28,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,27151,39636,1070,64,361387
+2026-09-28,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18050,25504,446,15,91304
+2026-09-28,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,24930,36200,778,36,212875
+2026-09-28,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,25641,36178,923,52,324519
+2026-09-28,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,19080,22510,360,10,63918
+2026-09-28,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,24375,31715,634,24,166591
+2026-09-28,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,31757,42057,1009,57,363553
+2026-09-28,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,24136,25119,364,10,70611
+2026-09-28,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,28105,32292,597,21,148338
+2026-09-28,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,36389,36632,824,42,286227
+2026-09-29,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,15377,23599,448,18,108941
+2026-09-29,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,19666,28667,659,34,186899
+2026-09-29,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,24302,32670,882,50,275985
+2026-09-29,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,17649,21484,376,12,78650
+2026-09-29,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,24237,30781,662,32,198084
+2026-09-29,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,27408,33896,864,51,306041
+2026-09-29,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,22420,28752,460,13,85460
+2026-09-29,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,24857,30771,615,26,175087
+2026-09-29,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,29032,35885,861,45,281232
+2026-09-29,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,24773,26498,384,10,70005
+2026-09-29,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,24643,27495,509,19,133436
+2026-09-29,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,35996,39187,882,46,317698
+2026-09-30,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,16377,25480,484,20,114232
+2026-09-30,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,23755,36996,851,41,247239
+2026-09-30,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,30200,42972,1160,67,393728
+2026-09-30,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,17590,25113,439,15,96967
+2026-09-30,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,22788,30337,652,31,189347
+2026-09-30,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,26365,34638,883,50,292621
+2026-09-30,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,20336,23573,377,12,82510
+2026-09-30,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,22998,28684,574,25,170866
+2026-09-30,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,28265,35945,863,45,295896
+2026-09-30,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,24272,24730,359,9,59808
+2026-09-30,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,30502,32568,603,21,146820
+2026-09-30,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,35879,36015,810,38,258172
+2026-10-01,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,17721,23877,454,19,114473
+2026-10-01,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24769,38458,885,44,252450
+2026-10-01,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,29524,40570,1095,61,341446
+2026-10-01,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,21163,27071,474,16,104017
+2026-10-01,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,21271,26069,560,23,145911
+2026-10-01,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,27602,33183,846,52,313152
+2026-10-01,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,20746,22976,368,10,65363
+2026-10-01,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,22712,27739,555,22,142794
+2026-10-01,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,32199,36329,872,47,318787
+2026-10-01,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,21901,25426,369,10,73860
+2026-10-01,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,25829,28701,531,18,127313
+2026-10-01,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,37382,43816,986,43,300910
+2026-10-02,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,15683,23436,445,15,84840
+2026-10-02,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,21660,31697,729,36,202442
+2026-10-02,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,23624,33027,892,53,308895
+2026-10-02,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,20146,27405,480,18,114945
+2026-10-02,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,25105,31389,675,31,198191
+2026-10-02,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,26763,37209,949,54,338236
+2026-10-02,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,21394,28214,451,14,95582
+2026-10-02,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,27018,34213,684,26,170299
+2026-10-02,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,32871,36047,865,45,309211
+2026-10-02,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,22617,26541,385,10,69812
+2026-10-02,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,23983,23855,441,16,116328
+2026-10-02,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,32100,34302,772,36,238977
+2026-10-03,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,17073,25111,477,18,109402
+2026-10-03,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,21738,35648,820,39,233566
+2026-10-03,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,27201,39476,1066,68,391700
+2026-10-03,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18875,25098,439,16,101137
+2026-10-03,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,28605,41773,898,44,264454
+2026-10-03,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,31282,39988,1020,57,373630
+2026-10-03,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,25156,31717,507,15,93791
+2026-10-03,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,27939,30306,606,27,168573
+2026-10-03,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,34273,41252,990,52,341805
+2026-10-03,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,21761,24261,352,10,70657
+2026-10-03,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,29812,32321,598,24,158247
+2026-10-03,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,34893,37603,846,39,262953
+2026-10-04,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,18710,29214,555,22,131144
+2026-10-04,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,26849,37608,865,45,256140
+2026-10-04,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,27424,37781,1020,60,364065
+2026-10-04,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,22234,30371,531,17,105380
+2026-10-04,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,23607,29542,635,28,165383
+2026-10-04,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,32267,46077,1175,71,447877
+2026-10-04,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,24506,30116,482,16,109357
+2026-10-04,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,32490,41775,836,34,214301
+2026-10-04,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,30170,39739,954,50,344297
+2026-10-04,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,22018,23790,345,9,64961
+2026-10-04,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,28146,32102,594,24,172944
+2026-10-04,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,33798,35515,799,40,273295
+2026-10-05,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,16580,24864,472,19,114046
+2026-10-05,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24803,38480,885,46,256878
+2026-10-05,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,30509,49906,1347,84,510674
+2026-10-05,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18637,22697,230,7,44088
+2026-10-05,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,25450,34192,735,32,198903
+2026-10-05,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,30433,38942,993,61,399848
+2026-10-05,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,22187,27660,443,15,104049
+2026-10-05,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,25994,34369,687,30,196087
+2026-10-05,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,34965,43768,1050,57,390798
+2026-10-05,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,21030,22694,329,8,52694
+2026-10-05,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,25297,27202,503,18,122632
+2026-10-05,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,29399,31223,703,37,273522
+2026-10-06,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,18002,26893,511,21,128043
+2026-10-06,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,20878,31948,735,33,187551
+2026-10-06,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,25034,41022,1108,60,349420
+2026-10-06,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,16192,22465,228,8,51964
+2026-10-06,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,21843,26885,578,28,180529
+2026-10-06,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,30521,42782,1091,57,352250
+2026-10-06,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,20066,23505,376,11,74323
+2026-10-06,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,28881,37031,741,33,216784
+2026-10-06,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,28852,32167,772,40,267889
+2026-10-06,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,25388,28675,416,11,79202
+2026-10-06,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,25533,26719,494,19,133165
+2026-10-06,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,35377,37662,847,44,321055
+2026-10-07,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,17346,25368,482,19,113853
+2026-10-07,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,21863,35588,819,39,227186
+2026-10-07,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,29949,41230,1113,67,400967
+2026-10-07,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,19458,26854,273,9,55951
+2026-10-07,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,24632,35269,758,32,197914
+2026-10-07,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,33188,40094,1022,56,354932
+2026-10-07,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,18964,24296,389,12,80342
+2026-10-07,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,27631,35149,703,27,177890
+2026-10-07,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,32281,37816,908,46,319629
+2026-10-07,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,21063,23929,347,9,64726
+2026-10-07,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,26074,29076,538,22,161574
+2026-10-07,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,35159,42428,955,46,327349
+2026-10-08,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,14632,21402,407,15,89062
+2026-10-08,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,24417,39693,913,43,241712
+2026-10-08,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,31063,48098,1299,79,455891
+2026-10-08,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,19259,27375,278,9,52921
+2026-10-08,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,26885,32418,697,31,202296
+2026-10-08,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,25951,31333,799,42,249680
+2026-10-08,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,18641,21919,351,10,65130
+2026-10-08,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,26658,34144,683,31,201503
+2026-10-08,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,33271,40801,979,53,362578
+2026-10-08,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,21672,26125,379,10,66287
+2026-10-08,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,30423,34142,632,24,166916
+2026-10-08,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,34745,36446,820,38,280713
+2026-10-09,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,19185,29220,555,21,124893
+2026-10-09,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,19570,29818,686,36,209006
+2026-10-09,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,25584,40973,1106,68,384589
+2026-10-09,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,17608,21840,222,8,48838
+2026-10-09,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,21783,29108,626,29,183176
+2026-10-09,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,30314,37994,969,58,353367
+2026-10-09,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,22015,23930,383,13,89254
+2026-10-09,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,24518,31515,630,27,180134
+2026-10-09,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,29208,35390,849,48,318003
+2026-10-09,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,23397,25341,367,10,66191
+2026-10-09,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,31344,31470,582,22,154593
+2026-10-09,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,33254,39851,897,41,281980
+2026-10-10,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,19266,28423,540,19,109378
+2026-10-10,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,27967,38374,883,44,268645
+2026-10-10,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,34972,47417,1280,80,475385
+2026-10-10,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,20352,25488,259,9,55592
+2026-10-10,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,26919,35379,761,37,243058
+2026-10-10,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,33289,48653,1241,73,458809
+2026-10-10,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,21215,26744,428,12,82538
+2026-10-10,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,25175,28073,561,22,138578
+2026-10-10,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,31890,41212,989,54,363277
+2026-10-10,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,27968,31553,458,12,80875
+2026-10-10,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,31098,34465,638,23,169889
+2026-10-10,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,37894,45751,1029,50,336769
+2026-10-11,cc-11,Evergreen essentials / Prospecting,Facebook,Prospecting,Purchase,17344,23995,456,17,93056
+2026-10-11,cc-12,Evergreen essentials / Retargeting,Facebook,Retargeting,Traffic,26758,37524,863,41,241568
+2026-10-11,cc-13,Evergreen essentials / Lookalike,Facebook,Lookalike,Awareness,29418,42148,1138,68,409584
+2026-10-11,cc-21,The discovery edit / Prospecting,Instagram,Prospecting,Purchase,18729,25158,255,9,56113
+2026-10-11,cc-22,The discovery edit / Retargeting,Instagram,Retargeting,Traffic,26996,35684,767,32,190445
+2026-10-11,cc-23,The discovery edit / Lookalike,Instagram,Lookalike,Awareness,31720,39939,1018,57,335074
+2026-10-11,cc-31,Everyday inspiration / Prospecting,Pinterest,Prospecting,Purchase,24535,26953,431,13,84125
+2026-10-11,cc-32,Everyday inspiration / Retargeting,Pinterest,Retargeting,Traffic,28984,37105,742,33,215320
+2026-10-11,cc-33,Everyday inspiration / Lookalike,Pinterest,Lookalike,Awareness,38874,48534,1165,61,421548
+2026-10-11,cc-41,New perspectives / Prospecting,Twitter,Prospecting,Purchase,25299,27621,401,11,73289
+2026-10-11,cc-42,New perspectives / Retargeting,Twitter,Retargeting,Traffic,29383,35006,648,26,189428
+2026-10-11,cc-43,New perspectives / Lookalike,Twitter,Lookalike,Awareness,40542,48966,1102,49,346711

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+*.webm
+*.mp4
+submission/*.docx
+submission/*.pdf
+evidence/local-*
+submission/recording/
+submission/narration-timing.json
+submission/recording-timeline.json

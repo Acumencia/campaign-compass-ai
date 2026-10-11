@@ -1,0 +1,50 @@
+[
+  {
+    "file": "00-overview-default-preview.jpg",
+    "capturedAt": "2026-10-11T16:20:49.6561189Z",
+    "bytes": 135408,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "01-overview-desktop.jpg",
+    "capturedAt": "2026-10-11T16:21:15.6749828Z",
+    "bytes": 172008,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "02-grounded-brief.jpg",
+    "capturedAt": "2026-10-11T16:21:57.9379882Z",
+    "bytes": 51347,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "03-empty-filter-state.jpg",
+    "capturedAt": "2026-10-11T16:22:56.7640828Z",
+    "bytes": 48647,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "04-budget-review.jpg",
+    "capturedAt": "2026-10-11T16:23:08.4423213Z",
+    "bytes": 137123,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "05-mobile-before-fix.jpg",
+    "capturedAt": "2026-10-11T16:23:10.0662683Z",
+    "bytes": 87061,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "06-mobile-after-fix.jpg",
+    "capturedAt": "2026-10-11T16:24:41.9722354Z",
+    "bytes": 87202,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  },
+  {
+    "file": "07-searchable-glossary.jpg",
+    "capturedAt": "2026-10-11T16:29:32.7863979Z",
+    "bytes": 51516,
+    "source": "Actual user-browser screenshot via Codex browser control"
+  }
+]
