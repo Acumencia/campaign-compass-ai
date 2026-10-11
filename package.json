@@ -17,7 +17,8 @@
     "test:browser": "node scripts/browser-qa.mjs",
     "privacy-check": "node scripts/privacy-check.mjs",
     "test:browser:chatgpt": "node scripts/chatgpt-browser-qa.mjs",
-    "test:browser:auth-navigation": "node scripts/auth-navigation-browser-qa.mjs"
+    "test:browser:auth-navigation": "node scripts/auth-navigation-browser-qa.mjs",
+    "test:browser:response-errors": "node scripts/response-errors-browser-qa.mjs"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",

@@ -1,5 +1,42 @@
 import {DeterministicProvider, validateResponse} from './assistant.mjs';
 
+const routes = new Set(['/api/snapshot', '/api/brief', ...['session','models','model','select','cancel','disconnect','acknowledge','retry-usage'].map(name => `/api/chatgpt/${name}`)]);
+const recovery = 'Reload the app served by npm start. Demo mode remains available.';
+function transportError(route, response, kind) {
+  const status = response?.status || 0;
+  const error = new Error(`Local service ${kind} (${route}; ${status ? `HTTP ${status}` : 'status unavailable'}). ${recovery}`);
+  error.code = 'local_response_invalid';
+  error.diagnostic = {path: route, httpStatus: status, kind};
+  return error;
+}
+async function localJSON(response, route) {
+  if (response.type === 'opaqueredirect' || response.redirected || (response.status >= 300 && response.status < 400)) {
+    throw transportError(route, response, 'unexpected redirect');
+  }
+  const type = (response.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+  if (type !== 'application/json') throw transportError(route, response, type === 'text/html' ? 'returned HTML instead of JSON' : 'returned a non-JSON response');
+  const reader = response.body?.getReader(), chunks = []; let size = 0;
+  if (!reader) throw transportError(route, response, 'returned an empty response');
+  try {
+    for (;;) {
+      const {done, value} = await reader.read(); if (done) break;
+      size += value.byteLength;
+      if (size > 128000) { await reader.cancel(); throw transportError(route, response, 'response exceeded the size limit'); }
+      chunks.push(value);
+    }
+  } catch (error) {
+    if (error.name === 'AbortError' || error.code === 'local_response_invalid') throw error;
+    throw transportError(route, response, 'response was interrupted');
+  } finally { reader.releaseLock(); }
+  const bytes = new Uint8Array(size); let offset = 0;
+  for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
+  let data;
+  try { data = JSON.parse(new TextDecoder().decode(bytes)); }
+  catch { throw transportError(route, response, 'returned malformed JSON'); }
+  if (!data || typeof data !== 'object' || Array.isArray(data)) throw transportError(route, response, 'returned an unsupported response');
+  return data;
+}
+
 export async function datasetIdentity(rows, filters) {
   const canonical = Object.fromEntries(['start','end','channel','audience','goal'].map(key => [key, filters[key]]));
   const bytes = new TextEncoder().encode(JSON.stringify({rows, filters: canonical}));
@@ -14,10 +51,13 @@ export class ChatGPTClient {
     this.available = false; this.demo = new DeterministicProvider();
   }
   async api(route, {body, signal, method} = {}) {
-    const response = await this.fetcher(route, {method: method || (body === undefined ? 'GET' : 'POST'),
+    if (!routes.has(route)) throw new Error('Unsupported local service action.');
+    let response;
+    try { response = await this.fetcher(route, {method: method || (body === undefined ? 'GET' : 'POST'), redirect: 'manual',
       credentials: 'same-origin', signal, headers: {'Content-Type': 'application/json', 'X-CC-CSRF': this.state.csrf || ''},
-      ...(body === undefined ? {} : {body: JSON.stringify(body)})});
-    const data = await response.json();
+      ...(body === undefined ? {} : {body: JSON.stringify(body)})}); }
+    catch (error) { if (error.name === 'AbortError') throw error; throw transportError(route, null, 'is unavailable'); }
+    const data = await localJSON(response, route);
     if (!response.ok) {
       const error = new Error(data.error?.message || 'The local service could not complete this request.');
       error.code = data.error?.code; throw error;
@@ -29,10 +69,10 @@ export class ChatGPTClient {
       const state = await this.api('/api/chatgpt/session');
       if (typeof state.csrf !== 'string' || typeof state.connected !== 'boolean' || !Array.isArray(state.profiles)) throw new Error();
       this.state = state; this.available = true;
-    } catch {
+    } catch (error) {
       this.available = false;
       this.state = {connected: false, sharing: false, models: [], profiles: [], supported: false,
-        notice: 'Connection service unavailable. Start the local Node server to use Continue with ChatGPT. Demo remains available.'};
+        notice: error.code === 'local_response_invalid' ? error.message : 'Connection service unavailable. Start the local Node server to use Continue with ChatGPT. Demo remains available.'};
     }
     return this.state;
   }

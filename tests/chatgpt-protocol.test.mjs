@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {generateKeyPair, SignJWT} from 'jose';
-import {createOpenAIProtocol, verifyIDToken, ISSUER, RESOURCE, SCOPES} from '../server/chatgpt-protocol.mjs';
+import {createOpenAIProtocol, verifyIDToken, boundedJSON, ISSUER, RESOURCE, SCOPES} from '../server/chatgpt-protocol.mjs';
 
 const config = {issuer: ISSUER, authorization_endpoint: `${ISSUER}/api/accounts/authorize`, token_endpoint: `${ISSUER}/api/accounts/oauth/token`,
   jwks_uri: `${ISSUER}/.well-known/jwks.json`, revocation_endpoint: `${ISSUER}/api/accounts/oauth/revoke`};
@@ -71,11 +71,30 @@ test('partial, failed, usage-limited and malformed streams never become model an
 });
 
 test('admission errors retain bounded codes/request IDs but not raw diagnostic text', async () => {
-  const protocol = createOpenAIProtocol({fetcher: async () => new Response(JSON.stringify({detail:'private upstream diagnostic'}), {status:403,headers:{'x-request-id':'fixture-request'}})});
+  const protocol = createOpenAIProtocol({fetcher: async () => new Response(JSON.stringify({detail:'private upstream diagnostic'}), {status:403,headers:{'x-request-id':'fixture-request','Content-Type':'application/json'}})});
   await assert.rejects(protocol.models('fixture-access'), error => {
     assert.equal(error.code,'restricted'); assert.equal(error.status,403); assert.equal(error.diagnostic.requestId,'fixture-request');
     assert.doesNotMatch(error.message,/private upstream/); return true;
   });
+});
+
+test('provider HTML errors identify only the operation, status and media category',async()=>{
+  for (const [operation,status] of [['discovery',403],['token',200],['models',502],['responses',429]]) {
+    const protocol=createOpenAIProtocol({fetcher:async url=>operation==='token'&&url.endsWith('openid-configuration')?json(config):
+      new Response('<!DOCTYPE html>private upstream fixture',{status,headers:{'Content-Type':'text/html; charset=utf-8'}})});
+    const run=operation==='discovery'?()=>protocol.configuration():operation==='token'?()=>protocol.token({}):operation==='models'?()=>protocol.models('fixture-access'):()=>protocol.infer('fixture-access','fixture-model',{});
+    await assert.rejects(run(),error=>{
+      assert.equal(error.code,'invalid_response');assert.equal(error.status,502);
+      assert.deepEqual(error.diagnostic,{operation,httpStatus:String(status),media:'html',reason:'content_type'});
+      assert.doesNotMatch(JSON.stringify({message:error.message,diagnostic:error.diagnostic}),/private|DOCTYPE|fixture-access/);return true;
+    });
+  }
+});
+
+test('provider parser rejects redirects, malformed JSON, wrong shapes and excessive bodies',async()=>{
+  for(const [body,status,type,reason] of [['',302,'text/html','redirect'],['<!DOCTYPE html>fixture',200,'application/json','json'],['null',200,'application/json','json'],['[]',200,'application/json','json'],['x'.repeat(33),200,'application/json','size']]){
+    await assert.rejects(boundedJSON(new Response(body,{status,headers:{'Content-Type':type}}),32,'models'),error=>error.diagnostic.reason===reason);
+  }
 });
 
 test('revocation uses discovery and only sends refresh credentials in the POST body', async () => {

@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-10-11T21:19:55.482Z",
+  "browser": "154.0.8037.97",
+  "scope": "Isolated Chrome and synthetic loopback provider only; no real consent, login replay or inference",
+  "checks": [
+    {
+      "check": "Mock provider login HTML failure occurs before callback; local JSON status remains disconnected",
+      "status": "passed"
+    },
+    {
+      "check": "Static HTML API fallback is explained clearly and deterministic assistance remains usable",
+      "status": "passed"
+    },
+    {
+      "check": "API redirect is rejected without visiting the login destination or leaving the dashboard",
+      "status": "passed"
+    },
+    {
+      "check": "HTML API denial reports bounded path/status without raw upstream content",
+      "status": "passed"
+    },
+    {
+      "check": "Stale service contract fails closed with no uncaught browser errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

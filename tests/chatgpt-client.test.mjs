@@ -37,3 +37,39 @@ test('static preview remains an explicit deterministic demo when the local servi
   const client=new ChatGPTClient({fetcher:async()=>{throw new Error('not available');}});await client.refresh();
   assert.equal(client.available,false);assert.equal((await client.answer('brief',snap)).mode,'demo');
 });
+
+test('HTML app fallback and proxy errors produce bounded diagnostics without response text', async()=>{
+  for (const status of [200,403,502]) {
+    const client=new ChatGPTClient({fetcher:async()=>new Response('<!DOCTYPE html>private fixture body',{status,headers:{'Content-Type':'text/html; charset=utf-8'}})});
+    await assert.rejects(client.api('/api/chatgpt/models'),error=>{
+      assert.equal(error.code,'local_response_invalid');assert.equal(error.diagnostic.httpStatus,status);
+      assert.match(error.message,/HTML instead of JSON/);assert.doesNotMatch(error.message,/private fixture|DOCTYPE|Unexpected token/);return true;
+    });
+    await client.refresh();assert.equal(client.available,false);assert.match(client.state.notice,/npm start/);
+    assert.equal((await client.answer('brief',snap)).mode,'demo');
+  }
+});
+
+test('API redirects are never followed, including opaque browser redirect responses',async()=>{
+  for (const response of [new Response(null,{status:302,headers:{Location:'https://invalid.example/login?private=fixture'}}),{type:'opaqueredirect',status:0}]) {
+    const client=new ChatGPTClient({fetcher:async(route,options)=>{assert.equal(options.redirect,'manual');return response;}});
+    await assert.rejects(client.api('/api/chatgpt/session'),error=>{
+      assert.match(error.message,/unexpected redirect/);assert.doesNotMatch(error.message,/invalid.example|private/);return true;
+    });
+  }
+});
+
+test('malformed, oversized, empty and unsupported JSON never leak body snippets',async()=>{
+  for(const body of ['<!DOCTYPE html>private fixture','{"private":"fixture"','null','[]','"private fixture"','{"long":"'+'x'.repeat(128000)+'"}']){
+    const client=new ChatGPTClient({fetcher:async()=>new Response(body,{headers:{'Content-Type':'application/json'}})});
+    await assert.rejects(client.api('/api/chatgpt/models'),error=>error.code==='local_response_invalid'&&!/private|fixture|DOCTYPE/.test(error.message));
+  }
+});
+
+test('stale session contracts fail closed while a normal API abort stays an abort',async()=>{
+  const stale=new ChatGPTClient({fetcher:async()=>json({version:'old',loggedIn:true})});await stale.refresh();
+  assert.equal(stale.available,false);assert.equal(stale.state.connected,false);
+  const aborted=new ChatGPTClient({fetcher:async()=>{throw new DOMException('Cancelled','AbortError');}});
+  await assert.rejects(aborted.api('/api/chatgpt/session'),error=>error.name==='AbortError');
+  await assert.rejects(stale.api('https://invalid.example/api/chatgpt/session'),/Unsupported/);
+});

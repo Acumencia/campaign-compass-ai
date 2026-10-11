@@ -19,6 +19,7 @@ const messages = {
   cancelled: 'The request was cancelled.',
   incomplete_stream: 'ChatGPT did not complete the response. No partial answer was used.',
   restricted: 'OpenAI denied this request. Review your account or workspace permissions; no alternate billing path was used.',
+  invalid_response: 'OpenAI returned an unreadable response. No result was accepted and saved credentials were preserved. Try again later.',
 };
 export class ChatGPTError extends Error {
   constructor(code, status = 400, diagnostic = {}) {
@@ -29,15 +30,22 @@ export class ChatGPTError extends Error {
   }
 }
 
-export async function boundedJSON(response, limit = 128000) {
+export async function boundedJSON(response, limit = 128000, operation = 'provider') {
+  const type = (response.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+  const diagnostic = {operation, httpStatus: String(response.status), media: type === 'application/json' ? 'json' : type === 'text/html' ? 'html' : type ? 'other' : 'missing'};
+  if (response.redirected || (response.status >= 300 && response.status < 400)) throw new ChatGPTError('invalid_response', 502, {...diagnostic, reason: 'redirect'});
+  if (type !== 'application/json') throw new ChatGPTError('invalid_response', 502, {...diagnostic, reason: 'content_type'});
   const chunks = []; let size = 0;
   for await (const chunk of response.body || []) {
     size += chunk.length;
-    if (size > limit) throw new ChatGPTError('invalid_response', 502);
+    if (size > limit) throw new ChatGPTError('invalid_response', 502, {...diagnostic, reason: 'size'});
     chunks.push(Buffer.from(chunk));
   }
-  try { return JSON.parse(Buffer.concat(chunks).toString('utf8')); }
-  catch { throw new ChatGPTError('invalid_response', 502); }
+  try {
+    const data = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+    if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error();
+    return data;
+  } catch { throw new ChatGPTError('invalid_response', 502, {...diagnostic, reason: 'json'}); }
 }
 
 export function responseError(status, body, requestId) {
@@ -61,8 +69,8 @@ export function createOpenAIProtocol({fetcher = fetch, verifyIdentity} = {}) {
   async function configuration(signal) {
     if (!discovery) {
       const response = await fetcher(`${ISSUER}/.well-known/openid-configuration`, {signal, redirect: 'error'});
-      if (!response.ok) throw new ChatGPTError('discovery_unavailable', 503);
-      const data = await boundedJSON(response);
+      const data = await boundedJSON(response, 128000, 'discovery');
+      if (!response.ok) throw new ChatGPTError('discovery_unavailable', 503, {httpStatus: String(response.status), operation: 'discovery'});
       if (data.issuer !== ISSUER || data.authorization_endpoint !== `${ISSUER}/api/accounts/authorize` ||
           data.token_endpoint !== `${ISSUER}/api/accounts/oauth/token` ||
           ['jwks_uri', 'revocation_endpoint'].some(key => {
@@ -82,7 +90,7 @@ export function createOpenAIProtocol({fetcher = fetch, verifyIdentity} = {}) {
     const config = await configuration(signal);
     const response = await fetcher(config.token_endpoint, {method: 'POST', redirect: 'error', signal,
       headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(parameters)});
-    const data = await boundedJSON(response);
+    const data = await boundedJSON(response, 128000, 'token');
     if (!response.ok) throw responseError(response.status, data, response.headers.get('x-request-id'));
     if (typeof data.access_token !== 'string' || !data.access_token || typeof data.refresh_token !== 'string' || !data.refresh_token ||
         typeof data.id_token !== 'string' || !data.id_token || !Number.isFinite(data.expires_in) || data.expires_in <= 0 ||
@@ -91,7 +99,7 @@ export function createOpenAIProtocol({fetcher = fetch, verifyIdentity} = {}) {
   }
   async function models(accessToken, signal) {
     const response = await fetcher(`${RESOURCE}/models`, {redirect: 'error', signal, headers: {Authorization: `Bearer ${accessToken}`}});
-    const data = await boundedJSON(response);
+    const data = await boundedJSON(response, 128000, 'models');
     if (!response.ok) throw responseError(response.status, data, response.headers.get('x-request-id'));
     if (!Array.isArray(data.models)) throw new ChatGPTError('invalid_response', 502);
     return data.models.filter(model => model.visibility === 'list' && typeof model.slug === 'string' && /^[a-zA-Z0-9._:-]{1,120}$/.test(model.slug) && typeof model.display_name === 'string')
@@ -101,7 +109,7 @@ export function createOpenAIProtocol({fetcher = fetch, verifyIdentity} = {}) {
     const response = await fetcher(`${RESOURCE}/responses`, {method: 'POST', redirect: 'error', signal,
       headers: {Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json'},
       body: JSON.stringify({model, instructions: request.system, input: [{role: 'user', content: JSON.stringify({question: request.question, contextId: request.contextId, snapshotId: request.snapshotId, facts: request.facts})}], store: false, stream: true})});
-    if (!response.ok) throw responseError(response.status, await boundedJSON(response), response.headers.get('x-request-id'));
+    if (!response.ok) throw responseError(response.status, await boundedJSON(response, 128000, 'responses'), response.headers.get('x-request-id'));
     if (!response.headers.get('content-type')?.includes('text/event-stream')) throw new ChatGPTError('invalid_response', 502);
     let buffer = '', bytes = 0, output = '', completed = false, usage = null;
     const decoder = new TextDecoder();

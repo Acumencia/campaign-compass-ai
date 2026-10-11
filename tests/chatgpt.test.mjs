@@ -101,7 +101,7 @@ test('rotating refresh is serialized and the newest token is saved atomically', 
 });
 
 test('terminal refresh clears tokens; temporary refresh failure preserves them', async () => {
-  for (const code of ['invalid_grant', 'temporary_failure']) {
+  for (const code of ['invalid_grant', 'temporary_failure', 'invalid_response']) {
     const {service, session, store, protocol} = setup(); await connect(service, session);
     store.state.profiles[0].tokens.expiresAt = 0;
     protocol.token = async () => { throw new ChatGPTError(code, code === 'invalid_grant' ? 400 : 503); };
