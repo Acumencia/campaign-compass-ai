@@ -78,6 +78,10 @@ export function createServer({invoke, timeoutMs = 30000, loadRows = loadDataset,
     let name;
     try { name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\//, '') || 'index.html'; }
     catch { res.writeHead(400); res.end('Bad request'); return; }
+    // A native same-origin POST inherits the document policy. `no-referrer`
+    // makes its Origin "null" in Chrome, correctly rejected by sameOrigin().
+    // Keep an exact origin on the app form; OAuth redirects retain no-referrer.
+    if (name === 'index.html') res.setHeader('Referrer-Policy', 'same-origin');
     const cookie = (req.headers.cookie || '').split(';').map(part => part.trim()).find(part => part.startsWith('cc_session='))?.slice(11);
     let session = chatgpt.sessionFor(cookie);
 

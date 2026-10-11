@@ -16,7 +16,8 @@
     "check": "node --check src/app.mjs && node --check src/chatgpt-client.mjs && node --check src/connection-ui.mjs && node --check server/inference.mjs && node --check server/chatgpt.mjs && node --check server/chatgpt-protocol.mjs && node --check server/chatgpt-store.mjs && node --check server.mjs && npm test && npm run build",
     "test:browser": "node scripts/browser-qa.mjs",
     "privacy-check": "node scripts/privacy-check.mjs",
-    "test:browser:chatgpt": "node scripts/chatgpt-browser-qa.mjs"
+    "test:browser:chatgpt": "node scripts/chatgpt-browser-qa.mjs",
+    "test:browser:auth-navigation": "node scripts/auth-navigation-browser-qa.mjs"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",

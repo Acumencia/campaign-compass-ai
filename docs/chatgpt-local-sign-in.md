@@ -58,3 +58,15 @@ Documentation was checked on October 11, 2026; account-specific availability is 
 - [Preview limitations](https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations)
 - [Errors and recovery](https://developers.openai.com/siwc/token-sharing-open-source/errors-and-recovery)
 - [Usage and UI guidance](https://developers.openai.com/siwc/ui-ux-guidelines)
+
+## Native sign-in navigation fix
+
+The user reported `cross_origin` after clicking Continue with ChatGPT. A real native Chrome form reproduced the failure before OAuth: the dashboard's previous `Referrer-Policy: no-referrer` made the POST carry the literal `Origin: null`. The strict origin check correctly rejected it. The earlier browser lifecycle test posted through an API helper with a supplied Origin header and therefore missed native navigation behavior.
+
+The dashboard document now uses `Referrer-Policy: same-origin`, which preserves its exact origin for the local form. OAuth start/callback responses and API responses retain `no-referrer`. The Origin, Host, port and CSRF checks are unchanged; opaque, foreign and mismatched-port requests still fail. Provider top-level GET callbacks may have no Origin and remain protected by browser-bound, single-use state, nonce/PKCE, verified identity and the exact redirect URI used for code exchange.
+
+After updating an already-open app, reload the dashboard at `http://127.0.0.1:4173/` before retrying the button so the document receives the corrected policy. Do not reload or share an OAuth callback URL. Sign-in still requires the user's own consent.
+
+The current regression suite clicks the actual button and follows a mock provider on a second loopback address. It covers the original failure, valid return without Origin, no referrer leakage on redirects, invalid CSRF, same-tab/popup behavior, opaque/cross-site/different-port attacks and forged callbacks. HTTP tests additionally verify an absent Origin on the start navigation, exact host/port rejection, forwarding-header resistance and preservation of a valid pending flow after rejected requests. No live eligibility or inference is implied.
+
+The relevant browser behavior is specified in [Fetch: append an Origin header](https://fetch.spec.whatwg.org/#append-a-request-origin-header).

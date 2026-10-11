@@ -91,3 +91,13 @@ Restarted only the task-owned preview and inspected the disconnected controls in
 The original 3:33 video remains unchanged and is explicitly labelled as the earlier deterministic UI/32-test milestone. Submission text now distinguishes current integration readiness from that genuine historical recording. No private project content, account tokens or host paths are part of public source or the submission bundle.
 
 The final packaging-path rerun exposed a second Windows environment edge case: Python uppercased PSMODULEPATH, leaving it alongside PSModulePath in a plain child-process environment object. Removed all case variants before setting the protected helper module path and added a regression test. The original direct-PowerShell fixture had passed; this failure was observed only through the Python-launched verifier. Console-only Unicode output also required ASCII-safe status printing; the complete test log remains UTF-8.
+
+## 2026-10-11 - user-reported native sign-in rejection
+
+The user attempted Continue with ChatGPT and reported `cross_origin`. Safe diagnostics confirmed the current published preview, zero saved registrations and no app-owned credential-storage directory. The request was rejected before a completed consent flow; no existing tokens were inspected.
+
+Reproduced the native form in isolated Chrome with a mocked server protocol. Its POST carried literal Origin null, Sec-Fetch-Site same-origin and mode navigate. The global no-referrer document policy caused this browser behavior. The previous browser lifecycle helper supplied Origin manually and did not exercise the real button navigation, a meaningful gap in verification.
+
+Changed only the dashboard document response to same-origin referrer policy; retained no-referrer on OAuth and API responses and preserved every origin/CSRF guard. Added native-navigation regressions and four HTTP tests. The raw Host-header test first used fetch, which did not preserve that override; changed the test transport to node:http so it actually sends the attack header. No production protection was loosened.
+
+An initial navigation harness timed out at its intercepted redirect destination. Broad route interception was not reliable for modeling redirected navigation, so accepted evidence now uses an actual second loopback mock provider and blocks HTTPS. No real consent, token exchange or inference was performed. A browser attempt to omit the POST Origin through interception was also not reliable; the natural provider GET without Origin is covered in the browser, and absent-Origin POST behavior is covered at the HTTP boundary. Final navigation evidence contains no OAuth query, cookie, body or token values.

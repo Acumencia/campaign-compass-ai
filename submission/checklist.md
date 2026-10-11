@@ -10,7 +10,7 @@
 - README, real development log and walkthrough script.
 - Searchable glossary of 21 terms, requested during the user's review.
 - Genuine screenshots from the user's browser, including a mobile issue and its verified fix.
-- 81 automated tests, 12 isolated-Chrome dashboard checks and eight mocked connection lifecycle checks pass.
+- 85 automated tests, 12 isolated-Chrome dashboard checks and eight mocked connection lifecycle checks and eight native navigation checks pass.
 - Public Acumencia/campaign-compass-ai repository created; final commit verification is in the handoff.
 
 ## Complete before submitting the course form

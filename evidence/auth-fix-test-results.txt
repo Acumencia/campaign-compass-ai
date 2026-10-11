@@ -1,0 +1,106 @@
+
+> campaign-compass-ai@1.0.0 check
+> node --check src/app.mjs && node --check src/chatgpt-client.mjs && node --check src/connection-ui.mjs && node --check server/inference.mjs && node --check server/chatgpt.mjs && node --check server/chatgpt-protocol.mjs && node --check server/chatgpt-store.mjs && node --check server.mjs && npm test && npm run build
+
+
+> campaign-compass-ai@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ supported questions return only computed facts and exact context (2.2318ms)
+✔ unknown questions and empty slices fail honestly (0.8065ms)
+✔ question injection cannot change numeric outputs or execute actions (0.9555ms)
+✔ unknown metric IDs, invented numbers and prose fields are rejected (0.3658ms)
+✔ stale filter context is rejected even when numeric values match (1.5222ms)
+✔ deterministic provider accurately identifies its mode (0.3583ms)
+✔ malformed evidence records and prototype names are rejected (0.5445ms)
+✔ browser and server compute identical data/filter identities (7.5325ms)
+✔ client validates snapshot and facts on successful model transport (31.6153ms)
+✔ client rejects stale data, stale replies and invented values (6.8562ms)
+✔ client passes cancellation through both HTTP calls and never renders an aborted answer (2.8319ms)
+✔ static preview remains an explicit deterministic demo when the local service is absent (0.491ms)
+✔ HTTP bootstrap is disconnected and read-only with HttpOnly SameSite cookies (101.4303ms)
+✔ sign-in POST requires CSRF and same origin; cross-origin GETs cannot read sessions (66.8548ms)
+✔ mock sign-in rotates session, keeps OAuth tokens server-side and gates model selection (120.0121ms)
+✔ callback with missing or wrong browser session does not exchange a code (31.4625ms)
+✔ only the app document preserves same-origin form attribution; OAuth and API responses suppress referrers (70.7464ms)
+✔ absent Origin is accepted for a session-bound navigation with valid CSRF, never by Referer alone (70.4529ms)
+✔ opaque, external, different-port and contradictory origins remain rejected even with the valid form token (37.0159ms)
+✔ callback host and port cannot be widened by forwarding headers or aliases; valid pending state survives rejection (32.1244ms)
+✔ ID token validation rejects bad signature, issuer, audience, expiry and nonce (250.0692ms)
+✔ discovery pins official issuer/endpoints and tokens use a form-encoded public-client exchange (33.3004ms)
+✔ model discovery preserves account catalog order and hides non-list entries (2.2422ms)
+✔ Responses uses only supported fields and waits for completion across split SSE boundaries (16.8798ms)
+✔ partial, failed, usage-limited and malformed streams never become model answers (5.0923ms)
+✔ admission errors retain bounded codes/request IDs but not raw diagnostic text (0.8115ms)
+✔ revocation uses discovery and only sends refresh credentials in the POST body (3.0723ms)
+✔ Windows helper removes duplicate module-path casing inherited through Python or PowerShell (2.2887ms)
+✔ Windows store encrypts synthetic fixtures, writes atomically and stays outside the project (5954.4061ms)
+✔ status is read-only and contains no credentials or fabricated eligibility (2.6287ms)
+✔ dynamic registration uses stable host, fresh state/nonce, PKCE and issued client (5.1741ms)
+✔ callback state is session-bound, single-use and expired states fail (2.415ms)
+✔ declines, duplicate callback parameters and invalid client changes never enable inference (1.3063ms)
+✔ missing plan permission keeps identity but blocks model requests (1.4523ms)
+✔ saved registrations cannot be used by a different browser session (1.1085ms)
+✔ same-email registrations stay separate and returning identity mismatch is rejected (2.3903ms)
+✔ rotating refresh is serialized and the newest token is saved atomically (1.5045ms)
+✔ terminal refresh clears tokens; temporary refresh failure preserves them (1.894ms)
+✔ unentitled and usage-limit failures pause new inference without OAuth loops (3.4748ms)
+✔ concurrency is bounded and disconnect aborts work, revokes and clears tokens (2.0842ms)
+✔ unconfirmed revocation still clears local credentials and tells the user (265.1375ms)
+✔ HTTP snapshot and default brief use authoritative metrics and honest demo mode (210.9367ms)
+✔ injected mock adapter is server-only and cannot be configured through request fields (103.7473ms)
+✔ filter or dataset changes reject an old snapshot before calling the adapter (36.7436ms)
+✔ a dataset revision during inference cannot release obsolete model evidence (31.2ms)
+✔ malformed and over-limit requests fail without inference; errors stay sanitized (83.3228ms)
+✔ cross-origin and non-loopback Host requests never reach the adapter (39.6782ms)
+✔ chunked requests obey the same byte limit as Content-Length requests (7.5142ms)
+✔ out-of-order requests keep their own filter and evidence snapshots (37.5129ms)
+✔ empty filters, fallback and upstream timeout have distinct HTTP outcomes (81.3689ms)
+✔ disconnecting the HTTP client cancels the mocked upstream request (22.8464ms)
+✔ server internals and adapter diagnostics do not leak into JSON responses (45.9575ms)
+✔ snapshot identity binds data and all filters, independent of object key order (9.2481ms)
+✔ no configured adapter is honest demo mode, not a model fallback (1.992ms)
+✔ mock adapter gets immutable server facts, context, question and cancellation only (1.9955ms)
+✔ malformed, ungrounded, duplicate, stale and prose-bearing output falls back explicitly (7.2254ms)
+✔ undefined ratios cannot become numeric model evidence (1.5663ms)
+✔ adapter exceptions are sanitized and distinguished from invalid output (0.4383ms)
+✔ timeout aborts the adapter and ignores a later successful result (18.6644ms)
+✔ caller cancellation aborts upstream work without returning fallback evidence (1.2518ms)
+✔ pre-cancelled and invalid requests never invoke an adapter (0.8924ms)
+✔ successful inference removes cancellation listeners and an unavailable fallback is explicit (0.9388ms)
+✔ reproducible CSV exactly matches seeded generator (5.9802ms)
+✔ metrics aggregate cents before converting and use weighted ratios (0.4076ms)
+✔ zero denominators are undefined, not Infinity or zero (0.8093ms)
+✔ zero conversions with spend yields undefined CPA and negative ad ROI (0.2005ms)
+✔ filters are inclusive and share one snapshot for all view aggregates (15.8751ms)
+✔ impossible audience/goal combination is a clear empty slice (0.6024ms)
+✔ reversed and impossible dates and unknown dimension are rejected (0.8054ms)
+✔ snapshot copies filter inputs and context responds to every dimension (2.5275ms)
+✔ anomaly is detected from observed CPA, with exact evidence (2.9187ms)
+✔ budget scenario conserves spend and uses explicit observed CPA assumption (2.4946ms)
+✔ invalid scenario targets and ratios are rejected (2.077ms)
+✔ schema rejects malformed numbers, funnel and duplicate records (1.326ms)
+✔ HTTP server serves allowlisted assets, protects private files and rejects mutations (217.7311ms)
+✔ all views render and reflect global filter changes (216.2657ms)
+✔ invalid dates and empty states disable stale dashboard and brief (93.7567ms)
+✔ campaign search narrows the table without corrupting global totals (46.5946ms)
+✔ assistant identifies demo mode, gives evidence and clears after context change (66.3102ms)
+✔ assistant shows unsupported-question errors instead of fake reasoning (39.2892ms)
+✔ scenario requires human acknowledgment and clears review on edits (36.7562ms)
+✔ dataset error surfaces a recoverable status and does not show stale numbers (11.1986ms)
+✔ campaign text is escaped at the HTML boundary (43.3765ms)
+✔ controls have labels and table/chart alternatives are present (35.6955ms)
+✔ glossary searches definitions and presents an explicit no-match state (40.6199ms)
+ℹ tests 85
+ℹ suites 0
+ℹ pass 85
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6185.756
+
+> campaign-compass-ai@1.0.0 build
+> node scripts/build.mjs
+
+Static build complete: 9 allowlisted assets; no secrets or development evidence bundled.
