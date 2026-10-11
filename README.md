@@ -38,7 +38,9 @@ The current app is an **AI-assisted build and a prototype of a grounded AI workf
 
 The copilot supports campaign briefs, channel comparisons, efficiency questions and anomaly explanations. Every displayed number is computed first, then referenced by a metric ID and filter-context ID. Unsupported questions return an explicit limitation. Filter changes invalidate old answers. Observational differences are not presented as causal findings.
 
-`src/assistant.mjs` includes a `GroundedModelProvider` adapter boundary for a future already-authorized, server-side integration. It takes an injected invocation function and accepts only a structured set of exact metric claims. Unknown IDs, changed values, unsupported fields and stale contexts fail validation. Errors and timeouts produce a labelled deterministic fallback. This adapter is tested with stubs; **live model inference has not been configured or tested**. The UI intentionally uses only `DeterministicProvider` until that work is authorized and implemented. Do not place API keys in browser code.
+`server/inference.mjs` and the loopback HTTP server provide a provider-neutral inference contract. The server computes metrics from its own CSV, binds answers to a SHA-256 dataset/filter snapshot, and accepts only exact metric claims. Unknown IDs, changed values, malformed output, extra prose and stale contexts fail validation. Timeouts and provider failures produce explicitly labelled deterministic fallback; cancellation aborts the adapter signal. Client input cannot configure providers or replace authoritative facts.
+
+The new contract is tested with mocks only: **live model inference has not been configured or tested**. `npm start` injects no adapter, and the UI intentionally uses only `DeterministicProvider`. An authorized inference service, a server-side provider adapter and UI transport wiring remain pending. See [the full contract and integration boundaries](docs/inference-contract.md). No keys belong in browser code.
 
 ## Dataset and definitions
 
@@ -71,11 +73,12 @@ Budget scenarios preserve total period spend, transferring 1–25% of a source c
 ```text
 index.html / styles.css      Accessible responsive dashboard shell
 src/metrics.mjs              CSV validation, shared filters, metrics and scenarios
-src/assistant.mjs            Intent routing, grounding validation, provider interface
+src/assistant.mjs            Deterministic intent routing and grounding validation
+server/inference.mjs         Provider-neutral server contract and cancellation
 src/app.mjs                  Views, charts, UI state and proposal review
 data/campaigns.csv           Reproducible synthetic dataset
 scripts/generate.mjs        Seeded dataset generator
-server.mjs                  Loopback-only allowlisted local server
+server.mjs                  Loopback assets and authoritative snapshot/brief API
 tests/                      Calculation, assistant, HTTP and DOM tests
 evidence/                   Actual development log and test output
 submission/                 Documentation content, demo script and completion checklist
@@ -85,7 +88,7 @@ submission/                 Documentation content, demo script and completion ch
 
 Automated checks cover calculations, filter consistency, zero/empty/error states, CSV validation, scenario conservation and review, prompt injection-like input, numeric grounding, stale context rejection, model fallback, HTML escaping and server file isolation. DOM checks use jsdom, which does not verify layout, native keyboard focus or real browser behavior.
 
-The automated suite passes **32 tests**. The app was also inspected in **the user's browser** at default, 1440-pixel desktop and 390-pixel mobile widths. That inspection found and corrected a clipped mobile metric selector; genuine before/after images are in `evidence/`. Native Escape/focus return, filters, empty states and scenario review were checked. A separate isolated-Chrome Playwright run passes **12 browser checks**, including local proposal download and a dataset-loading error. Run it with the local server active: `node scripts/browser-qa.mjs` (requires installed Chrome).
+The current automated suite passes **51 tests**, including mocked server inference and its HTTP boundary; the earlier recorded milestone had 32. Current output is in `evidence/inference-test-results.txt`. The app was also inspected in **the user's browser** at default, 1440-pixel desktop and 390-pixel mobile widths. That inspection found and corrected a clipped mobile metric selector; genuine before/after images are in `evidence/`. Native Escape/focus return, filters, empty states and scenario review were checked. A separate isolated-Chrome Playwright run passes **12 browser checks**, including local proposal download and a dataset-loading error; it was rerun against the updated server (`evidence/inference-browser-qa.json`). Run it with the local server active: `node scripts/browser-qa.mjs` (requires installed Chrome).
 
 See `evidence/development-log.md` and `submission/recording-notes.md` for genuine capture details. These checks are not a complete accessibility audit. Live model inference remains unavailable and unverified.
 

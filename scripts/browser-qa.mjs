@@ -5,8 +5,9 @@ const browser=await chromium.launch({channel:'chrome',headless:true,chromiumSand
 const context=await browser.newContext({viewport:{width:1440,height:1000}});
 const page=await context.newPage();const errors=[];page.on('pageerror',error=>errors.push(error.message));
 const checks=[];const record=label=>checks.push({check:label,status:'passed'});
+const appURL=process.env.APP_URL||'http://127.0.0.1:4173';
 try{
-  await page.goto(process.env.APP_URL||'http://127.0.0.1:4173');await page.locator('#dashboard').waitFor({state:'visible'});
+  await page.goto(appURL);await page.locator('#dashboard').waitFor({state:'visible'});
   assert.match(await page.locator('#filter-summary').innerText(),/336 daily records/);record('Dataset and overview render');
   await page.locator('#brief-button').click();await page.locator('#answer .answer-card').waitFor();
   assert.match(await page.locator('#answer').innerText(),/total.spend/);assert.match(await page.locator('.mode-banner').innerText(),/No live model/);
@@ -22,7 +23,7 @@ try{
   for(const view of ['overview','platforms','campaigns','trends','lab']){await page.locator(`[data-view="${view}"]`).click();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);}
   await page.locator('[data-view="trends"]').click();const bounds=await page.locator('[data-metric="revenue"]').boundingBox();assert.ok(bounds.x+bounds.width<=390);record('All views fit mobile viewport; metric buttons remain inside viewport');
   await page.locator('#brief-button').click();await page.locator('#answer .answer-card').waitFor();assert.equal(await page.locator('#assistant-dialog').evaluate(d=>d.getBoundingClientRect().width<=window.innerWidth),true);await page.keyboard.press('Escape');record('Mobile copilot fits viewport');
-  const failure=await context.newPage();await failure.route('**/data/campaigns.csv',route=>route.fulfill({status:500,body:'Unavailable'}));await failure.goto('http://127.0.0.1:4173');await failure.locator('#error').waitFor({state:'visible'});assert.equal(await failure.locator('#brief-button').isDisabled(),true);record('Real browser handles dataset loading failure');
+  const failure=await context.newPage();await failure.route('**/data/campaigns.csv',route=>route.fulfill({status:500,body:'Unavailable'}));await failure.goto(appURL);await failure.locator('#error').waitFor({state:'visible'});assert.equal(await failure.locator('#brief-button').isDisabled(),true);record('Real browser handles dataset loading failure');
   assert.deepEqual(errors,[]);record('No uncaught application errors');
   await mkdir('evidence',{recursive:true});await writeFile(process.env.BROWSER_QA_OUTPUT||'evidence/browser-qa.json',JSON.stringify({capturedAt:new Date().toISOString(),browser:await browser.version(),automation:'Playwright using installed Chrome in an isolated context; separate from user-browser CUA inspection',checks,errors},null,2));
   console.log(`Browser QA: ${checks.length} checks passed.`);

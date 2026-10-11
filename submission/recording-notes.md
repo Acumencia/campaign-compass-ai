@@ -17,3 +17,5 @@ The bundled Playwright encoder may support only VP8. Mixing narration requires a
 The development-evidence page shown near the end is generated from the real initial request, actual test log and recorded iterations. It is shown as a current evidence page, not as a reconstruction of earlier development screenshots.
 
 Actual completed recording: 213.2 seconds (3 minutes 33 seconds), 1440 x 1000 pixels. The MP4, WebVTT transcript and raw WebM are local submission artifacts; binary video is excluded from Git history.
+
+The retained video records the UI and 32-test milestone associated with commit `c5dee6f908ff60f4d812bf28b81419624b42e260`. Provider-neutral server groundwork was added afterward with mock-only validation. The UI remains in deterministic demo mode, so the recording still represents its visible behavior, but it does not demonstrate the later API. Pair it with the post-recording addendum in `documentation.md`; do not describe its recorded test count as the current suite or claim live inference from this video.
