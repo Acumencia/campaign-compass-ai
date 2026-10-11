@@ -26,9 +26,12 @@ async function setup(t) {
     return {state:await status(),oldCookie};
   };
   const start=(csrfValue,headers={})=>send('/auth/start',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded',...headers},body:new URLSearchParams({csrf:csrfValue,profileId:''})});
-  const sendRaw=(route,headers)=>new Promise((resolve,reject)=>{
-    const request=http.request(base+route,{headers:{Cookie:cookie,...headers}},response=>{response.resume();response.on('end',()=>resolve({status:response.statusCode}));});
-    request.on('error',reject);request.end();
+  const sendRaw=(route,headers,method='GET',body='')=>new Promise((resolve,reject)=>{
+    const request=http.request(base+route,{method,headers:{Cookie:cookie,...headers}},response=>{
+      let text='';response.setEncoding('utf8');response.on('data',chunk=>{text+=chunk;});
+      response.on('end',()=>resolve({status:response.statusCode,headers:response.headers,text}));
+    });
+    request.on('error',reject);request.end(body);
   });
   return {base,send,status,post,signin,store,protocol,start,sendRaw};
 }
@@ -38,6 +41,35 @@ test('HTTP bootstrap is disconnected and read-only with HttpOnly SameSite cookie
   assert.match(response.headers.get('set-cookie'),/HttpOnly; SameSite=Lax/);
   const status=await response.json();assert.equal(status.connected,false);assert.equal(api.store.writes,0);
   assert.equal(api.protocol.calls.tokens.length,0);
+});
+
+test('exact localhost dashboard alias redirects before session creation and drops query strings',async t=>{
+  const api=await setup(t),host=new URL(api.base).host.replace('127.0.0.1','localhost');
+  for(const method of ['GET','HEAD'])for(const route of ['/','/index.html?discard=fixture']){
+    const response=await api.sendRaw(route,{Host:host},method);
+    assert.equal(response.status,302);assert.equal(response.headers.location,api.base+'/');
+    assert.equal(response.headers['referrer-policy'],'no-referrer');assert.equal(response.headers['set-cookie'],undefined);
+  }
+  assert.equal(api.store.writes,0);assert.equal(api.protocol.calls.tokens.length,0);
+  assert.equal((await api.send('/')).status,200);
+});
+
+test('stale localhost forms are never redirected into OAuth and recovery uses the actual listener port',async t=>{
+  const api=await setup(t),state=await api.status(),host=new URL(api.base).host.replace('127.0.0.1','localhost');
+  const response=await api.sendRaw('/auth/start',{Host:host,Origin:`http://${host}`,'Content-Type':'application/x-www-form-urlencoded'},'POST',new URLSearchParams({csrf:state.csrf}).toString());
+  assert.equal(response.status,400);assert.equal(response.headers.location,undefined);
+  const error=JSON.parse(response.text).error;assert.equal(error.code,'loopback_required');
+  assert.ok(error.message.includes(api.base+'/'));assert.match(error.message,/cannot be reused/);
+  assert.equal(api.store.writes,0);assert.equal(api.protocol.calls.tokens.length,0);
+});
+
+test('canonical redirect does not trust lookalikes, IPv6, other ports or forwarded hosts',async t=>{
+  const api=await setup(t),port=new URL(api.base).port;
+  for(const host of [`localhost.evil.invalid:${port}`,`localhost.:${port}`,`[::1]:${port}`,`127.0.0.2:${port}`,'localhost:1',`attacker.invalid:${port}`]){
+    const response=await api.sendRaw('/',{Host:host,'X-Forwarded-Host':`localhost:${port}`,'X-Forwarded-Proto':'http'});
+    assert.equal(response.status,403);assert.equal(response.headers.location,undefined);
+  }
+  assert.equal(api.store.writes,0);
 });
 test('sign-in POST requires CSRF and same origin; cross-origin GETs cannot read sessions',async t=>{
   const api=await setup(t);await api.status();

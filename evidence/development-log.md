@@ -110,3 +110,12 @@ The next user attempt displayed an HTML-versus-JSON parse error on the official 
 Rechecked the documented protocol; no parameter/endpoint mismatch was found. Added normal-system-browser recovery guidance, explicitly unverified as a fix for the provider page. Separately replaced the client's unconditional response.json call with bounded content-type/shape checks and redirect rejection, and added safe operation/status/media categories at the server's provider JSON parser. Added six automated cases and five isolated-browser checks for HTML fallback, login-page failure, unexpected redirects, malformed/oversized payloads and stale contracts. Existing credential-preservation coverage now includes invalid_response. No OAuth protections or endpoints changed.
 
 The requested searchable 21-term glossary was reopened and CPA verified in the user's browser in a separate dashboard tab, preserving the provider error page. The glossary and demo features remain available during the unresolved real sign-in issue.
+
+
+## 2026-10-11 - localhost entry mismatch, then organization policy denial
+
+The user reported loopback_required. Inspected the actual task server: one listener on 127.0.0.1:4173. A safe diagnostic using deliberately invalid CSRF reproduced localhost dashboard HTTP 200 followed by localhost sign-in HTTP 400 loopback_required; canonical 127.0.0.1 proceeded to the expected CSRF rejection without initiating real OAuth. Hostile/IPv6/other-port Host headers returned 403. The user's regular browser was not connected to the browser tool, so their actual address remains unconfirmed.
+
+Fixed the dashboard entry path only: exact localhost GET/HEAD documents redirect to canonical 127.0.0.1 before creating browser state, with query dropping and no referrer. Kept alias POSTs/callbacks rejected; recovery now names the real port. Added three HTTP cases and two native-navigation cases with a local mock provider.
+
+While this repair was under verification, the next reported real outcome was organization policy denial. Stopped live authorization investigation and retained it as the current blocker; did not try alternate identity, scope, endpoint or policy changes. Official cached recovery guidance covered general restrictions but not this exact code or admin control. Current official Help Center pages identify global-admin External access controls, with identity and delegated permission separated. No control specific to this local client was established. User-specific request identifiers are excluded from public evidence.

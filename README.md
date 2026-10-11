@@ -94,7 +94,7 @@ submission/                 Documentation content, demo script and completion ch
 
 Automated checks cover calculations, filter consistency, zero/empty/error states, CSV validation, scenario conservation and review, prompt injection-like input, numeric grounding, stale context rejection, model fallback, HTML escaping and server file isolation. DOM checks use jsdom, which does not verify layout, native keyboard focus or real browser behavior.
 
-The current suite passes **91 automated tests**, including real JWT signature checks, HTTP session/CSRF boundaries and a Windows DPAPI test using temporary synthetic fixtures. Current output is in `evidence/response-fix-test-results.txt`; earlier logs remain historical evidence. A separate isolated-Chrome run passes **12 dashboard checks** and **eight mocked connection lifecycle checks**, plus **eight native navigation checks** between two loopback servers and **five response-error checks**. Run:
+The current suite passes **94 automated tests**, including real JWT signature checks, HTTP session/CSRF boundaries and a Windows DPAPI test using temporary synthetic fixtures. Current output is in `evidence/loopback-fix-test-results.txt`; earlier logs remain historical evidence. A separate isolated-Chrome run passes **12 dashboard checks** and **eight mocked connection lifecycle checks**, plus **ten native navigation checks** between two loopback servers and **five response-error checks**. Run:
 
 ```sh
 npm run test:browser            # requires npm start in another terminal and installed Chrome

@@ -78,6 +78,12 @@ export function createServer({invoke, timeoutMs = 30000, loadRows = loadDataset,
     let name;
     try { name = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\//, '') || 'index.html'; }
     catch { res.writeHead(400); res.end('Bad request'); return; }
+    // Canonicalize only the dashboard document before creating browser state.
+    // Do not transfer query strings, cookies, form bodies or OAuth callbacks
+    // between localhost and 127.0.0.1: these are distinct browser origins.
+    if (name === 'index.html' && ['GET', 'HEAD'].includes(req.method) && req.headers.host === `localhost:${server.address().port}`) {
+      res.writeHead(302, {Location: `http://127.0.0.1:${server.address().port}/`}); res.end(); return;
+    }
     // A native same-origin POST inherits the document policy. `no-referrer`
     // makes its Origin "null" in Chrome, correctly rejected by sameOrigin().
     // Keep an exact origin on the app form; OAuth redirects retain no-referrer.
@@ -107,7 +113,7 @@ export function createServer({invoke, timeoutMs = 30000, loadRows = loadDataset,
         }
         if (!session) throw new InferenceError(401, 'session_required', 'Refresh the app before connecting.');
         if (name === 'auth/start' && req.method === 'POST') {
-          if (!req.headers.host.startsWith('127.0.0.1:')) throw new InferenceError(400, 'loopback_required', 'Open this app at http://127.0.0.1:4173 before signing in.');
+          if (!req.headers.host.startsWith('127.0.0.1:')) throw new InferenceError(400, 'loopback_required', `Open http://127.0.0.1:${server.address().port}/ and start a new sign-in there. A form already opened at localhost cannot be reused.`);
           const body = new URLSearchParams(await readText(req, 'application/x-www-form-urlencoded'));
           if ([...body.keys()].some(key => !['csrf','profileId','reconsent'].includes(key)) || [...new Set(body.keys())].some(key => body.getAll(key).length !== 1)) throw new InferenceError(400, 'invalid_request', 'Invalid sign-in form.');
           csrf(session, body.get('csrf'));

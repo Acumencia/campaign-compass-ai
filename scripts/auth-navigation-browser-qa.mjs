@@ -108,6 +108,22 @@ try{
   assert.equal(protocol.calls.tokens.length,callsBefore);
   record('Forged cross-site callback never exchanges a code and reports the invalid state');
 
+  phase='localhost-entry';
+  const aliasContext=await contextFor(),aliasPage=await aliasContext.newPage(),aliasBase=base.replace('127.0.0.1','localhost');
+  const aliasResponse=aliasPage.waitForResponse(response=>new URL(response.url()).origin===aliasBase);
+  await aliasPage.goto(aliasBase+'/index.html?discard=fixture');
+  assert.equal((await aliasResponse).status(),302);assert.equal(aliasPage.url(),base+'/');
+  await aliasPage.locator('#connection-button').click();await aliasPage.waitForFunction(()=>!document.querySelector('#continue-chatgpt').disabled);
+  assert.equal((await aliasContext.cookies(aliasBase)).length,0);assert.equal(store.writes,writesBefore);
+  record('Opening the exact localhost alias redirects to canonical 127.0.0.1 before session creation, without carrying the query or alias cookies');
+  phase='canonical-after-alias';
+  assert.equal((await submit(aliasPage)).status(),303);await aliasPage.locator('#return').waitFor();
+  await aliasPage.locator('#return').click();await aliasPage.locator('#plan-welcome').waitFor({state:'visible'});
+  assert.equal(protocol.calls.tokens.length,callsBefore+1);
+  assert.equal(protocol.calls.tokens.at(-1).redirect_uri,base+'/auth/callback');
+  assert.ok(observations.some(item=>item.phase===phase&&item.path==='/auth/start'&&item.origin===base&&item.site==='same-origin'));
+  record('Native sign-in after canonical navigation keeps Origin, CSRF, browser session and exact callback bound to 127.0.0.1');
+
   await mkdir('evidence',{recursive:true});
   await writeFile(process.env.AUTH_NAVIGATION_QA_OUTPUT||'evidence/auth-navigation-browser-qa.json',JSON.stringify({capturedAt:new Date().toISOString(),browser:await browser.version(),
     scope:'Real native browser navigation between two loopback servers; mock OAuth only; no real grant or inference',checks,

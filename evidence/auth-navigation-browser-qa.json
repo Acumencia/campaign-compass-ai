@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-10-11T21:21:11.424Z",
+  "capturedAt": "2026-10-11T22:08:56.431Z",
   "browser": "154.0.8037.97",
   "scope": "Real native browser navigation between two loopback servers; mock OAuth only; no real grant or inference",
   "checks": [
@@ -33,6 +33,14 @@
     },
     {
       "check": "Forged cross-site callback never exchanges a code and reports the invalid state",
+      "status": "passed"
+    },
+    {
+      "check": "Opening the exact localhost alias redirects to canonical 127.0.0.1 before session creation, without carrying the query or alias cookies",
+      "status": "passed"
+    },
+    {
+      "check": "Native sign-in after canonical navigation keeps Origin, CSRF, browser session and exact callback bound to 127.0.0.1",
       "status": "passed"
     }
   ],
