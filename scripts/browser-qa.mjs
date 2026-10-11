@@ -24,6 +24,6 @@ try{
   await page.locator('#brief-button').click();await page.locator('#answer .answer-card').waitFor();assert.equal(await page.locator('#assistant-dialog').evaluate(d=>d.getBoundingClientRect().width<=window.innerWidth),true);await page.keyboard.press('Escape');record('Mobile copilot fits viewport');
   const failure=await context.newPage();await failure.route('**/data/campaigns.csv',route=>route.fulfill({status:500,body:'Unavailable'}));await failure.goto('http://127.0.0.1:4173');await failure.locator('#error').waitFor({state:'visible'});assert.equal(await failure.locator('#brief-button').isDisabled(),true);record('Real browser handles dataset loading failure');
   assert.deepEqual(errors,[]);record('No uncaught application errors');
-  await mkdir('evidence',{recursive:true});await writeFile('evidence/browser-qa.json',JSON.stringify({capturedAt:new Date().toISOString(),browser:await browser.version(),automation:'Playwright using installed Chrome in an isolated context; separate from user-browser CUA inspection',checks,errors},null,2));
+  await mkdir('evidence',{recursive:true});await writeFile(process.env.BROWSER_QA_OUTPUT||'evidence/browser-qa.json',JSON.stringify({capturedAt:new Date().toISOString(),browser:await browser.version(),automation:'Playwright using installed Chrome in an isolated context; separate from user-browser CUA inspection',checks,errors},null,2));
   console.log(`Browser QA: ${checks.length} checks passed.`);
 }finally{await context.close();await browser.close();}

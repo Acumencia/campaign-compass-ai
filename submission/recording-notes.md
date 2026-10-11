@@ -16,4 +16,4 @@ The bundled Playwright encoder may support only VP8. Mixing narration requires a
 
 The development-evidence page shown near the end is generated from the real initial request, actual test log and recorded iterations. It is shown as a current evidence page, not as a reconstruction of earlier development screenshots.
 
-Actual completed recording: 213.0 seconds (3 minutes 33 seconds), 1440 x 1000 pixels. The MP4, WebVTT transcript and raw WebM are local submission artifacts; binary video is excluded from Git history.
+Actual completed recording: 213.2 seconds (3 minutes 33 seconds), 1440 x 1000 pixels. The MP4, WebVTT transcript and raw WebM are local submission artifacts; binary video is excluded from Git history.

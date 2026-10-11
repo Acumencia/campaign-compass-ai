@@ -1,45 +1,45 @@
 WEBVTT
 
 1
-00:00:00.193 --> 00:00:19.269
+00:00:00.220 --> 00:00:19.296
 This is Campaign Compass, built with Codex for Mastering Agentic AI Week One. It helps a marketer turn campaign reporting into an evidence based next decision. This is a recording of the working local application. The voice is synthesized narration. All advertising records are synthetic, and no ad account is connected.
 
 2
-00:00:20.156 --> 00:00:41.026
+00:00:20.178 --> 00:00:41.048
 The overview calculates spend, attributed revenue, conversions, and ad return on investment from one shared metric engine. Ad R O I excludes product, staffing and other non advertising costs, so it is not net profit. Spend and conversions have separate labelled chart scales. The daily data table provides an accessible alternative.
 
 3
-00:00:41.925 --> 00:01:00.506
+00:00:41.911 --> 00:01:00.492
 Now I select Instagram and the Prospecting audience. Every view shares the same filtered slice. Platform comparison shows the channel's observed return and cost per conversion. These comparisons describe association, not what would happen if we moved budget. Audience and goal mix can explain differences.
 
 4
-00:01:02.696 --> 00:01:16.428
+00:01:02.709 --> 00:01:16.441
 Campaign details are searchable by name, channel, goal or identifier. Search narrows this table, while the global filters continue to determine the metrics. Here the discovery campaign is the only campaign in the selected slice.
 
 5
-00:01:17.818 --> 00:01:33.310
+00:01:17.976 --> 00:01:33.468
 Time series lets us switch between spend, conversions, clicks and revenue. This last week shows a change worth inspecting. The anomaly rule compares two observed seven day windows with enough conversions. It does not prove creative fatigue or any other cause.
 
 6
-00:01:34.128 --> 00:01:46.015
+00:01:34.284 --> 00:01:46.171
 Choosing an incompatible audience and campaign goal produces a clear empty state. The app does not display stale numbers or let the assistant describe missing data. Reset restores the full synthetic dataset.
 
 7
-00:01:46.926 --> 00:02:05.067
+00:01:47.073 --> 00:02:05.214
 The campaign copilot is clearly labelled deterministic demo mode. No live model was connected for this build. It assembles exact computed facts and displays their metric identifiers and filter context. A guarded provider interface supports a future authorized model connection, with validation and a timeout fallback.
 
 8
-00:02:05.906 --> 00:02:24.791
+00:02:06.043 --> 00:02:24.928
 The anomaly answer compares observed cost per conversion in the two windows. Creative fatigue, auction shifts and tracking errors are hypotheses to investigate, not established explanations. Unknown claims, invented numbers and stale contexts are rejected. The current demo supports a limited set of question types.
 
 9
-00:02:26.005 --> 00:02:49.070
+00:02:26.176 --> 00:02:49.241
 The Decision lab simulates moving ten percent of Twitter's selected period budget to Facebook. Total spend is conserved. The result holds observed cost per conversion constant and ignores saturation, auction changes and audience overlap. It is arithmetic sensitivity analysis, not a causal forecast. Human review is required before exporting a proposal, and no ad spend is executed.
 
 10
-00:02:49.906 --> 00:03:17.795
+00:02:50.092 --> 00:03:17.981
 The development record contains the actual initial request and real test results. One iteration fixed test synchronization when asynchronous answers had not settled. Actual mobile browser inspection then found a clipped metric selector, which was corrected and captured before and after. The tests cover metrics, filters, grounding, privacy boundaries and error states. The lesson is to make assistance accountable to deterministic evidence and to verify the real interface, not just its code.
 
 11
-00:03:18.669 --> 00:03:32.221
+00:03:18.867 --> 00:03:32.419
 The public source includes the dataset generator, tests and reproducible run instructions. This prototype keeps decisions with the human reviewer and makes its current model limitation explicit. Thank you for watching Campaign Compass.
