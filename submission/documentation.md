@@ -1,5 +1,11 @@
 # Campaign Compass Week 1 project documentation
 
+## Current submission recording — 12 October 2026
+
+The refreshed real demo records application commit `6977f67c6a3878e78000424e6d1039cdc7c016d9` and runs 260.80 seconds. It includes the dashboard, shared filters, glossary, grounded deterministic answers, reviewed scenarios and current disconnected ChatGPT controls. The final evidence scenes show actual published source and saved results: 94 automated tests and 35 browser checks. Microsoft Zira synthetic narration is disclosed. The original 3:33 recording is preserved separately as historical evidence.
+
+Live authorization remains blocked by organization policy; no live inference is claimed or attempted for this recording. This status supersedes earlier plans to retain only the original video or retry sign-in. Public Google Doc/video synchronization and final form submission are coordinated separately.
+
 ## Project overview
 
 Campaign Compass is a standalone ad campaign performance analyzer created with Codex for Mastering Agentic AI Week 1, following Path B. It helps a marketer inspect campaign outcomes, compare channels and explore a budget proposal while keeping the evidence and assumptions visible.
@@ -98,7 +104,7 @@ The demo is a continuous recording of the actual app in isolated Chrome, with di
 - Assignment: https://docs.google.com/document/d/1n5kzwxgJYGFU5mvhvnCpOtYrYLlkwHoPgI8VZ6hCpGI/edit
 - Submission form: https://forms.gle/VpQz7ZnsgL1bYRqv6
 
-Final form submission has not been requested.
+Final form submission is coordinated separately after the public document and refreshed video are verified.
 
 ## Post-recording update: provider-neutral server groundwork
 

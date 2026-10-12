@@ -119,3 +119,8 @@ The user reported loopback_required. Inspected the actual task server: one liste
 Fixed the dashboard entry path only: exact localhost GET/HEAD documents redirect to canonical 127.0.0.1 before creating browser state, with query dropping and no referrer. Kept alias POSTs/callbacks rejected; recovery now names the real port. Added three HTTP cases and two native-navigation cases with a local mock provider.
 
 While this repair was under verification, the next reported real outcome was organization policy denial. Stopped live authorization investigation and retained it as the current blocker; did not try alternate identity, scope, endpoint or policy changes. Official cached recovery guidance covered general restrictions but not this exact code or admin control. Current official Help Center pages identify global-admin External access controls, with identity and delegated permission separated. No control specific to this local client was established. User-specific request identifiers are excluded from public evidence.
+
+
+## 2026-10-12 — refreshed current-version recording
+
+The user requested a fresh video of the current app. Preserved the original recording, generated disclosed offline synthetic narration, and rehearsed all fourteen interactions in isolated Chrome. The first attempted take stopped because Escape cleared the glossary search without closing its dialog. Changed only the recording actions to use explicit Close buttons, then completed a continuous 260.80-second take showing current controls and saved genuine source/test evidence. No account sign-in or inference was attempted. Full decode, audio and playback checks passed. The app remains a working deterministic demo with organization-blocked live integration.

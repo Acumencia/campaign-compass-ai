@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-12T01:37:32.342011+00:00",
+  "applicationCommit": "6977f67c6a3878e78000424e6d1039cdc7c016d9",
+  "durationSeconds": 260.8,
+  "recordingDurationSeconds": 261.033,
+  "width": 1440,
+  "height": 1000,
+  "bytes": 6100728,
+  "sha256": "1ba5a52d5867168222d853440e78872d8982965a1f2e8832b554ce2c8cf71005",
+  "videoCodec": "H.264",
+  "audioCodec": "AAC",
+  "decodePassed": true,
+  "playbackPassed": true,
+  "audioPeakDBFS": -2.5,
+  "audioMeanDBFS": -20.5,
+  "narration": "Microsoft Zira Desktop synthetic voice, disclosed at opening",
+  "frames": "Six extracted frames reviewed separately",
+  "liveAuthorizationAttempted": false,
+  "liveInferenceVerified": false
+}

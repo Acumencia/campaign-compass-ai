@@ -105,7 +105,7 @@ npm run test:browser:response-errors # mock provider login, HTML and redirect fa
 
 The app was inspected in **the user's browser**, including the new disconnected connection dialog and its 390-pixel mobile layout. Escape returned focus correctly. Earlier inspection found and corrected a clipped mobile metric selector; genuine before/after images are retained. These checks are not a complete accessibility audit.
 
-See `evidence/development-log.md` and `submission/recording-notes.md` for capture details. The existing 3:33 video shows the earlier deterministic UI and 32-test milestone, not this later ChatGPT integration. A live demo refresh must follow user consent and successful real inference.
+See `evidence/development-log.md` and `submission/recording-notes.md` for capture details. The refreshed 260.80-second demo shows the current app, searchable glossary, reviewed scenarios and disconnected ChatGPT controls. It includes real source/test evidence for 94 automated tests and 35 browser checks, and explicitly discloses the organization policy block. No live inference is claimed. The original 3:33 video remains preserved in the submission bundle.
 
 ## License
 

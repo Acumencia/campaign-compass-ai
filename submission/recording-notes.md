@@ -1,21 +1,22 @@
-# Recording method
+# Refreshed demo recording — 12 October 2026
 
-The demo is a **continuous Playwright screen recording of real Chrome interactions with the running local app**. It captures an isolated browser context with only synthetic campaign data. It does not capture the desktop, notifications, unrelated tabs or personal accounts. Screenshots are not stitched into the video, and no generated imagery replaces application frames.
+The current demo is a continuous Playwright video of real interactions with the running app in an isolated Chrome profile. Application commit: `6977f67c6a3878e78000424e6d1039cdc7c016d9`. The later publication updates recording assets and documentation only. It shows the dashboard, shared filters, campaign search, time series, the CPA glossary, grounded deterministic answers, reviewed budget scenarios and disconnected ChatGPT controls.
 
-The voiceover uses the installed **Microsoft Zira Desktop synthetic voice**, disclosed in the opening narration. It is not the user's voice. Narration is timed to the recorded steps, then mixed into an MP4. A WebVTT transcript is supplied. The actual recorded duration is stored in `recording-timeline.json` and must remain under 300 seconds.
+The last two evidence scenes show the actual request, published source excerpt and saved exact-commit test output. They are explicitly labelled current saved evidence, not a live terminal or reconstructed development session. No still images replace application frames. No desktop, notifications, unrelated tabs or account details are captured. External browser traffic and authentication routes are blocked during recording.
 
-To reproduce on Windows with Node, installed Chrome and FFmpeg:
+Microsoft Zira Desktop supplies the disclosed synthetic narration; this is not the user's voice. The encoded MP4 is **260.80 seconds**, below five minutes, with H.264 video and AAC audio at 1440 × 1000. `campaign-compass-demo.vtt` provides a transcript. Audio, decoded video and isolated-browser playback were checked; `evidence/refreshed-video-qa.json` records the results.
 
-1. `npm ci --ignore-scripts` and `npm start`.
-2. Run `npm run check` and save its actual output to `evidence/test-results.txt`.
+Live AI is blocked by organization policy. The video does not start authorization or claim successful live inference. The current application milestone passed 94 automated tests and 35 browser checks; OAuth and provider tests use synthetic mocks.
+
+The original 213.22-second take at `c5dee6f908ff60f4d812bf28b81419624b42e260` is preserved separately in the submission bundle under `original-recording/`. Its SHA-256 is `a63c70f696fe85cf87788fb80a0b60df6051165a238e4c73897b273b730e5be2`. It remains historical evidence, while the refreshed video is the current submission asset.
+
+## Reproduce
+
+1. Install Node, Python, Chrome and a full FFmpeg build with H.264/AAC. Run `npm ci --ignore-scripts` and `npm start`.
+2. Verify source with `npm run check` and the browser commands in README. The committed evidence HTML is a fixed, explicitly labelled 6977f67 milestone. Update its source/test excerpts and narration only from actual newer evidence when changing the app.
 3. Run `powershell -File scripts/prepare-demo.ps1`, then `python scripts/narration-timing.py`.
-4. Run `node scripts/record-demo.mjs`. Playwright's video encoder must be installed (`npx playwright install ffmpeg` if needed).
-5. Run `python scripts/mux-demo.py --ffmpeg <path-to-full-ffmpeg>`.
+4. Ensure Playwright's video encoder is available (`npx playwright install ffmpeg`). Optionally set `DEMO_PREFLIGHT=1` for a short interaction rehearsal; unset it before recording.
+5. Run `node scripts/record-demo.mjs`. It refuses to record saved account entries and never clicks Continue with ChatGPT.
+6. Run `python scripts/mux-demo.py --ffmpeg <full-ffmpeg-path>`. Check duration, audio, playback and privacy before delivery. Raw WebM and WAV intermediates remain local and are excluded from Git.
 
-The bundled Playwright encoder may support only VP8. Mixing narration requires a full FFmpeg build with H.264/AAC. For this build, a task-local `imageio-ffmpeg` package supplied the encoder; no global installation, paid service or new credential was needed.
-
-The development-evidence page shown near the end is generated from the real initial request, actual test log and recorded iterations. It is shown as a current evidence page, not as a reconstruction of earlier development screenshots.
-
-Actual completed recording: 213.2 seconds (3 minutes 33 seconds), 1440 x 1000 pixels. The MP4, WebVTT transcript and raw WebM are local submission artifacts; binary video is excluded from Git history.
-
-The retained video records the UI and 32-test milestone associated with commit `c5dee6f908ff60f4d812bf28b81419624b42e260`. Provider-neutral server groundwork was added afterward with mock-only validation. The app starts in deterministic demo mode. The recording predates the later API and ChatGPT connection controls and does not demonstrate either integration or live account access. Pair it with the post-recording addendum in `documentation.md`; do not describe its recorded test count as the current suite or claim live inference from this video.
+One attempted take stopped when Escape cleared the glossary search without closing the modal. The recorder now uses the explicit Close buttons; a full fourteen-step rehearsal passed before the continuous take. That unsuccessful recording is not a submission asset.

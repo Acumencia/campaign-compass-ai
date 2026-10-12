@@ -1,45 +1,57 @@
 WEBVTT
 
 1
-00:00:00.220 --> 00:00:19.296
-This is Campaign Compass, built with Codex for Mastering Agentic AI Week One. It helps a marketer turn campaign reporting into an evidence based next decision. This is a recording of the working local application. The voice is synthesized narration. All advertising records are synthetic, and no ad account is connected.
+00:00:00.330 --> 00:00:20.036
+This is Campaign Compass, a Week One campaign intelligence project built with Codex. This fresh recording shows the current working application. The narration uses the Microsoft Zira synthetic voice. All advertising data is synthetic. No ad account is connected, and live model access is blocked by organization policy.
 
 2
-00:00:20.178 --> 00:00:41.048
-The overview calculates spend, attributed revenue, conversions, and ad return on investment from one shared metric engine. Ad R O I excludes product, staffing and other non advertising costs, so it is not net profit. Spend and conversions have separate labelled chart scales. The daily data table provides an accessible alternative.
+00:00:21.041 --> 00:00:37.982
+The overview computes spend, attributed revenue, conversions and ad return from one shared metric engine. Ad return on investment excludes non advertising costs, so it is not net profit. Separate labelled chart scales and an accessible daily table make the numbers easier to inspect.
 
 3
-00:00:41.911 --> 00:01:00.492
-Now I select Instagram and the Prospecting audience. Every view shares the same filtered slice. Platform comparison shows the channel's observed return and cost per conversion. These comparisons describe association, not what would happen if we moved budget. Audience and goal mix can explain differences.
+00:00:38.974 --> 00:00:57.180
+Selecting Instagram and the Prospecting audience updates the same data slice across every view. Platform comparison shows observed return and cost per conversion. These are descriptive comparisons. Audience and goal mix can explain differences, so correlation does not establish what moving budget would cause.
 
 4
-00:01:02.709 --> 00:01:16.441
-Campaign details are searchable by name, channel, goal or identifier. Search narrows this table, while the global filters continue to determine the metrics. Here the discovery campaign is the only campaign in the selected slice.
+00:00:59.227 --> 00:01:14.234
+Campaign details add a searchable table. Searching discovery narrows the visible campaigns while the shared filters continue to control the metrics. Clear labels distinguish spend, clicks, conversions, return on ad spend and ad return on investment.
 
 5
-00:01:17.976 --> 00:01:33.468
-Time series lets us switch between spend, conversions, clicks and revenue. This last week shows a change worth inspecting. The anomaly rule compares two observed seven day windows with enough conversions. It does not prove creative fatigue or any other cause.
+00:01:15.909 --> 00:01:30.216
+Time series lets us inspect daily spend, conversions, clicks and revenue. This view helps locate a change worth investigating. The anomaly rule needs two observed seven day windows with enough conversions; a flag does not prove its cause.
 
 6
-00:01:34.284 --> 00:01:46.171
-Choosing an incompatible audience and campaign goal produces a clear empty state. The app does not display stale numbers or let the assistant describe missing data. Reset restores the full synthetic dataset.
+00:01:31.232 --> 00:01:47.758
+The searchable glossary explains twenty one terms, including cost per acquisition, return on ad spend, attribution and uncertainty. Here CPA means ad spend divided by conversions. Examples are illustrative, and zero conversions make this ratio undefined.
 
 7
-00:01:47.073 --> 00:02:05.214
-The campaign copilot is clearly labelled deterministic demo mode. No live model was connected for this build. It assembles exact computed facts and displays their metric identifiers and filter context. A guarded provider interface supports a future authorized model connection, with validation and a timeout fallback.
+00:01:48.956 --> 00:02:06.562
+The campaign copilot is clearly labelled deterministic demo. It returns computed facts, metric identifiers, and the current filter and dataset context. A real provider path is implemented, but this answer uses repeatable templates. It is not presented as a live language model response.
 
 8
-00:02:06.043 --> 00:02:24.928
-The anomaly answer compares observed cost per conversion in the two windows. Creative fatigue, auction shifts and tracking errors are hypotheses to investigate, not established explanations. Unknown claims, invented numbers and stale contexts are rejected. The current demo supports a limited set of question types.
+00:02:07.608 --> 00:02:24.769
+The anomaly brief compares observed cost per conversion across two windows. Creative fatigue, auctions and tracking changes are possible explanations to investigate, not established causes. Numeric claims must match the computed registry. Changing filters invalidates an old answer.
 
 9
-00:02:26.176 --> 00:02:49.241
-The Decision lab simulates moving ten percent of Twitter's selected period budget to Facebook. Total spend is conserved. The result holds observed cost per conversion constant and ignores saturation, auction changes and audience overlap. It is arithmetic sensitivity analysis, not a causal forecast. Human review is required before exporting a proposal, and no ad spend is executed.
+00:02:26.079 --> 00:02:46.124
+The Decision lab models transferring ten percent of the selected Twitter budget to Facebook while keeping total spend constant. This calculation holds observed CPA fixed and ignores saturation, auction changes and audience overlap. It is a sensitivity calculation, not a causal forecast. Export is disabled until the assumptions are reviewed.
 
 10
-00:02:50.092 --> 00:03:17.981
-The development record contains the actual initial request and real test results. One iteration fixed test synchronization when asynchronous answers had not settled. Actual mobile browser inspection then found a clipped metric selector, which was corrected and captured before and after. The tests cover metrics, filters, grounding, privacy boundaries and error states. The lesson is to make assistance accountable to deterministic evidence and to verify the real interface, not just its code.
+00:02:47.063 --> 00:02:58.815
+After acknowledging those assumptions, the proposal export becomes available. This review only permits a local proposal file. It never approves, purchases or executes advertising spend.
 
 11
-00:03:18.867 --> 00:03:32.419
-The public source includes the dataset generator, tests and reproducible run instructions. This prototype keeps decisions with the human reviewer and makes its current model limitation explicit. Thank you for watching Campaign Compass.
+00:02:59.742 --> 00:03:19.067
+The current version includes ChatGPT connection controls, model selection, cancellation and usage guidance. We do not initiate authentication here. A real user attempt returned an organization policy denial, so live inference remains unverified. Authorization work is paused pending an authorized organization review.
+
+12
+00:03:20.039 --> 00:03:40.724
+Here is the actual Codex engineering record, displayed as source and saved evidence, not a reenacted terminal. The real request led to a deterministic metric contract, shared views and evidence validation. Browser testing exposed a native form origin problem and a localhost entry mismatch. Both were reproduced and fixed without weakening the security checks.
+
+13
+00:03:41.665 --> 00:04:01.476
+The exact published application commit was verified from a fresh anonymous clone. Saved results show ninety four automated tests and thirty five browser checks, plus a successful build. OAuth and inference tests use synthetic mocks. The organization restriction is documented separately, and no successful live model response is claimed.
+
+14
+00:04:02.528 --> 00:04:20.099
+Campaign Compass turns synthetic campaign data into traceable observations and reviewed decisions. The public repository, current documentation, source data and this refreshed demo are the submission assets. The remaining limitation is live model access, not hidden or replaced with a pretend AI result.

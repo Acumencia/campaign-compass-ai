@@ -1,16 +1,59 @@
-# Campaign Compass — real demo recording script
+# Recorded walkthrough — refreshed current demo
 
-Target duration: **3 minutes 45 seconds**, comfortably below the five-minute limit. This is a script, not a recording. Record the actual application only, keeping the desktop, notifications and unrelated tabs out of frame. Speak naturally and adapt to what actually appears.
+Actual encoded duration: 260.80 seconds. Real app interaction with disclosed synthetic Microsoft Zira narration. Application commit: `6977f67c6a3878e78000424e6d1039cdc7c016d9`. No live inference claimed.
 
-| Time | Show | Suggested narration |
-|---|---|---|
-| 0:00–0:20 | Overview, synthetic badge | “Campaign Compass helps a marketer move from reporting to a reviewable next decision. I built it with Codex for Week 1. All 336 records are synthetic; no ad account or customer data is connected.” |
-| 0:20–0:45 | KPI cards, aligned spend and conversion charts | “These metrics come from one calculation engine. Ad ROI means attributed revenue minus ad spend, divided by ad spend. Other business costs are excluded, so this is not net profit. The two charts have separate labelled units.” |
-| 0:45–1:15 | Filter Instagram, then Prospecting; switch platform and campaign views | “Date, channel, audience and goal filters apply across all views and the assistant. The campaign table can also be searched locally.” |
-| 1:15–1:40 | Time series; reset, choose Prospecting plus Traffic to show empty state; reset again | “The daily table is available as an accessible alternative to the chart. Incompatible filters show an explicit empty state instead of misleading zeros.” |
-| 1:40–2:10 | Generate brief, then Explain an anomaly | “This submission runs in deterministic demo mode. No live model was connected. The assistant assembles validated metric facts and shows their IDs. A CPA spike is an observation; fatigue or auction changes are hypotheses, not established causes. A provider interface supports a future authorized model integration.” |
-| 2:10–2:50 | Decision lab; move 10% between channels; simulate; review checkbox | “This is a constant-CPA sensitivity calculation. It conserves the total budget, but ignores saturation and auction effects. I must review the assumption before exporting a proposal. The app cannot execute ad spend.” |
-| 2:50–3:25 | Development log and actual passing test output in a clean app/editor window | “My actual initial request was to create a compelling AI-native ad campaign dashboard, a public GitHub project, a recording and submission materials. One real iteration corrected asynchronous test synchronization: the DOM tests checked before the answer had settled. I also added a provider timeout and tests for invented claims, stale filters and empty slices.” |
-| 3:25–3:45 | README and repository | “The lesson was to keep calculations deterministic and make the assistance accountable to evidence. The repository contains the generator, data, tests and instructions. The current limitation is live model access. Thanks for watching.” |
+## 0:00 — intro
 
-Before recording, update the verification sentence to the actual final test count and only show checks that ran. Do not claim browser QA unless it was completed. If development screenshots were not captured during earlier steps, document that limitation; do not recreate a fake history.
+This is Campaign Compass, a Week One campaign intelligence project built with Codex. This fresh recording shows the current working application. The narration uses the Microsoft Zira synthetic voice. All advertising data is synthetic. No ad account is connected, and live model access is blocked by organization policy.
+
+## 0:21 — metrics
+
+The overview computes spend, attributed revenue, conversions and ad return from one shared metric engine. Ad return on investment excludes non advertising costs, so it is not net profit. Separate labelled chart scales and an accessible daily table make the numbers easier to inspect.
+
+## 0:38 — filters
+
+Selecting Instagram and the Prospecting audience updates the same data slice across every view. Platform comparison shows observed return and cost per conversion. These are descriptive comparisons. Audience and goal mix can explain differences, so correlation does not establish what moving budget would cause.
+
+## 0:59 — campaigns
+
+Campaign details add a searchable table. Searching discovery narrows the visible campaigns while the shared filters continue to control the metrics. Clear labels distinguish spend, clicks, conversions, return on ad spend and ad return on investment.
+
+## 1:15 — trends
+
+Time series lets us inspect daily spend, conversions, clicks and revenue. This view helps locate a change worth investigating. The anomaly rule needs two observed seven day windows with enough conversions; a flag does not prove its cause.
+
+## 1:31 — glossary
+
+The searchable glossary explains twenty one terms, including cost per acquisition, return on ad spend, attribution and uncertainty. Here CPA means ad spend divided by conversions. Examples are illustrative, and zero conversions make this ratio undefined.
+
+## 1:48 — brief
+
+The campaign copilot is clearly labelled deterministic demo. It returns computed facts, metric identifiers, and the current filter and dataset context. A real provider path is implemented, but this answer uses repeatable templates. It is not presented as a live language model response.
+
+## 2:07 — anomaly
+
+The anomaly brief compares observed cost per conversion across two windows. Creative fatigue, auctions and tracking changes are possible explanations to investigate, not established causes. Numeric claims must match the computed registry. Changing filters invalidates an old answer.
+
+## 2:26 — scenario
+
+The Decision lab models transferring ten percent of the selected Twitter budget to Facebook while keeping total spend constant. This calculation holds observed CPA fixed and ignores saturation, auction changes and audience overlap. It is a sensitivity calculation, not a causal forecast. Export is disabled until the assumptions are reviewed.
+
+## 2:47 — review
+
+After acknowledging those assumptions, the proposal export becomes available. This review only permits a local proposal file. It never approves, purchases or executes advertising spend.
+
+## 2:59 — connection
+
+The current version includes ChatGPT connection controls, model selection, cancellation and usage guidance. We do not initiate authentication here. A real user attempt returned an organization policy denial, so live inference remains unverified. Authorization work is paused pending an authorized organization review.
+
+## 3:20 — build
+
+Here is the actual Codex engineering record, displayed as source and saved evidence, not a reenacted terminal. The real request led to a deterministic metric contract, shared views and evidence validation. Browser testing exposed a native form origin problem and a localhost entry mismatch. Both were reproduced and fixed without weakening the security checks.
+
+## 3:41 — verification
+
+The exact published application commit was verified from a fresh anonymous clone. Saved results show ninety four automated tests and thirty five browser checks, plus a successful build. OAuth and inference tests use synthetic mocks. The organization restriction is documented separately, and no successful live model response is claimed.
+
+## 4:02 — close
+
+Campaign Compass turns synthetic campaign data into traceable observations and reviewed decisions. The public repository, current documentation, source data and this refreshed demo are the submission assets. The remaining limitation is live model access, not hidden or replaced with a pretend AI result.
