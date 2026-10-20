@@ -1,0 +1,9 @@
+{
+  "execution": "TEST ONLY synthetic temporary credentials; zero external API calls",
+  "checks": [
+    "anthropic: blank config, single-provider key save, model apply and consent all work without other keys, embeddings, delegated login or API calls",
+    "anthropic: provider switch resets consent and keeps missing-provider gate",
+    "openai: blank config, single-provider key save, model apply and consent all work without other keys, embeddings, delegated login or API calls",
+    "openai: provider switch resets consent and keeps missing-provider gate"
+  ]
+}

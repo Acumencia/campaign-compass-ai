@@ -1,0 +1,444 @@
+[
+  {
+    "id": "K01",
+    "category": "direct",
+    "question": "What is the capacity and material of the Switchback bottle?",
+    "expectedEvidence": [
+      {
+        "sourceId": "bottle",
+        "heading": "Capacity and materials"
+      }
+    ],
+    "expectedBehavior": "650 milliliters; stainless steel body and polypropylene lid.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K02",
+    "category": "direct",
+    "question": "How should I clean the Dayline pack?",
+    "expectedEvidence": [
+      {
+        "sourceId": "pack",
+        "heading": "Care and price"
+      }
+    ],
+    "expectedBehavior": "Spot-clean with mild soap, air dry; no machine wash.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K03",
+    "category": "direct",
+    "question": "What does standard shipping cost and when is it free?",
+    "expectedEvidence": [
+      {
+        "sourceId": "shipping",
+        "heading": "Delivery"
+      }
+    ],
+    "expectedBehavior": "6 demo USD; free for post-discount merchandise subtotal at least 75 demo USD.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K04",
+    "category": "direct",
+    "question": "What is the return window for unused products?",
+    "expectedEvidence": [
+      {
+        "sourceId": "shipping",
+        "heading": "Returns"
+      }
+    ],
+    "expectedBehavior": "30 calendar days after delivery with proof of purchase.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K05",
+    "category": "direct",
+    "question": "When does the Autumn Everyday campaign end?",
+    "expectedEvidence": [
+      {
+        "sourceId": "campaign",
+        "heading": "Offer and dates"
+      }
+    ],
+    "expectedBehavior": "October 31, 2026.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K06",
+    "category": "direct",
+    "question": "What voice should Luma Trail use?",
+    "expectedEvidence": [
+      {
+        "sourceId": "brand",
+        "heading": "Identity and voice"
+      }
+    ],
+    "expectedBehavior": "Practical, warm, specific; avoid superlatives and urgency pressure.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K07",
+    "category": "cross_document",
+    "question": "Can a Dayline pack campaign say it is waterproof?",
+    "expectedEvidence": [
+      {
+        "sourceId": "pack",
+        "heading": "Care and price"
+      },
+      {
+        "sourceId": "claims",
+        "heading": "Approved and prohibited claims"
+      }
+    ],
+    "expectedBehavior": "No; light-splash resistance only, explicitly not waterproof.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K08",
+    "category": "cross_document",
+    "question": "What is the Switchback bottle price with EVERYDAY10, and does this order get free shipping?",
+    "expectedEvidence": [
+      {
+        "sourceId": "bottle",
+        "heading": "Care and price"
+      },
+      {
+        "sourceId": "campaign",
+        "heading": "Offer and dates"
+      },
+      {
+        "sourceId": "shipping",
+        "heading": "Delivery"
+      }
+    ],
+    "expectedBehavior": "25.20 demo USD merchandise plus 6 shipping; below 75 threshold. Arithmetic must be identified.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K09",
+    "category": "cross_document",
+    "question": "What capacity and brand voice can a Dayline pack social caption use?",
+    "expectedEvidence": [
+      {
+        "sourceId": "pack",
+        "heading": "Capacity and fit"
+      },
+      {
+        "sourceId": "brand",
+        "heading": "Identity and voice"
+      },
+      {
+        "sourceId": "campaign",
+        "heading": "Deliverables and review"
+      }
+    ],
+    "expectedBehavior": "18 liters; practical warm voice; factual citations and human review.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K10",
+    "category": "cross_document",
+    "question": "May a Switchback bottle caption promise cold water for 24 hours?",
+    "expectedEvidence": [
+      {
+        "sourceId": "bottle",
+        "heading": "Care and price"
+      },
+      {
+        "sourceId": "claims",
+        "heading": "Approved and prohibited claims"
+      }
+    ],
+    "expectedBehavior": "No approved temperature-retention duration.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K11",
+    "category": "ambiguous",
+    "question": "Is it safe?",
+    "expectedEvidence": [
+      {
+        "sourceId": "faq",
+        "heading": "Choosing a product"
+      }
+    ],
+    "expectedBehavior": "Clarify product and intended use; do not infer safety.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K12",
+    "category": "ambiguous",
+    "question": "Which one is best?",
+    "expectedEvidence": [
+      {
+        "sourceId": "faq",
+        "heading": "Choosing a product"
+      }
+    ],
+    "expectedBehavior": "Clarify needs and product; no unsupported ranking.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K13",
+    "category": "unanswerable",
+    "question": "Who manufactures the Switchback bottle?",
+    "expectedEvidence": [
+      {
+        "sourceId": "faq",
+        "heading": "Unknown information"
+      }
+    ],
+    "expectedBehavior": "Abstain: supplier identity not provided.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K14",
+    "category": "unanswerable",
+    "question": "How many Dayline packs are in stock today?",
+    "expectedEvidence": [
+      {
+        "sourceId": "faq",
+        "heading": "Unknown information"
+      }
+    ],
+    "expectedBehavior": "Abstain: no inventory counts.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K15",
+    "category": "unanswerable",
+    "question": "What conversion lift will EVERYDAY10 produce?",
+    "expectedEvidence": [
+      {
+        "sourceId": "faq",
+        "heading": "Unknown information"
+      }
+    ],
+    "expectedBehavior": "Abstain: no conversion-lift experiment or forecast.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K16",
+    "category": "direct",
+    "question": "What is the Waypoint sling capacity and list price?",
+    "expectedEvidence": [
+      {
+        "sourceId": "sling",
+        "heading": "Capacity and dimensions"
+      },
+      {
+        "sourceId": "sling",
+        "heading": "Care and price"
+      }
+    ],
+    "expectedBehavior": "3 liters and 35 demo USD.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K17",
+    "category": "direct",
+    "question": "Does Ridgeline have a padded electronics compartment?",
+    "expectedEvidence": [
+      {
+        "sourceId": "tote",
+        "heading": "Materials"
+      }
+    ],
+    "expectedBehavior": "No padded electronics compartment is documented.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K18",
+    "category": "direct",
+    "question": "What capacity does Switchback Mini have?",
+    "expectedEvidence": [
+      {
+        "sourceId": "bottle-mini",
+        "heading": "Capacity and materials"
+      }
+    ],
+    "expectedBehavior": "400 milliliters; distinguish standard Switchback.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K19",
+    "category": "direct",
+    "question": "What is the fictional September email delivered-message click rate?",
+    "expectedEvidence": [
+      {
+        "sourceId": "campaign-email",
+        "heading": "Observed metrics"
+      }
+    ],
+    "expectedBehavior": "8 percent; synthetic, not ad CTR.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K20",
+    "category": "cross_document",
+    "question": "Can we claim Dayline is waterproof because commuter scenarios request rain protection?",
+    "expectedEvidence": [
+      {
+        "sourceId": "audience-commuters",
+        "heading": "Weather concerns"
+      },
+      {
+        "sourceId": "claims",
+        "heading": "Approved and prohibited claims"
+      }
+    ],
+    "expectedBehavior": "No; authored desires do not establish product capability.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K21",
+    "category": "cross_document",
+    "question": "Did Spring capacity messaging outperform Summer discount messaging?",
+    "expectedEvidence": [
+      {
+        "sourceId": "campaign-spring",
+        "heading": "Attribution"
+      },
+      {
+        "sourceId": "campaign-summer",
+        "heading": "Attribution"
+      },
+      {
+        "sourceId": "campaign-summer",
+        "heading": "Learning"
+      }
+    ],
+    "expectedBehavior": "Cannot infer causal superiority; attribution, audience and offer differ.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K22",
+    "category": "cross_document",
+    "question": "Does an eligible 80 demo USD subtotal qualify for free shipping after EVERYDAY10?",
+    "expectedEvidence": [
+      {
+        "sourceId": "campaign",
+        "heading": "Offer and dates"
+      },
+      {
+        "sourceId": "shipping",
+        "heading": "Delivery"
+      }
+    ],
+    "expectedBehavior": "72 after discount; below 75 threshold, so no free standard shipping.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K23",
+    "category": "cross_document",
+    "question": "Can a stainless steel Switchback caption claim carbon neutrality?",
+    "expectedEvidence": [
+      {
+        "sourceId": "bottle",
+        "heading": "Capacity and materials"
+      },
+      {
+        "sourceId": "claims-environment",
+        "heading": "Evidence required"
+      }
+    ],
+    "expectedBehavior": "No product-specific certification or lifecycle evidence.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K24",
+    "category": "ambiguous",
+    "question": "Which bag fits my device?",
+    "expectedEvidence": [
+      {
+        "sourceId": "sling",
+        "heading": "Selection"
+      }
+    ],
+    "expectedBehavior": "Ask for device dimensions and carrying requirements.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K25",
+    "category": "ambiguous",
+    "question": "Can I combine these offers?",
+    "expectedEvidence": [
+      {
+        "sourceId": "offer-examples",
+        "heading": "Unknown baskets"
+      }
+    ],
+    "expectedBehavior": "Ask which offers and items; do not invent allocation or stacking.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K26",
+    "category": "unanswerable",
+    "question": "What is the real customer lifetime value for Luma Trail?",
+    "expectedEvidence": [
+      {
+        "sourceId": "campaign-spring",
+        "heading": "Attribution"
+      }
+    ],
+    "expectedBehavior": "Unknown; fictional reports provide no lifetime value.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K27",
+    "category": "unanswerable",
+    "question": "Which country legally permits this environmental claim?",
+    "expectedEvidence": [
+      {
+        "sourceId": "claims-environment",
+        "heading": "Policy scope"
+      }
+    ],
+    "expectedBehavior": "No jurisdiction-specific legal evidence.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K28",
+    "category": "version_conflict",
+    "question": "What is the current Dayline capacity, 16 or 18 liters?",
+    "expectedEvidence": [
+      {
+        "sourceId": "pack",
+        "heading": "Capacity and fit"
+      }
+    ],
+    "expectedBehavior": "18 liters; archived 16-liter specification is not current.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K29",
+    "category": "version_conflict",
+    "question": "Is the current free-shipping threshold 60 or 75 demo USD?",
+    "expectedEvidence": [
+      {
+        "sourceId": "shipping",
+        "heading": "Delivery"
+      }
+    ],
+    "expectedBehavior": "75 post-discount; archived 60 threshold expired.",
+    "modelEvaluation": null
+  },
+  {
+    "id": "K30",
+    "category": "version_conflict",
+    "question": "Can the current Autumn campaign use SUMMER15?",
+    "expectedEvidence": [
+      {
+        "sourceId": "campaign",
+        "heading": "Offer and dates"
+      },
+      {
+        "sourceId": "source-register",
+        "heading": "Supersession"
+      }
+    ],
+    "expectedBehavior": "No; Summer offer expired, Autumn uses EVERYDAY10.",
+    "modelEvaluation": null
+  }
+]

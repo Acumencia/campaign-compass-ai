@@ -1,0 +1,8 @@
+// Development replay of previously observed misses, not a fresh live quality measurement.
+import {readFile,writeFile} from 'node:fs/promises';
+import {loadKnowledge} from '../server/knowledge.mjs';
+import {expandEvidence,completeFitClarification} from '../server/knowledge-context.mjs';
+import {buildGroundedPrompt} from '../server/rag.mjs';
+const c=await loadKnowledge(),baseline=JSON.parse(await readFile('evidence/live-evaluation-2026-10-19.json','utf8')),byId=new Map(c.chunks.map(c=>[c.chunkId,c]));
+const records=['K08','K17','K24','K28','K29'].map(id=>{const r=baseline.records.find(r=>r.id===id),e=expandEvidence(c,r.question,r.vector.matches.map(m=>({...byId.get(m.chunkId),score:m.score}))),prompt=buildGroundedPrompt(c,r.question,e.matches);return {id,question:r.question,baselineStatus:r.answer.status,baselineMissingEvidence:r.vector.missingEvidence,supplied:JSON.parse(prompt.input).evidence.map(({chunkId,sourceId,heading,evidenceRole,metadata})=>({chunkId,sourceId,heading,evidenceRole,status:metadata.status})),newlyCovered:r.vector.missingEvidence.filter(m=>e.matches.some(c=>c.sourceId===m.sourceId&&c.heading===m.heading&&prompt.evidenceIds.includes(c.chunkId))),contextCharacters:prompt.characters,clarification:id==='K24'?completeFitClarification(r.question,r.answer):null};});
+await writeFile('evidence/knowledge-coverage-development-checks.json',JSON.stringify({checkedAt:new Date().toISOString(),scope:'Development checks using retained vector results; no new semantic search or generated answers. Not held-out quality evidence.',providerCalls:0,corpusVersion:c.corpusVersion,records},null,2)+'\n');console.log('Five development cases replayed locally; no provider calls.');

@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "Product remembered across clarification without provider calls",
+    "Use fragment receives product context and fresh retrieval",
+    "Transcript survives dashboard navigation",
+    "Retained accepted answer reopens with inspectable source",
+    "Request history is capped at four completed exchanges",
+    "Failed requests excluded from history",
+    "New chat cancels pending response and clears context",
+    "Multiple possible products require clarification",
+    "390px transcript fits without horizontal overflow",
+    "Reload clears session conversation"
+  ],
+  "errors": [],
+  "providerCalls": 0,
+  "scope": "Isolated mock fixtures; external network blocked"
+}

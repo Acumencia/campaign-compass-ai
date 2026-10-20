@@ -17,3 +17,18 @@ connections.dpapi.json
 chatgpt-auth.json
 chatgpt-host.json
 *.credentials.json
+
+# Real provider embeddings stay local; no test index is shipped.
+data/knowledge/private/
+
+# Local user-operated API credential storage
+key.json
+key.json.*
+
+# User-created Pinecone credential file (never distribute)
+key_pinecone.json
+key_pinecone.json.*
+
+# Local activation/runtime snapshots are not submission evidence.
+evidence/*activation*
+evidence/*actual-browser*

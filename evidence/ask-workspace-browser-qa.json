@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-10-19T20:49:13.697Z",
+  "checks": [
+    "Keyboard opens top-level Ask and focuses question, outside settings dialog",
+    "Examples fill question without submitting or enabling billing",
+    "Cited answer is primary; diagnostic passages are collapsed",
+    "Citation opens numbered source alongside retained answer, with keyboard focus",
+    "Completed question, answer and inspected source survive dashboard navigation",
+    "Sources contains management, not question form; Escape restores Ask with answer",
+    "Source filter survives navigation",
+    "Repeated pending submission is ignored; cancel suppresses late result",
+    "Navigation cancels pending answer and prevents stale completion",
+    "Invalid citation remains rejected and visible error is readable in Ask",
+    "390px layout has no horizontal overflow; Enter submits and citations remain usable",
+    "Missing-provider state links to setup, never enables billing, and offers working offline search"
+  ],
+  "errors": [],
+  "providerCalls": 0,
+  "scope": "Mock fixtures and unconfigured local server; external traffic blocked",
+  "screenshots": [
+    "ask-workspace-desktop.png",
+    "ask-workspace-mobile.png",
+    "ask-workspace-setup.png"
+  ]
+}

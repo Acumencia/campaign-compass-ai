@@ -62,7 +62,7 @@ test('malformed, ungrounded, duplicate, stale and prose-bearing output falls bac
     const result = await run({invoke: async () => output});
     assert.equal(result.mode, 'fallback');
     assert.equal(result.reason, 'invalid_response');
-    assert.match(result.notice, /deterministic/);
+    assert.match(result.notice, /unavailable or rejected/);assert.equal(result.providerIssue.code,'grounding_rejected');
     assert.deepEqual(result.answer, demoAnswer('brief', snap));
   }
 });
@@ -124,4 +124,41 @@ test('successful inference removes cancellation listeners and an unavailable fal
   assert.equal(getEventListeners(controller.signal, 'abort').length, 0);
   await assert.rejects(run({question: 'Write a poem', invoke: async () => null}), error => error.code === 'fallback_unavailable');
   await assert.rejects(run({question: 'Write a poem'}), error => error.code === 'unsupported_question');
+});
+
+test('API failures survive deterministic fallback without upstream response content',async()=>{
+ const {createAnthropicKeyService}=await import('../server/anthropic-api-key.mjs');
+ const secret='synthetic-claude-diagnostic-key';
+ const service=createAnthropicKeyService({environment:{CAMPAIGN_ANTHROPIC_ENABLED:'1',CAMPAIGN_ANTHROPIC_API_KEY:secret,CAMPAIGN_ANTHROPIC_GENERATION_MODEL:'claude-sonnet-5-5'},fetcher:async()=>new Response(JSON.stringify({error:{message:secret}}),{status:400})});
+ const result=await run({invoke:service.invokeMetric});
+ assert.equal(result.mode,'fallback');assert.equal(result.providerIssue.code,'api_request_invalid');assert.equal(result.providerIssue.diagnostic.httpStatus,400);assert.equal(JSON.stringify(result).includes(secret),false);
+});
+
+test('Claude structured response distinguishes accepted evidence, grounding, JSON, empty and truncation failures',async()=>{
+ const {createAnthropicKeyService}=await import('../server/anthropic-api-key.mjs');
+ for(const [text,stop,expected] of [[JSON.stringify(valid()),'end_turn',null],[JSON.stringify({...valid(),snapshotId:'wrong'}),'end_turn','grounding_rejected'],['{broken','end_turn','api_json_invalid'],['','end_turn','api_empty_response'],['{','max_tokens','api_output_limit']]){
+  const service=createAnthropicKeyService({environment:{CAMPAIGN_ANTHROPIC_ENABLED:'1',CAMPAIGN_ANTHROPIC_API_KEY:'synthetic-diagnostic-credential',CAMPAIGN_ANTHROPIC_GENERATION_MODEL:'claude-sonnet-5-5'},fetcher:async()=>new Response(JSON.stringify({type:'message',role:'assistant',stop_reason:stop,content:[{type:'thinking',thinking:'discard this'},{type:'text',text}]}),{headers:{'content-type':'application/json','request-id':'req_Test12345678'}})});
+  const result=await run({invoke:service.invokeMetric});assert.equal(result.mode,expected?'fallback':'model');if(expected){assert.equal(result.providerIssue.code,expected);if(expected!=='grounding_rejected')assert.equal(result.providerIssue.diagnostic.requestId,'req_Test12345678');}assert.equal(JSON.stringify(result).includes('discard this'),false);
+ }
+});
+
+test('both API providers preserve exact metric contract and safe rejection subcodes',async()=>{
+ const {createAPIProviders}=await import('../server/api-providers.mjs');
+ const {METRIC_SCHEMA,METRIC_RULES}=await import('../src/assistant.mjs');
+ const a=valid(),claim=a.claims[0];
+ const cases=[[a,null],[{...a,contextId:'wrong'},'context_mismatch'],[{...a,snapshotId:'wrong'},'snapshot_mismatch'],[{...a,claims:[]},'claim_count'],[{...a,claims:Array(9).fill(claim)},'claim_count'],[{...a,claims:[claim,claim]},'duplicate_evidence'],[{...a,claims:[{...claim,metricId:'injected secret text'}]},'unknown_evidence_id'],[{...a,claims:[{...claim,value:String(claim.value)}]},'invalid_numeric_type'],[{...a,claims:[{...claim,value:null}]},'invalid_numeric_type'],[{...a,claims:[{...claim,value:claim.value+1}]},'metric_mismatch'],[{...a,claims:[{metricId:claim.metricId}]},'missing_field'],[{...a,claims:[{...claim,label:'unexpected'}]},'extra_field'],[{...a,narrative:'injected secret text'},'extra_field'],[{...a,intent:'Overview'},'invalid_enum']];
+ for(const provider of ['anthropic','openai'])for(const [value,expected] of cases){
+  const providers=createAPIProviders({environment:{CAMPAIGN_GENERATION_PROVIDER:provider,CAMPAIGN_ANTHROPIC_ENABLED:'1',CAMPAIGN_ANTHROPIC_API_KEY:'synthetic-claude-contract-key',CAMPAIGN_ANTHROPIC_GENERATION_MODEL:'claude-sonnet-5-5',CAMPAIGN_OPENAI_ENABLED:'1',CAMPAIGN_OPENAI_API_KEY:'synthetic-openai-contract-key',CAMPAIGN_OPENAI_GENERATION_MODEL:'gpt-6-astra'},fetcher:async(url,options)=>{
+   const b=JSON.parse(options.body);if(provider==='anthropic'){assert.deepEqual(b.output_config.format.schema,METRIC_SCHEMA);assert.ok(b.system.includes(METRIC_RULES));return new Response(JSON.stringify({type:'message',role:'assistant',stop_reason:'end_turn',content:[{type:'text',text:JSON.stringify(value)}]}),{headers:{'content-type':'application/json'}});}
+   assert.deepEqual(b.text.format.schema,METRIC_SCHEMA);return new Response(JSON.stringify({status:'completed',output:[{type:'message',role:'assistant',status:'completed',content:[{type:'output_text',text:JSON.stringify(value)}]}]}),{headers:{'content-type':'application/json'}});
+  }});
+  const result=await run({invoke:providers.invokeMetric});assert.equal(result.mode,expected?'fallback':'model');if(expected){assert.equal(result.providerIssue.diagnostic.subcode,expected);assert.equal(JSON.stringify(result.providerIssue).includes('injected secret text'),false);}
+ }
+});
+test('strict grounding preserves numeric precision and excludes undefined evidence',()=>{
+ const a=valid(),fixture={...snap,facts:{...snap.facts,'test.number':{value:0.123456789012345},'test.zero':{value:0},'test.null':{value:null}}};
+ const check=(id,value)=>validateModelAnswer({...a,claims:[{metricId:id,value}]},fixture);
+ assert.doesNotThrow(()=>check('test.number',0.123456789012345));assert.doesNotThrow(()=>check('test.zero',0));assert.doesNotThrow(()=>check('test.zero',-0));
+ for(const value of ['0.123456789012345',NaN,Infinity,null])assert.throws(()=>check('test.number',value),{subcode:'invalid_numeric_type'});
+ assert.throws(()=>check('test.number',0.12),{subcode:'metric_mismatch'});assert.throws(()=>check('test.null',0),{subcode:'undefined_evidence'});
 });

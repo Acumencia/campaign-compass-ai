@@ -1,0 +1,14 @@
+{
+  "capturedAt": "2026-10-19T20:50:32.951Z",
+  "execution": "TEST ONLY hand-authored vectors and canned JSON; not model or semantic-performance evidence",
+  "scope": "Installed Chrome, isolated context, in-memory session store, external traffic blocked",
+  "checks": [
+    "TEST ONLY pipeline renders cited answer through actual session/CSRF flow",
+    "Cited source button opens actual source lines",
+    "TEST ONLY clarification renders separately from factual claims",
+    "Filtered empty retrieval does not invoke generation fixture",
+    "Invalid quotation is rejected before answer display",
+    "RAG options and cited output fit 390-pixel dialog"
+  ],
+  "errors": []
+}

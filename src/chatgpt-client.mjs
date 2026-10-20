@@ -1,6 +1,6 @@
 import {DeterministicProvider, validateResponse} from './assistant.mjs';
 
-const routes = new Set(['/api/snapshot', '/api/brief', ...['session','models','model','select','cancel','disconnect','acknowledge','retry-usage'].map(name => `/api/chatgpt/${name}`)]);
+const routes = new Set(['/api/session','/api/snapshot', '/api/brief', '/api/provider/consent', '/api/provider/status', '/api/provider/select', '/api/provider/key', '/api/provider/configure', ...['session','models','model','select','cancel','disconnect','acknowledge','retry-usage'].map(name => `/api/chatgpt/${name}`)]);
 const recovery = 'Reload the app served by npm start. Demo mode remains available.';
 function transportError(route, response, kind) {
   const status = response?.status || 0;
@@ -48,10 +48,11 @@ export class ChatGPTClient {
   constructor({fetcher = (...args) => fetch(...args), getRows = () => [], identity = datasetIdentity} = {}) {
     this.fetcher = fetcher; this.getRows = getRows; this.identity = identity;
     this.state = {connected: false, sharing: false, models: [], profiles: [], supported: false};
-    this.available = false; this.demo = new DeterministicProvider();
+    this.stateVersion=0; this.available = false; this.demo = new DeterministicProvider();
   }
   async api(route, {body, signal, method} = {}) {
     if (!routes.has(route)) throw new Error('Unsupported local service action.');
+    if(body!==undefined)this.stateVersion++;
     let response;
     try { response = await this.fetcher(route, {method: method || (body === undefined ? 'GET' : 'POST'), redirect: 'manual',
       credentials: 'same-origin', signal, headers: {'Content-Type': 'application/json', 'X-CC-CSRF': this.state.csrf || ''},
@@ -65,14 +66,17 @@ export class ChatGPTClient {
     return data;
   }
   async refresh() {
+    const version=this.stateVersion;
     try {
-      const state = await this.api('/api/chatgpt/session');
-      if (typeof state.csrf !== 'string' || typeof state.connected !== 'boolean' || !Array.isArray(state.profiles)) throw new Error();
+      const state = await this.api('/api/session');
+      if (typeof state.csrf !== 'string' || !state.apiKey || !state.keySettings) throw new Error();
+      if(version!==this.stateVersion)return;
       this.state = state; this.available = true;
     } catch (error) {
+      if(version!==this.stateVersion)return;
       this.available = false;
       this.state = {connected: false, sharing: false, models: [], profiles: [], supported: false,
-        notice: error.code === 'local_response_invalid' ? error.message : 'Connection service unavailable. Start the local Node server to use Continue with ChatGPT. Demo remains available.'};
+        notice: error.code === 'local_response_invalid' ? error.message : 'Connection service unavailable. Start the local Node server to configure the API. Demo remains available.'};
     }
     return this.state;
   }

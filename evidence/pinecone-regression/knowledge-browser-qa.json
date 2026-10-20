@@ -1,0 +1,17 @@
+{
+  "capturedAt": "2026-10-19T12:59:21.733Z",
+  "browser": "155.0.8059.40",
+  "scope": "Isolated installed Chrome; external traffic blocked; no model calls",
+  "checks": [
+    "Corpus manifest loads without account connection",
+    "Question returns explicitly lexical excerpts and scores",
+    "Source opens with numbered lines",
+    "Escape closes and restores focus",
+    "Knowledge remains available when dashboard filters are empty",
+    "Knowledge dialog fits 390-pixel viewport",
+    "No-match state makes no answer claim",
+    "RAG mode reports missing providers without a fabricated answer",
+    "No uncaught browser errors"
+  ],
+  "errors": []
+}

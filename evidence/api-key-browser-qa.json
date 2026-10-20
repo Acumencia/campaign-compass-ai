@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-10-18T01:44:52.225Z",
+  "execution": "TEST ONLY fake key and mocked OpenAI and Anthropic HTTP responses. No real provider requests.",
+  "checks": [
+    "Independent configuration status loads without an API request",
+    "No populated key field, key characters or browser storage",
+    "Explicit billing consent makes no transport call",
+    "TEST ONLY metric response is labeled OpenAI API and validated",
+    "Disabling API restores demo without another transport call",
+    "Switching to Claude clears consent without a provider call",
+    "Claude mock generation is validated, labeled and does not expose its separate key",
+    "Connection panel fits mobile; no console errors or secret leakage"
+  ],
+  "errors": []
+}

@@ -1,20 +1,41 @@
 import {keyOf} from './metrics.mjs';
-const intents=['overview','channels','efficiency','anomaly'];
-const recommendations=['compare_channels','inspect_anomaly','review_measurement'];
-const isRecord=value=>value!==null && typeof value==='object' && !Array.isArray(value) && [Object.prototype,null].includes(Object.getPrototypeOf(value));
+export const METRIC_INTENTS=['overview','channels','efficiency','anomaly'];
+export const METRIC_RECOMMENDATIONS=['compare_channels','inspect_anomaly','review_measurement'];
+export const MAX_METRIC_CLAIMS=8;
+const object=properties=>({type:'object',properties,required:Object.keys(properties),additionalProperties:false});
+const str={type:'string'};
+export const METRIC_SCHEMA=object({contextId:str,snapshotId:str,intent:{type:'string',enum:METRIC_INTENTS},claims:{type:'array',minItems:1,description:`Select 1 to ${MAX_METRIC_CLAIMS} unique metric IDs. Copy exact finite numeric values from facts; omit null-valued metrics. Never round, calculate, add units, or stringify values.`,items:object({metricId:{type:'string',description:'Exact key of an entry in facts.'},value:{type:'number',description:'Exact numeric value of that facts entry, without rounding.'}})},recommendationId:{type:'string',enum:METRIC_RECOMMENDATIONS}});
+export const METRIC_RULES=`Return only these required fields: ${METRIC_SCHEMA.required.join(', ')}. Allowed intents: ${METRIC_INTENTS.join(',')}. Allowed recommendationId: ${METRIC_RECOMMENDATIONS.join(',')}. ${METRIC_SCHEMA.properties.claims.description} Each claim has exactly metricId and value. The facts object maps metric IDs to records with id, value, label and unit. Use its key as metricId and its value property as the JSON number. Labels and units are metadata, not response fields. Copy contextId and snapshotId exactly. Return lowercase enum values exactly as listed.`;
+export class EvidenceValidationError extends Error {
+ constructor(subcode,field,message,claimIndex){super(message);this.subcode=subcode;this.field=field;if(Number.isInteger(claimIndex))this.claimIndex=claimIndex;}
+}
+const reject=(subcode,field,message,index)=>{throw new EvidenceValidationError(subcode,field,message,index);};
+export const isEvidenceRecord=value=>value!==null && typeof value==='object' && !Array.isArray(value) && [Object.prototype,null].includes(Object.getPrototypeOf(value));
+export function checkEvidenceFields(value,fields,field='response',index){
+ if(!isEvidenceRecord(value))reject('invalid_object',field,field==='response'?'Expected a structured evidence response.':'An unsupported numeric claim was rejected.',index);
+ if(fields.some(k=>!Object.hasOwn(value,k)))reject('missing_field',field,'Missing required response fields.',index);
+ if(Object.keys(value).some(k=>!fields.includes(k)))reject('extra_field',field,'Unsupported response fields.',index);
+}
 export function validateResponse(response,snap) {
-  if (!isRecord(response)) throw new Error('Expected a structured evidence response.');
-  if (response.contextId!==snap.id) throw new Error('The response belongs to an outdated filter context.');
-  if (Object.keys(response).length!==4 || Object.keys(response).some(k=>!['contextId','intent','claims','recommendationId'].includes(k))) throw new Error('Unsupported response fields.');
-  if (!intents.includes(response.intent) || !recommendations.includes(response.recommendationId)) throw new Error('Unsupported answer or recommendation.');
-  if (!Array.isArray(response.claims) || response.claims.length<1 || response.claims.length>8) throw new Error('Evidence is required.');
-  for (const claim of response.claims) {
-    if (!isRecord(claim) || typeof claim.metricId!=='string' || Object.keys(claim).length!==2 || !Object.hasOwn(snap.facts,claim.metricId)) throw new Error('An unsupported numeric claim was rejected.');
-    const fact=snap.facts[claim.metricId];
-    if (Object.keys(claim).some(k=>!['metricId','value'].includes(k)) || !fact || fact.value===null || !Number.isFinite(claim.value) || claim.value!==fact.value) throw new Error('An unsupported numeric claim was rejected.');
-  }
-  if (new Set(response.claims.map(c=>c.metricId)).size!==response.claims.length) throw new Error('Duplicate evidence.');
-  return response;
+ checkEvidenceFields(response,METRIC_SCHEMA.required.filter(k=>k!=='snapshotId'));
+ if(response.contextId!==snap.id)reject('context_mismatch','contextId','The response belongs to an outdated filter context.');
+ if(!METRIC_INTENTS.includes(response.intent))reject('invalid_enum','intent','Unsupported answer or recommendation.');
+ if(!METRIC_RECOMMENDATIONS.includes(response.recommendationId))reject('invalid_enum','recommendationId','Unsupported answer or recommendation.');
+ if(!Array.isArray(response.claims))reject('invalid_type','claims','Evidence is required.');
+ if(response.claims.length<1||response.claims.length>MAX_METRIC_CLAIMS)reject('claim_count','claims','Evidence requires 1 to 8 claims.');
+ const seen=new Set();
+ for(const [index,claim] of response.claims.entries()){
+  checkEvidenceFields(claim,METRIC_SCHEMA.properties.claims.items.required,'claims',index);
+  if(typeof claim.metricId!=='string')reject('invalid_type','claims.metricId','An unsupported numeric claim was rejected.',index);
+  if(!Object.hasOwn(snap.facts,claim.metricId))reject('unknown_evidence_id','claims.metricId','An unsupported numeric claim was rejected.',index);
+  const fact=snap.facts[claim.metricId];
+  if(!fact||!Number.isFinite(fact.value))reject('undefined_evidence','claims.value','An unsupported numeric claim was rejected.',index);
+  if(typeof claim.value!=='number'||!Number.isFinite(claim.value))reject('invalid_numeric_type','claims.value','An unsupported numeric claim was rejected.',index);
+  if(claim.value!==fact.value)reject('metric_mismatch','claims.value','An unsupported numeric claim was rejected.',index);
+  if(seen.has(claim.metricId))reject('duplicate_evidence','claims.metricId','Duplicate evidence.',index);
+  seen.add(claim.metricId);
+ }
+ return response;
 }
 export function demoAnswer(question,snap) {
   if (!snap.total.rows) throw new Error('No rows match these filters. Reset filters before requesting a brief.');

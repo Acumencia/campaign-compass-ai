@@ -1,0 +1,2903 @@
+{
+  "schemaVersion": 1,
+  "corpusVersion": "sha256:e8aba1ac1fa4d6de6134b696780abcb065b9785f90cd8b8a0e02cd871d6798bf",
+  "config": {
+    "version": 2,
+    "maxWords": 180,
+    "overlapWords": 30,
+    "retrieval": "lexical-tfidf-cosine-v1"
+  },
+  "documents": [
+    {
+      "sourceId": "audience-commuters",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-commuters"
+      },
+      "filename": "audience-commuters.md",
+      "title": "Synthetic commuter interview synthesis",
+      "contentHash": "76d3ba3c46dc6466b32625865f817b220fd476a08ee98281b33ed1b0a06d519a",
+      "text": "# Synthetic commuter interview synthesis\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"audience-commuters\"} -->\n\n## Research provenance\nThese are invented qualitative scenarios for an assignment, not real interviews. Six fictional commuter personas were written to explore carrying needs; no participant recruitment, consent records or population inference exists.\n\n## Carrying needs\nFour of the six fictional scenarios mention keeping small items accessible during transfers. Two prioritize room for a change of clothes. These counts describe authored scenarios, not measured customer prevalence.\n\n## Weather concerns\nThree fictional scenarios ask about rain exposure. Dayline documentation permits only light-splash resistance. A research desire for waterproofing is not evidence that the product is waterproof.\n\n## Messaging hypotheses\nTest a hypothesis emphasizing documented capacity and practical organization. Do not claim that this message increases sales; the synthetic research supports a question to investigate, not a causal marketing result.\n\n## Limits\nThe scenarios omit wheelchair access, long-distance travel and many body types. Ask users about specific needs. Do not infer demographic attributes or universal comfort from this small fictional set.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "audience-gifting",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-gifting"
+      },
+      "filename": "audience-gifting.md",
+      "title": "Synthetic gifting scenarios",
+      "contentHash": "c118e11ecd84d2efd83004ac50560376e12719733a85f06eef59617cb5dd7201",
+      "text": "# Synthetic gifting scenarios\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"audience-gifting\"} -->\n\n## Research provenance\nFour fictional gifting situations were authored to test recommendation questions. They are not customer data. None supplies age-specific product safety evidence.\n\n## Budget needs\nTwo scenarios set a 40 demo USD merchandise budget before shipping. A product below that price may still exceed a delivered budget. Calculate shipping using current policy and disclose assumptions.\n\n## Unknown preferences\nWhen capacity, recipient needs or care preferences are unknown, ask a clarifying question. Do not infer that a smaller bottle is suitable for children or that a tote suits every recipient.\n\n## Offer limits\nGift status does not extend EVERYDAY10 to Mini, Waypoint or Ridgeline. An eligible standard Switchback or Dayline item must still satisfy the campaign terms.\n\n## Recommendation limits\nThere is no best gift ranking, personalization service or gift-wrap price in this corpus. A helpful answer may identify missing information rather than invent a recommendation.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "audience-hikers",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-hikers"
+      },
+      "filename": "audience-hikers.md",
+      "title": "Synthetic occasional-hiker scenarios",
+      "contentHash": "975b1f26c3115f675324371a15bd3a2576cda139b40cdac6fcf0e7d7c2e555b6",
+      "text": "# Synthetic occasional-hiker scenarios\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"audience-hikers\"} -->\n\n## Research provenance\nFive fictional weekend-walk scenarios were authored for demonstration. They are not survey responses or market research. Counts and quotations must be labeled synthetic if shown.\n\n## Carrying needs\nThe scenarios include snacks, a layer and a bottle for short walks. None establishes load capacity or medical safety. Product suitability requires checking size, weather and intended use.\n\n## Weather concerns\nTwo scenarios mention wanting equipment for sustained heavy rain. The current corpus does not establish that Dayline or Ridgeline meets that need. Clarify conditions instead of recommending unsupported protection.\n\n## Messaging hypotheses\nA practical, non-technical description may fit occasional walking. Avoid expedition language, rescue claims and promised physical performance improvements. These are fictional brand choices, not legal determinations.\n\n## Limits\nNo field test, comfort trial or safety assessment occurred. The synthetic scenarios cannot prove durability, wilderness suitability, waterproofing or demand among real hikers.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "bottle-mini",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle-mini"
+      },
+      "filename": "bottle-mini.md",
+      "title": "Switchback Mini bottle specification",
+      "contentHash": "164992d198d74776adcab447f8c7237b0e50216cb89c55729e5671fad53d37d8",
+      "text": "# Switchback Mini bottle specification\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"bottle-mini\"} -->\n\n## Capacity and materials\nSwitchback Mini is a separate fictional 400-milliliter bottle with a stainless steel body and polypropylene lid. It is not the 650-milliliter Switchback bottle. Use the full product name when stating capacity.\n\n## Care\nHand-wash body and lid with mild soap and let them dry separately. No dishwasher suitability is documented for Mini. Do not copy cleaning claims from an unrelated container.\n\n## Price and eligibility\nSwitchback Mini costs 18 demo USD. The Autumn Everyday offer names the standard Switchback bottle and Dayline pack only; Mini is excluded unless campaign terms are explicitly revised.\n\n## Claim limits\nNo temperature-retention duration, medical benefit, leakproof certification or carbon-neutral certification is supplied for Mini. Stainless steel material alone does not establish any of those claims.\n\n## Selection\nMini provides less nominal volume than the standard Switchback. Ask about preferred capacity rather than claiming a particular daily hydration benefit. No age-specific safety approval is included.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "bottle",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle"
+      },
+      "filename": "bottle.md",
+      "title": "Switchback bottle product specification",
+      "contentHash": "34ef9a52f54b443086642e99dcfa8205a5ae224e80485f875de3147aa8e904a2",
+      "text": "# Switchback bottle product specification\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"bottle\"} -->\n## Capacity and materials\nThe fictional Switchback bottle holds 650 milliliters. Its body is stainless steel with a removable polypropylene lid. The empty bottle weighs 310 grams. Available colors are Moss and Slate. It is not a water purifier. Do not imply that it makes untreated water safe to drink.\n## Care and price\nThe Switchback bottle costs 28 demo USD before shipping. Wash the bottle and lid by hand with mild soap; it is not dishwasher safe. Do not microwave or freeze the bottle. No temperature-retention duration has been tested or approved for advertising.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "brand-positioning",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand-positioning"
+      },
+      "filename": "brand-positioning.md",
+      "title": "Positioning and comparison boundaries",
+      "contentHash": "34905f5471605f195fb4fb576e01a26972650d77b706b8e5ec53338339db954f",
+      "text": "# Positioning and comparison boundaries\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"brand-positioning\"} -->\n\n## Position\nLuma Trail is a fictional everyday-carry brand for city trips and occasional short walks. It is not positioned as professional expedition, emergency survival, or medical equipment.\n\n## Differentiation\nDescribe documented features such as capacity, materials and care. There are no comparative laboratory tests against competitors in this corpus. Do not claim best-in-class durability or superior environmental performance.\n\n## Product families\nSwitchback is a bottle family, Dayline is a pack, Waypoint is a sling, and Ridgeline is a tote. Similar names and use cases do not transfer capacities, materials or approved claims between products.\n\n## Price language\nPrices are demo USD for a fictional storefront. They are not market observations or current real-world offers. Use the applicable product document and active campaign terms before calculating a basket.\n\n## Evidence hierarchy\nFor current product facts use active specifications; for allowed language also consult active claims policy. Archived content can explain past decisions but cannot authorize a present claim. When current sources conflict, abstain and request review.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "brand",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand"
+      },
+      "filename": "brand.md",
+      "title": "Luma Trail brand guide",
+      "contentHash": "1de154f3cb6f534a024472e3ef95513f9e45484f4292a2105b0546b71dda4bdc",
+      "text": "# Luma Trail brand guide\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"brand\"} -->\n## Identity and voice\nLuma Trail is a fictional demonstration brand. Every product, policy, price and claim in this corpus is synthetic, authored for Campaign Compass. These documents do not describe Acumencia or a real business. The voice is practical, warm and specific. Use short sentences and concrete product details. Avoid superlatives, urgency pressure and promises of life transformation.\n## Audience\nLuma Trail serves city commuters and occasional day hikers. Address everyday carrying needs, not technical mountaineering or emergency survival. Campaign performance in campaigns.csv is a separate synthetic teaching dataset and does not establish demand for Luma Trail products.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "campaign-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-email"
+      },
+      "filename": "campaign-email.md",
+      "title": "Synthetic September email review",
+      "contentHash": "3106ebb6ffdb766e08cc32bfc7a4023bbb96e1c63081733eae74b7e9ce6144af",
+      "text": "# Synthetic September email review\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"campaign-email\"} -->\n\n## Scope and provenance\nThe fictional September 2026 email exercise used 1000 delivered messages. No actual recipients were contacted, and no real email service data was collected.\n\n## Observed metrics\nThe authored example records 80 unique clicks and 12 attributed purchases. Click-through rate on delivered messages is 8 percent. There is no reliable open-count field in this scenario.\n\n## Attribution\nPurchases use a fictional three-day click window. Delivered-message click rate is not interchangeable with ad-impression CTR. No spend field is available, so cost per acquisition and ROAS cannot be calculated.\n\n## Creative\nThe subject-line scenario emphasized everyday carrying needs. There was no randomized subject-line test. The observed count cannot prove that the subject caused purchases.\n\n## Learning\nA proposed next test would randomize a clearly documented subject-line variation. Keep factual product claims identical across arms and establish attribution before interpreting results.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "campaign-holdout",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-holdout"
+      },
+      "filename": "campaign-holdout.md",
+      "title": "Synthetic October holdout exercise",
+      "contentHash": "eb967914587fa03ae68c0a864df756ae195a671f04eebf0f5fc56c36b0c6c415",
+      "text": "# Synthetic October holdout exercise\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"campaign-holdout\"} -->\n\n## Scope and provenance\nThis is a fictional arithmetic teaching scenario, not a real experiment. Two authored groups each contain 1000 eligible people. They must not be described as actual customers or test participants.\n\n## Observed metrics\nThe treatment group has 40 purchases and the control group 30. The authored purchase rates are 4 percent and 3 percent, an absolute difference of 1 percentage point.\n\n## Interpretation\nThe difference is a point estimate in a synthetic example. No statistical uncertainty analysis or implementation audit is supplied. Do not call it a significant lift or promise the same result in deployment.\n\n## Design checks\nBefore interpreting a real holdout, inspect random assignment, exposure contamination and consistent outcome windows. This document describes methodological questions, not evidence that these checks passed here.\n\n## Learning\nDo not merge this fictional holdout with the observational Spring or Summer reports. It has a different design and no revenue or cost fields, so it cannot establish profit or ROAS.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "campaign-spring",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-spring"
+      },
+      "filename": "campaign-spring.md",
+      "title": "Synthetic Spring Carry campaign review",
+      "contentHash": "35351d519e6eb34aabd7adcff77d05aee6f5f01c88498a619cb6e814ee0e544c",
+      "text": "# Synthetic Spring Carry campaign review\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"campaign-spring\"} -->\n\n## Scope and provenance\nAll figures in this review are invented Luma Trail teaching data for April 2026. They are separate from campaigns.csv. Do not combine them with dashboard totals or present them as real campaign performance.\n\n## Observed metrics\nThe fictional campaign spent 1000 demo USD and recorded 2500 demo USD attributed revenue and 50 attributed purchases. Observed ROAS is 2.5 and cost per attributed purchase is 20 demo USD.\n\n## Attribution\nRevenue uses a fictional seven-day click attribution window. These observations do not measure incremental lift, profit, customer lifetime value or organic sales. Product and fulfillment costs are absent.\n\n## Creative and audience\nThe scenario used a capacity-focused Dayline message for commuters. No randomized control group or controlled creative split was included. Do not attribute the observed results to wording alone.\n\n## Learning\nA subsequent controlled test could compare capacity and organization themes with consistent attribution. This is a proposed learning step, not a conclusion that either message will outperform.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "campaign-summer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-summer"
+      },
+      "filename": "campaign-summer.md",
+      "title": "Synthetic Summer Carry campaign review",
+      "contentHash": "8953b9727ba832822254e507f41a4f14fccea49d14a63e107a0100b3bdda3c51",
+      "text": "# Synthetic Summer Carry campaign review\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"campaign-summer\"} -->\n\n## Scope and provenance\nThis fictional July 2026 review is authored teaching material. Its performance numbers are invented and separate from the dashboard dataset. The expired SUMMER15 terms govern its historical offer.\n\n## Observed metrics\nThe scenario spent 1200 demo USD and recorded 2400 demo USD attributed revenue and 60 attributed purchases. Observed ROAS is 2.0 and cost per attributed purchase is 20 demo USD.\n\n## Attribution\nThis scenario uses a fictional one-day view attribution window. It cannot be fairly ranked against Spring Carry seven-day click results without harmonizing measurement. Neither figure establishes incrementality.\n\n## Creative and audience\nThe campaign scenario featured a discount-focused Dayline message to a mixed gifting and commuter audience. Audience composition, offer and attribution all differ from Spring Carry.\n\n## Learning\nDo not conclude that capacity messaging beat discount messaging from these reports. Propose a controlled comparison with common measurement and audience definitions; record uncertainty in the draft brief.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "campaign",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign"
+      },
+      "filename": "campaign.md",
+      "title": "Autumn campaign brief",
+      "contentHash": "3b873bb5f67398d176e55b07fe03cabefd9e5617a50203af1775d04805f4cb51",
+      "text": "# Autumn campaign brief\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"campaign\"} -->\n## Offer and dates\nThe fictional Autumn Everyday campaign runs from October 1 through October 31, 2026. It targets city commuters. Offer code EVERYDAY10 takes 10 percent off one Switchback bottle or one Dayline pack. It does not stack with other discounts and does not apply to shipping. The free-shipping threshold is evaluated after discounts, as specified in the shipping policy.\n## Deliverables and review\nDraft one short social caption and one email subject line in the practical, warm brand voice. Include the offer end date when mentioning EVERYDAY10. Link factual statements to product or policy sources. A human must approve every draft before publication. Campaign Compass has no ad publishing connection and does not execute advertising spend.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "claims-comparative",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-comparative"
+      },
+      "filename": "claims-comparative.md",
+      "title": "Fictional comparative and testimonial policy",
+      "contentHash": "04a04221832e79436c867e27ac7943435053d6a20848cfa316b85a53a8dc0730",
+      "text": "# Fictional comparative and testimonial policy\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"claims-comparative\"} -->\n\n## Policy scope\nThese are fictional internal editorial rules, not jurisdiction-specific law or platform policy. They supplement the core claims policy for all Luma Trail products.\n\n## Comparisons\nDo not use best, strongest or more comfortable than competitors without matching comparative evidence. No competitor benchmark or comfort trial is available. Product volume comparisons may use cited specifications.\n\n## Testimonials\nNo real customer testimonials or endorsements are included. Authored audience scenarios are not testimonials. Do not turn their invented preferences into quotations attributed to real users.\n\n## Rejected example\nRejected fictional copy: Doctors recommend Dayline for a pain-free commute. No medical endorsement or health outcome evidence exists. This sentence is a hard negative and must never be treated as approval.\n\n## Review\nSeparate proposed creative language from factual assertions. Human reviewers verify claim scope, current sources and missing evidence. The application creates drafts only and has no publishing authority.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "claims-environment",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-environment"
+      },
+      "filename": "claims-environment.md",
+      "title": "Fictional environmental claims policy",
+      "contentHash": "93a36aa9bd21497ac19fc288885e505aee532788c2b5bc1d4082302c93a82854",
+      "text": "# Fictional environmental claims policy\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"claims-environment\"} -->\n\n## Policy scope\nThis is an internal policy for the fictional Luma Trail exercise, not legal advice or a statement of real advertising law. It applies alongside the core advertising claims policy.\n\n## Evidence required\nDo not claim carbon neutrality, recycled-content percentages or lifecycle benefits without a current product-specific evidence document. No such certification or lifecycle assessment is provided in this corpus.\n\n## Material versus outcome\nA stainless steel body is a documented material fact for the matching bottle. That fact alone does not prove lower emissions, indefinite reuse, recyclability in every locality or an environmental advantage.\n\n## Rejected example\nRejected fictional caption: Our carbon-neutral bottle saves the planet. This is a negative example, not an approved claim. Retrieval of this sentence must not convert it into usable product evidence.\n\n## Allowed approach\nUse current material and care facts without adding environmental outcomes. If a user requests a sustainability claim beyond the available evidence, state the evidence gap and request human review.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "claims",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims"
+      },
+      "filename": "claims.md",
+      "title": "Advertising claims policy",
+      "contentHash": "7c6ffdbee098289cba3c6a1fed2478aafaec7575fdf57b67cbffbc39b977f829",
+      "text": "# Advertising claims policy\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"claims\"} -->\n## Approved and prohibited claims\nUse only documented product capacities, weights, materials, care instructions and demo prices. Neither Switchback nor Dayline may be described as waterproof, carbon neutral, medically beneficial or guaranteed to improve performance. The Switchback bottle has no approved temperature-retention duration. The Dayline pack may be described as resisting light splashes, with the limitation that it is not waterproof.\n## Evidence and creative language\nFactual campaign statements must cite their product specification or policy section. Creative slogans are proposals requiring human review, not facts or endorsements. Do not invent testimonials, scarcity, comparative superiority or certifications. A product fact in one document does not authorize claims about another product.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "dayline-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2025-01-01",
+        "status": "superseded",
+        "supersededBy": "pack",
+        "scope": "dayline-v1"
+      },
+      "filename": "dayline-v1.md",
+      "title": "Archived Dayline specification v1",
+      "contentHash": "f798930fd489f89f839d499a8d153a4579cc76f91974f3cd48c02d1125920081",
+      "text": "# Archived Dayline specification v1\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2025-01-01\",\"status\":\"superseded\",\"supersededBy\":\"pack\",\"scope\":\"dayline-v1\"} -->\n\n## Historical capacity\nARCHIVED: Dayline v1 listed 16 liters during the fictional 2025 pilot. This document was superseded by the active Dayline specification. Do not use 16 liters for the current 18-liter product.\n\n## Historical price\nThe pilot list price was 42 demo USD. It was a synthetic planning value, not a measured market price. The current product document governs present basket calculations.\n\n## Historical care\nThe pilot instructed spot-cleaning and air drying. An unchanged care statement does not make all other historical details current. Treat facts individually within their version scope.\n\n## Supersession\nThe active source ID pack replaces this specification as of October 1, 2026. Current campaigns must cite pack for capacity. This archive is retained to test wrong-version retrieval.\n\n## Archive use\nUse this document only for an explicitly historical question about the fictional pilot. It cannot establish current inventory, sales, customer preferences or product testing.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "faq",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "faq"
+      },
+      "filename": "faq.md",
+      "title": "Product selection FAQ",
+      "contentHash": "7cc618c60fccae4c208781f24a3d21c334b5c95b8383f81a2ae82414ccdd15e0",
+      "text": "# Product selection FAQ\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"faq\"} -->\n## Choosing a product\nFor carrying a drink, consider the 650-milliliter Switchback bottle. For carrying everyday essentials, consider the 18-liter Dayline pack. They solve different needs; this corpus does not rank either as the best product. Ask which product and use case the customer means when a question is underspecified.\n## Unknown information\nNo customer reviews, customer identities, inventory counts, supplier identities or competitor comparisons are provided. No conversion-lift experiment has been conducted for these fictional products. Do not infer sales forecasts or product effectiveness from the separate synthetic campaign dashboard.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "measurement",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "measurement"
+      },
+      "filename": "measurement.md",
+      "title": "Campaign measurement glossary",
+      "contentHash": "b82e7d7ab8e7bc0a43521e7327416b21179eae5fb4c28de7ef78477e6155e7cc",
+      "text": "# Campaign measurement glossary\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"measurement\"} -->\n\n## ROAS\nObserved ROAS equals attributed revenue divided by advertising spend when spend is positive. It excludes non-ad costs and does not establish incremental revenue. State the attribution window alongside a comparison.\n\n## Acquisition cost\nCost per attributed purchase equals spend divided by attributed purchases when purchases are positive. If purchases are zero or missing, the ratio is undefined; do not replace it with zero.\n\n## Rate denominators\nAd CTR uses clicks divided by impressions. Email delivered-message click rate uses unique clicks divided by delivered messages. Different denominators must be named and should not be silently compared.\n\n## Causal limits\nObservational differences may reflect audience, season, offer or attribution differences. A controlled design and uncertainty analysis are needed before making causal claims. The fictional reports do not establish real effects.\n\n## Dataset separation\nLuma Trail narrative campaign reports and campaigns.csv are independent synthetic datasets. Never join them on similar channel names or dates. Missing identity and measurement links make such a combination unsupported.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "offer-examples",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "offer-examples"
+      },
+      "filename": "offer-examples.md",
+      "title": "Autumn offer calculation examples",
+      "contentHash": "4f922faeab5b0a3998fdc9e72cbb1e66c4a53c332741baed103d31bf62977ae0",
+      "text": "# Autumn offer calculation examples\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"offer-examples\"} -->\n\n## Scope\nThese are synthetic worked examples for the active Autumn Everyday campaign. Current campaign and shipping policy remain the authoritative terms. The examples do not introduce additional eligible products.\n\n## Threshold arithmetic\nAn eligible merchandise subtotal of 80 demo USD becomes 72 after a 10 percent discount. Because 72 is below the active 75 threshold, standard shipping is not free. Cite both campaign and shipping terms when explaining.\n\n## Threshold boundary\nA post-discount merchandise subtotal exactly equal to 75 demo USD qualifies for free standard shipping. Shipping charges themselves do not count toward the merchandise threshold.\n\n## Excluded products\nWaypoint, Ridgeline and Switchback Mini are excluded from EVERYDAY10. Do not discount them because their names resemble eligible products. An example basket cannot override explicit eligibility.\n\n## Unknown baskets\nFor mixed baskets or multiple eligible items where the one-item offer allocation is unspecified, ask for clarification or review. Do not invent a stacking or allocation rule absent from the campaign terms.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "pack",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "pack"
+      },
+      "filename": "pack.md",
+      "title": "Dayline pack product specification",
+      "contentHash": "411e8a31a425e0f2ab319130e3f906c523e5e6b94739ebf5c309b46fbc338a46",
+      "text": "# Dayline pack product specification\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"pack\"} -->\n## Capacity and fit\nThe fictional Dayline pack has an 18-liter capacity and weighs 540 grams. It has adjustable shoulder straps, one main compartment and a sleeve for laptops up to 13 inches. It is intended for city commutes and short day walks. Available colors are Moss and Sand.\n## Care and price\nThe Dayline pack costs 64 demo USD before shipping. Spot-clean with mild soap and air dry. Do not machine wash. The shell resists light splashes but is not waterproof. There is no approved load rating or mountaineering safety certification.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "shipping-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "superseded",
+        "supersededBy": "shipping",
+        "scope": "shipping-v1"
+      },
+      "filename": "shipping-v1.md",
+      "title": "Archived shipping policy v1",
+      "contentHash": "f60aee2850a8d634c9c3f50c3ef332ee8905a7ca05543476117135fc548f8fb1",
+      "text": "# Archived shipping policy v1\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-07-01\",\"status\":\"superseded\",\"supersededBy\":\"shipping\",\"scope\":\"shipping-v1\"} -->\n\n## Historical threshold\nARCHIVED: free standard shipping formerly required a 60 demo USD post-discount subtotal. This fictional rule expired September 30, 2026. The active shipping document sets the current threshold.\n\n## Historical fee\nThe prior standard shipping fee was 5 demo USD. Do not use that figure for current offers or compare it to a real carrier tariff. It is synthetic exercise data.\n\n## Historical scope\nThe old policy covered the fictional domestic demonstration storefront only. It supplied no international service terms. Do not infer international eligibility from the absence of a prohibition.\n\n## Supersession\nSource ID shipping supersedes this archive effective October 1, 2026. A current basket must apply the active post-discount threshold and fee, not whichever retrieved passage appears first.\n\n## Archive use\nRetained for version-conflict testing. This archive is evidence about an old fictional policy, not permission to advertise it today. Explicit historical filtering is required to retrieve it.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "shipping",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "shipping"
+      },
+      "filename": "shipping.md",
+      "title": "Shipping and returns policy",
+      "contentHash": "4e1de7e95e89e21eef96553c5e86ee35c8061a9db292af87c142aad46a3dd7ae",
+      "text": "# Shipping and returns policy\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"shipping\"} -->\n## Delivery\nThis fictional store ships only to the contiguous United States. Standard delivery takes 5 to 7 business days after dispatch. Standard shipping costs 6 demo USD per order, and is free when the merchandise subtotal after discounts is at least 75 demo USD. Taxes are not specified. No express shipping or international delivery is offered.\n## Returns\nUnused products can be returned within 30 calendar days of delivery with proof of purchase. Customers pay return postage unless the item arrived damaged. Contact the fictional support team before returning damaged goods. Used items and purchases without proof of purchase are outside this demo return policy. No lifetime warranty is promised.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "sling",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "sling"
+      },
+      "filename": "sling.md",
+      "title": "Waypoint sling specification",
+      "contentHash": "72bf9a575d03b4e074f06a937d9e6d4f01816047f822deda75a3dc566f739171",
+      "text": "# Waypoint sling specification\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"sling\"} -->\n\n## Capacity and dimensions\nThe fictional Waypoint sling holds 3 liters and measures 28 by 16 by 8 centimeters. Its small volume is not equivalent to the Dayline pack. Capacity alone does not guarantee that a particular device fits.\n\n## Materials\nThe shell is woven nylon with a polyester lining. The adjustable webbing strap fits circumferences from 70 to 120 centimeters. No waterproof coating certification is documented.\n\n## Care and price\nSpot-clean using mild soap and air dry. Do not machine wash. The demo list price is 35 demo USD. EVERYDAY10 applies only to Switchback and Dayline, so Waypoint is excluded.\n\n## Use and limits\nWaypoint is intended for small everyday items such as keys and a wallet. There is no protective equipment certification, load rating, or theft-prevention guarantee. Do not invent one.\n\n## Selection\nFor larger carrying needs, compare the 18-liter Dayline pack or 12-liter Ridgeline tote. Ask about intended contents before recommending a fit; the fictional specifications do not describe every device.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "source-register",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "source-register"
+      },
+      "filename": "source-register.md",
+      "title": "Source authority and version register",
+      "contentHash": "6433209991c479dfab6ee7a50550505bc9a027f962b33a13482c721380329445",
+      "text": "# Source authority and version register\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"source-register\"} -->\n\n## Provenance\nEvery document in this corpus is original synthetic teaching material authored for Campaign Compass. Products, research scenarios, policies and results are fictional. No Acumencia private files or real customer data are included.\n\n## Current scope\nCurrent questions use documents marked active. Historical records remain inspectable but are excluded from unfiltered retrieval. An explicit source selection permits historical inspection and must retain its archive label.\n\n## Supersession\nThe active pack document supersedes dayline-v1. The active shipping document supersedes shipping-v1. summer-offer is expired. Similar names never authorize substitution across products or versions.\n\n## Conflict handling\nIf two active sources disagree on the same scoped fact, identify the conflict and abstain instead of choosing a convenient passage. A later ingestion timestamp alone does not establish a later effective policy.\n\n## Evaluation boundary\nCitation quote matching verifies that text exists in a supplied passage. It does not establish that the passage supports the generated claim. Human review must check meaning, product scope and effective version.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "summer-offer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "expired",
+        "supersededBy": "none",
+        "scope": "summer-offer"
+      },
+      "filename": "summer-offer.md",
+      "title": "Expired Summer Carry offer",
+      "contentHash": "d3c0d3cbf9d75207318be112d35e2356513592a5cdb9cf342ea3c20ab0ad276b",
+      "text": "# Expired Summer Carry offer\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-07-01\",\"status\":\"expired\",\"supersededBy\":\"none\",\"scope\":\"summer-offer\"} -->\n\n## Offer period\nEXPIRED: SUMMER15 reduced the fictional Dayline pilot price by 15 percent from July 1 through July 31, 2026. It is not an active alternative to EVERYDAY10.\n\n## Eligibility\nThe summer offer covered Dayline only and did not apply to bottles, slings, totes or shipping. Product family similarity did not broaden eligibility.\n\n## Stacking\nThe summer code could not be stacked with other offers. Its historical percentage must not be substituted into an Autumn Everyday basket calculation.\n\n## Supersession\nThe summer campaign ended without renewal. Autumn Everyday is a separate campaign with its own terms. An expired offer is not automatically extended by a later campaign.\n\n## Archive use\nThis source is a deliberate hard negative for current discount queries. It supports historical offer questions only and contains no real transaction or redemption records.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "tote",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "tote"
+      },
+      "filename": "tote.md",
+      "title": "Ridgeline tote specification",
+      "contentHash": "907b834420cbf4ca8ca04d1c92f8affb9ce6cf019e80792d52f2060605d235f6",
+      "text": "# Ridgeline tote specification\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"tote\"} -->\n\n## Capacity and dimensions\nThe fictional Ridgeline tote holds 12 liters and measures 36 by 30 by 12 centimeters. Capacity is a nominal internal volume, not a certified maximum load.\n\n## Materials\nThe tote has a cotton canvas body and fixed cotton handles. It has no closure or padded electronics compartment. Do not describe it as providing the protection of a dedicated laptop case.\n\n## Care and price\nSpot-clean and air dry. Color transfer testing has not been performed in this synthetic scenario. The demo list price is 30 demo USD and the tote is not eligible for EVERYDAY10.\n\n## Weather limits\nNo waterproof or water-resistance claim is approved for Ridgeline. Dayline light-splash resistance applies only to Dayline. Carrying a bottle in the tote does not change the tote material rating.\n\n## Selection\nRidgeline may suit open-access carrying needs. Ask whether closure, padding or hands-free carrying is required before choosing it over a pack or sling. No comparative comfort study is available.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "voice-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-email"
+      },
+      "filename": "voice-email.md",
+      "title": "Email voice guide",
+      "contentHash": "c6b80d5fb2e594f65627cb4984d56ad9adfd19ed786a04beaa2ed5f2a57f91be",
+      "text": "# Email voice guide\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"voice-email\"} -->\n\n## Subject lines\nUse a specific product or use case in subject lines, with a fictional editorial target of 45 characters or fewer. Avoid false reply prefixes, invented scarcity, and guaranteed outcomes.\n\n## Offer disclosure\nWhen mentioning EVERYDAY10, include its October 31, 2026 end date and non-stacking condition in the body. Do not imply that shipping is discounted. The campaign and shipping documents govern exact eligibility.\n\n## Examples\nA style example is Everyday space for your commute. This describes a theme, not evidence of increased productivity. Any numerical capacity must come from the matching product specification.\n\n## Audience adaptation\nFor fictional commuter research, emphasize carrying needs and care. For occasional day hikers, explain product limitations. Do not imply that the same message was proven to work for both groups.\n\n## Review\nLink factual claims to source sections in the internal draft. A human reviews tone, product scope and offer dates before release. This application does not send marketing emails.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    },
+    {
+      "sourceId": "voice-social",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-social"
+      },
+      "filename": "voice-social.md",
+      "title": "Social voice guide",
+      "contentHash": "50d7efecb1f8e223dc8688801e28d4c86d644a0d9a92606122489cc83040dcbf",
+      "text": "# Social voice guide\n<!-- metadata: {\"provenance\":\"synthetic\",\"owner\":\"Campaign Compass teaching corpus\",\"version\":\"1.0\",\"effective\":\"2026-10-01\",\"status\":\"active\",\"supersededBy\":\"none\",\"scope\":\"voice-social\"} -->\n\n## Caption structure\nOpen with a concrete everyday use, name one supported product fact, and finish with an optional invitation. For Dayline, commuting with an 18-liter pack is supported; becoming more productive is not a measured outcome.\n\n## Examples\nApproved fictional example: Carry your everyday essentials in the 18-liter Dayline pack. Avoid: The ultimate pack that transforms every commute. Approval covers style only; offer and specification details still need their own current sources.\n\n## Accessibility\nUse descriptive language instead of emoji-only instructions. Put essential offer conditions in readable copy. Describe the product in image alt text without adding unverified benefits or demographic assumptions.\n\n## Channel limits\nFor this exercise, proposed social captions should stay below 240 characters and contain at most one optional hashtag. These are fictional editorial preferences, not platform limits or advertising law.\n\n## Review\nA reviewer checks each factual phrase against current specifications and claims policy. A draft is not publication approval. Do not present invented customer quotations as testimonials.\n",
+      "license": "Original synthetic demo content; MIT",
+      "synthetic": true
+    }
+  ],
+  "chunks": [
+    {
+      "chunkId": "audience-commuters:73527e9d36e4374e6acb9ab4:1",
+      "sourceId": "audience-commuters",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-commuters"
+      },
+      "heading": "Research provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "These are invented qualitative scenarios for an assignment, not real interviews. Six fictional commuter personas were written to explore carrying needs; no participant recruitment, consent records or population inference exists.",
+      "contentHash": "84cc77cf1984894e520b5a5a53a22e02aa9d530ca9b41e25a6d713de77401f7c",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "audience-commuters:5038f43002237887a87de741:1",
+      "sourceId": "audience-commuters",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-commuters"
+      },
+      "heading": "Carrying needs",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Four of the six fictional scenarios mention keeping small items accessible during transfers. Two prioritize room for a change of clothes. These counts describe authored scenarios, not measured customer prevalence.",
+      "contentHash": "f6e7194bd84a6fb29b12cd3f62051218955f41e73e3d4390eaef2e32ac24b896",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "audience-commuters:659d8547c46512ecbe46fc2e:1",
+      "sourceId": "audience-commuters",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-commuters"
+      },
+      "heading": "Weather concerns",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Three fictional scenarios ask about rain exposure. Dayline documentation permits only light-splash resistance. A research desire for waterproofing is not evidence that the product is waterproof.",
+      "contentHash": "1458b08042869178336dbcce5a279b4a222715d1af5c207a884dd9024b2ed1df",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "audience-commuters:92439a87d2a10b59706cb7dd:1",
+      "sourceId": "audience-commuters",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-commuters"
+      },
+      "heading": "Messaging hypotheses",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Test a hypothesis emphasizing documented capacity and practical organization. Do not claim that this message increases sales; the synthetic research supports a question to investigate, not a causal marketing result.",
+      "contentHash": "fb09ffa2fa7506058e559a4a294f391485e65ad06ad0912c67cbfe7ef69f47a4",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "audience-commuters:d5548a260256b501d7c5479f:1",
+      "sourceId": "audience-commuters",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-commuters"
+      },
+      "heading": "Limits",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "The scenarios omit wheelchair access, long-distance travel and many body types. Ask users about specific needs. Do not infer demographic attributes or universal comfort from this small fictional set.",
+      "contentHash": "afc0d4814587ae7af56159a6a1d88b0ae8bebb8172d101b5bf64713b7f76ac4b",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "audience-gifting:89875700c88434a773dae7ae:1",
+      "sourceId": "audience-gifting",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-gifting"
+      },
+      "heading": "Research provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Four fictional gifting situations were authored to test recommendation questions. They are not customer data. None supplies age-specific product safety evidence.",
+      "contentHash": "69361f52f3713e8e20a21f8d090f75cb738d64d3dbb22569ed02571841988073",
+      "wordCount": 21
+    },
+    {
+      "chunkId": "audience-gifting:95e825e17ec514301566e206:1",
+      "sourceId": "audience-gifting",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-gifting"
+      },
+      "heading": "Budget needs",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Two scenarios set a 40 demo USD merchandise budget before shipping. A product below that price may still exceed a delivered budget. Calculate shipping using current policy and disclose assumptions.",
+      "contentHash": "7a2bc51fbc05c4586ecc3b482a58402a7f09e7f18e644d4fc0a52d1d4ea0c908",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "audience-gifting:887eddde430e3eca783cb2f4:1",
+      "sourceId": "audience-gifting",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-gifting"
+      },
+      "heading": "Unknown preferences",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "When capacity, recipient needs or care preferences are unknown, ask a clarifying question. Do not infer that a smaller bottle is suitable for children or that a tote suits every recipient.",
+      "contentHash": "112dd5c3b418e004ee0a977a1cc5e044f669abee2525e3d89a2131d9f7298ec0",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "audience-gifting:0ef0948fbb94167716cecba3:1",
+      "sourceId": "audience-gifting",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-gifting"
+      },
+      "heading": "Offer limits",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Gift status does not extend EVERYDAY10 to Mini, Waypoint or Ridgeline. An eligible standard Switchback or Dayline item must still satisfy the campaign terms.",
+      "contentHash": "b709fa8d0a7fb37642448fc28d215d623c6888ed2b194fbc769ee283d891e1fa",
+      "wordCount": 24
+    },
+    {
+      "chunkId": "audience-gifting:112a4c886b9cb80a67dad5b6:1",
+      "sourceId": "audience-gifting",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-gifting"
+      },
+      "heading": "Recommendation limits",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "There is no best gift ranking, personalization service or gift-wrap price in this corpus. A helpful answer may identify missing information rather than invent a recommendation.",
+      "contentHash": "9a37485ffcc7b458692fc5820f73c748a8c4ba16ade35a96a5c812869c2ebd5b",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "audience-hikers:d578456d75e72ce7a43665c8:1",
+      "sourceId": "audience-hikers",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-hikers"
+      },
+      "heading": "Research provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Five fictional weekend-walk scenarios were authored for demonstration. They are not survey responses or market research. Counts and quotations must be labeled synthetic if shown.",
+      "contentHash": "1e109cf757efc74aab23857bb37de6c3a5d52e286b52d4b59367f6094a067b65",
+      "wordCount": 25
+    },
+    {
+      "chunkId": "audience-hikers:60a5c465c982ed0069a6af45:1",
+      "sourceId": "audience-hikers",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-hikers"
+      },
+      "heading": "Carrying needs",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The scenarios include snacks, a layer and a bottle for short walks. None establishes load capacity or medical safety. Product suitability requires checking size, weather and intended use.",
+      "contentHash": "f7be71259bf334b98e290492485088e43deb05acd06b80e009e225dfd57ac87d",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "audience-hikers:9f2d0da2a820e2ba96a71e0c:1",
+      "sourceId": "audience-hikers",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-hikers"
+      },
+      "heading": "Weather concerns",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Two scenarios mention wanting equipment for sustained heavy rain. The current corpus does not establish that Dayline or Ridgeline meets that need. Clarify conditions instead of recommending unsupported protection.",
+      "contentHash": "49f35a521bec652ff9b587efdd1f4a06c55506a04bac7ec4d0a59add69672e3a",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "audience-hikers:e3cd81d8b72b9a966d2fcd80:1",
+      "sourceId": "audience-hikers",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-hikers"
+      },
+      "heading": "Messaging hypotheses",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "A practical, non-technical description may fit occasional walking. Avoid expedition language, rescue claims and promised physical performance improvements. These are fictional brand choices, not legal determinations.",
+      "contentHash": "41ebb85d319aa3824efeac3a2d0f3b3d0925830aa6ce2320178d57ee97a18ea4",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "audience-hikers:d7c5927404adc232736718ee:1",
+      "sourceId": "audience-hikers",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "audience-hikers"
+      },
+      "heading": "Limits",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "No field test, comfort trial or safety assessment occurred. The synthetic scenarios cannot prove durability, wilderness suitability, waterproofing or demand among real hikers.",
+      "contentHash": "da3ae6f5de4e520db9cf4cbaa468e45ecf72af1e026d35d76565780b238c00ca",
+      "wordCount": 23
+    },
+    {
+      "chunkId": "bottle-mini:67c44a2c0a60b5a175c5bf6a:1",
+      "sourceId": "bottle-mini",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle-mini"
+      },
+      "heading": "Capacity and materials",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Switchback Mini is a separate fictional 400-milliliter bottle with a stainless steel body and polypropylene lid. It is not the 650-milliliter Switchback bottle. Use the full product name when stating capacity.",
+      "contentHash": "ae9ce64725f769ed45453b496c4fb95ed6f9ae746582d2ae7ddaaedc02e95712",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "bottle-mini:97111003ee69e643df8177f1:1",
+      "sourceId": "bottle-mini",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle-mini"
+      },
+      "heading": "Care",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Hand-wash body and lid with mild soap and let them dry separately. No dishwasher suitability is documented for Mini. Do not copy cleaning claims from an unrelated container.",
+      "contentHash": "67f7de4880348daa934b960cb1a2650ad2950740cf6e9560c8c5f0342294b4b3",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "bottle-mini:752b59c182efc9699705e4b5:1",
+      "sourceId": "bottle-mini",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle-mini"
+      },
+      "heading": "Price and eligibility",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Switchback Mini costs 18 demo USD. The Autumn Everyday offer names the standard Switchback bottle and Dayline pack only; Mini is excluded unless campaign terms are explicitly revised.",
+      "contentHash": "7fc27960778be61cda86cbdc753fb0cd3a4b3eed18066fd12a49ca6995356d3d",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "bottle-mini:d4277fb2be5c9bbd7f30ad56:1",
+      "sourceId": "bottle-mini",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle-mini"
+      },
+      "heading": "Claim limits",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "No temperature-retention duration, medical benefit, leakproof certification or carbon-neutral certification is supplied for Mini. Stainless steel material alone does not establish any of those claims.",
+      "contentHash": "944a820994541151f730a0570a2a4b241259410173cee77f845392960bf99837",
+      "wordCount": 25
+    },
+    {
+      "chunkId": "bottle-mini:a086bcc8952eac67888c8871:1",
+      "sourceId": "bottle-mini",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle-mini"
+      },
+      "heading": "Selection",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Mini provides less nominal volume than the standard Switchback. Ask about preferred capacity rather than claiming a particular daily hydration benefit. No age-specific safety approval is included.",
+      "contentHash": "93bae91700cfed9f1c6ef2e68ab633b86277de0d087dbced6ea54d90a394c362",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "bottle:8e25556bcf89249215194b52:1",
+      "sourceId": "bottle",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle"
+      },
+      "heading": "Capacity and materials",
+      "sectionLine": 3,
+      "startLine": 4,
+      "endLine": 4,
+      "text": "The fictional Switchback bottle holds 650 milliliters. Its body is stainless steel with a removable polypropylene lid. The empty bottle weighs 310 grams. Available colors are Moss and Slate. It is not a water purifier. Do not imply that it makes untreated water safe to drink.",
+      "contentHash": "ad33750bb5fbe32993c0f9d8d424804982615bf41c36180231e26d2f5d995def",
+      "wordCount": 46
+    },
+    {
+      "chunkId": "bottle:12157541c03e5cec04a38487:1",
+      "sourceId": "bottle",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "bottle"
+      },
+      "heading": "Care and price",
+      "sectionLine": 5,
+      "startLine": 6,
+      "endLine": 6,
+      "text": "The Switchback bottle costs 28 demo USD before shipping. Wash the bottle and lid by hand with mild soap; it is not dishwasher safe. Do not microwave or freeze the bottle. No temperature-retention duration has been tested or approved for advertising.",
+      "contentHash": "a16ffa58860b668c51580b10f8f3ee3b53241ad5103288400aecefd1b71e56b9",
+      "wordCount": 41
+    },
+    {
+      "chunkId": "brand-positioning:72a6aa65f4834350c10cccc0:1",
+      "sourceId": "brand-positioning",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand-positioning"
+      },
+      "heading": "Position",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Luma Trail is a fictional everyday-carry brand for city trips and occasional short walks. It is not positioned as professional expedition, emergency survival, or medical equipment.",
+      "contentHash": "036db165abf99445c62eea9d167eebbf7ba2621a18083b098d0ece2361f8c66a",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "brand-positioning:dc0863373c8cec615b9bf4cc:1",
+      "sourceId": "brand-positioning",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand-positioning"
+      },
+      "heading": "Differentiation",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Describe documented features such as capacity, materials and care. There are no comparative laboratory tests against competitors in this corpus. Do not claim best-in-class durability or superior environmental performance.",
+      "contentHash": "53e4ddb3a060928068fc8e79f4bf867267cc072ee8e84de62928168defc61b60",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "brand-positioning:6df3d0fcfd13a2c880ff1cd2:1",
+      "sourceId": "brand-positioning",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand-positioning"
+      },
+      "heading": "Product families",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Switchback is a bottle family, Dayline is a pack, Waypoint is a sling, and Ridgeline is a tote. Similar names and use cases do not transfer capacities, materials or approved claims between products.",
+      "contentHash": "ce01fc081f8cce1a23dfdba0417beafc1065ccaf8e7197092b1338fd7f60783d",
+      "wordCount": 33
+    },
+    {
+      "chunkId": "brand-positioning:c27fdb603b3caed281bab44f:1",
+      "sourceId": "brand-positioning",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand-positioning"
+      },
+      "heading": "Price language",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Prices are demo USD for a fictional storefront. They are not market observations or current real-world offers. Use the applicable product document and active campaign terms before calculating a basket.",
+      "contentHash": "c1915ae64f0ad8145af57eaae47bb32d5b20b7c60357364bebbe2341316d3176",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "brand-positioning:53c28c525fd73932669bf0ef:1",
+      "sourceId": "brand-positioning",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand-positioning"
+      },
+      "heading": "Evidence hierarchy",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "For current product facts use active specifications; for allowed language also consult active claims policy. Archived content can explain past decisions but cannot authorize a present claim. When current sources conflict, abstain and request review.",
+      "contentHash": "0e72d65b63565d638849996bbc8e934a59af78c37b5402d7afbc9f0aeaf9dd9a",
+      "wordCount": 35
+    },
+    {
+      "chunkId": "brand:3c747f0cfeec4e9c4436e2b6:1",
+      "sourceId": "brand",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand"
+      },
+      "heading": "Identity and voice",
+      "sectionLine": 3,
+      "startLine": 4,
+      "endLine": 4,
+      "text": "Luma Trail is a fictional demonstration brand. Every product, policy, price and claim in this corpus is synthetic, authored for Campaign Compass. These documents do not describe Acumencia or a real business. The voice is practical, warm and specific. Use short sentences and concrete product details. Avoid superlatives, urgency pressure and promises of life transformation.",
+      "contentHash": "483f1bf259f1998a504bc3a2b609f40e88dd65c5c92d32d4880faf3c884c548a",
+      "wordCount": 55
+    },
+    {
+      "chunkId": "brand:285d73dc62c19a82b4d346a8:1",
+      "sourceId": "brand",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "brand"
+      },
+      "heading": "Audience",
+      "sectionLine": 5,
+      "startLine": 6,
+      "endLine": 6,
+      "text": "Luma Trail serves city commuters and occasional day hikers. Address everyday carrying needs, not technical mountaineering or emergency survival. Campaign performance in campaigns.csv is a separate synthetic teaching dataset and does not establish demand for Luma Trail products.",
+      "contentHash": "be040e1fb8f101ed9dc1615c5c6e72250ae1592291c5866d82f6baf316ceb379",
+      "wordCount": 38
+    },
+    {
+      "chunkId": "campaign-email:7a49a22ae4c4edcd7e45f177:1",
+      "sourceId": "campaign-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-email"
+      },
+      "heading": "Scope and provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "The fictional September 2026 email exercise used 1000 delivered messages. No actual recipients were contacted, and no real email service data was collected.",
+      "contentHash": "e9f0943c69b1a8dbdab0dfc214d4698d1a5fc0dc225633ff71043c21a49a3073",
+      "wordCount": 23
+    },
+    {
+      "chunkId": "campaign-email:474ec6a04591ce15749bd531:1",
+      "sourceId": "campaign-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-email"
+      },
+      "heading": "Observed metrics",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The authored example records 80 unique clicks and 12 attributed purchases. Click-through rate on delivered messages is 8 percent. There is no reliable open-count field in this scenario.",
+      "contentHash": "c804773f3369b649cef86c272fdca42075c41ee9ea92c7191c65617fd1159fe4",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "campaign-email:c4b2eaec698f6d1ed43473b8:1",
+      "sourceId": "campaign-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-email"
+      },
+      "heading": "Attribution",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Purchases use a fictional three-day click window. Delivered-message click rate is not interchangeable with ad-impression CTR. No spend field is available, so cost per acquisition and ROAS cannot be calculated.",
+      "contentHash": "cf2ee12f781e0aed673f10c5db112ac553efca5549beab2632f018674b2182e7",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "campaign-email:8de0d461859a4f8707896281:1",
+      "sourceId": "campaign-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-email"
+      },
+      "heading": "Creative",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "The subject-line scenario emphasized everyday carrying needs. There was no randomized subject-line test. The observed count cannot prove that the subject caused purchases.",
+      "contentHash": "ec7aedcf6d0b39822aa287bd122481e3c196c061f9c4c60c7dd780ebb8e6bf28",
+      "wordCount": 23
+    },
+    {
+      "chunkId": "campaign-email:6ec220cfb20173192f2211fc:1",
+      "sourceId": "campaign-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-email"
+      },
+      "heading": "Learning",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "A proposed next test would randomize a clearly documented subject-line variation. Keep factual product claims identical across arms and establish attribution before interpreting results.",
+      "contentHash": "1dc45e61ff0dd572468e968a9ce604580481b067f61ed1a2143da8671d7afcd9",
+      "wordCount": 24
+    },
+    {
+      "chunkId": "campaign-holdout:945c53e260c09aa029237a18:1",
+      "sourceId": "campaign-holdout",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-holdout"
+      },
+      "heading": "Scope and provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "This is a fictional arithmetic teaching scenario, not a real experiment. Two authored groups each contain 1000 eligible people. They must not be described as actual customers or test participants.",
+      "contentHash": "3772563c236f15e919dbe4f829fe915da8828f4255a544da7af1b88898444271",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "campaign-holdout:a3749b648de19962fa116d24:1",
+      "sourceId": "campaign-holdout",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-holdout"
+      },
+      "heading": "Observed metrics",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The treatment group has 40 purchases and the control group 30. The authored purchase rates are 4 percent and 3 percent, an absolute difference of 1 percentage point.",
+      "contentHash": "351b56c81f2c3a7bfbee18d52eb91348f91db3f3645221b9a3357268fdfdf636",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "campaign-holdout:8f1d43ab457da2bf3ede4939:1",
+      "sourceId": "campaign-holdout",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-holdout"
+      },
+      "heading": "Interpretation",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "The difference is a point estimate in a synthetic example. No statistical uncertainty analysis or implementation audit is supplied. Do not call it a significant lift or promise the same result in deployment.",
+      "contentHash": "4e21aeca4b7d1a3cfe4979e540956669bc56eb515e34c8549414cb02deb6bc32",
+      "wordCount": 33
+    },
+    {
+      "chunkId": "campaign-holdout:29d37fdb1cf7050c2aaea0bd:1",
+      "sourceId": "campaign-holdout",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-holdout"
+      },
+      "heading": "Design checks",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Before interpreting a real holdout, inspect random assignment, exposure contamination and consistent outcome windows. This document describes methodological questions, not evidence that these checks passed here.",
+      "contentHash": "623fbf8276762c911d8ea1c3cffc431fc5e64e1628a6768d942b004ea649c396",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "campaign-holdout:1bfefe6c25d87f9b48ecb4ad:1",
+      "sourceId": "campaign-holdout",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-holdout"
+      },
+      "heading": "Learning",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Do not merge this fictional holdout with the observational Spring or Summer reports. It has a different design and no revenue or cost fields, so it cannot establish profit or ROAS.",
+      "contentHash": "e5d7766bd3e5351b52a825e1d0d169883fd294120453922ad03f522282997e9d",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "campaign-spring:d6a69031a0c07ea788525708:1",
+      "sourceId": "campaign-spring",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-spring"
+      },
+      "heading": "Scope and provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "All figures in this review are invented Luma Trail teaching data for April 2026. They are separate from campaigns.csv. Do not combine them with dashboard totals or present them as real campaign performance.",
+      "contentHash": "91cd5a2f59fe7194958328d30d9eb8aa9b3ef3ddebb0b9dcca7ad3d18629cb98",
+      "wordCount": 33
+    },
+    {
+      "chunkId": "campaign-spring:ec315c15d23a9ef84d44f01d:1",
+      "sourceId": "campaign-spring",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-spring"
+      },
+      "heading": "Observed metrics",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The fictional campaign spent 1000 demo USD and recorded 2500 demo USD attributed revenue and 50 attributed purchases. Observed ROAS is 2.5 and cost per attributed purchase is 20 demo USD.",
+      "contentHash": "66c400699cf9117bf98cc54b993c77f5b7edf7036ae89bbe69d5802a17a7bd84",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "campaign-spring:3b531bd9b95c6233b34d2e8a:1",
+      "sourceId": "campaign-spring",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-spring"
+      },
+      "heading": "Attribution",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Revenue uses a fictional seven-day click attribution window. These observations do not measure incremental lift, profit, customer lifetime value or organic sales. Product and fulfillment costs are absent.",
+      "contentHash": "e591ea15da0004ab2540da63158d46131dbfd479b368223cb3df4d4b33e42947",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "campaign-spring:79a241769f26e22e14bea1a3:1",
+      "sourceId": "campaign-spring",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-spring"
+      },
+      "heading": "Creative and audience",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "The scenario used a capacity-focused Dayline message for commuters. No randomized control group or controlled creative split was included. Do not attribute the observed results to wording alone.",
+      "contentHash": "f9b4ff4bee1a285a722e487250dc58ffef6474614a944c3f4eda42ec5c04435e",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "campaign-spring:4246a7e0dd4459892505f7eb:1",
+      "sourceId": "campaign-spring",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-spring"
+      },
+      "heading": "Learning",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "A subsequent controlled test could compare capacity and organization themes with consistent attribution. This is a proposed learning step, not a conclusion that either message will outperform.",
+      "contentHash": "6de2cbc55bcc2fbf4eaa72dd3af5088c14b507329bf7229ace7fe896513f36f8",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "campaign-summer:fcbafa00e2c3d8f6792622c4:1",
+      "sourceId": "campaign-summer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-summer"
+      },
+      "heading": "Scope and provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "This fictional July 2026 review is authored teaching material. Its performance numbers are invented and separate from the dashboard dataset. The expired SUMMER15 terms govern its historical offer.",
+      "contentHash": "cc2ab62ff5149ba29a5b6c2bad3e4178ae32a00b2060699e55329b817358d66d",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "campaign-summer:7974e0344bf33e48e4d38a37:1",
+      "sourceId": "campaign-summer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-summer"
+      },
+      "heading": "Observed metrics",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The scenario spent 1200 demo USD and recorded 2400 demo USD attributed revenue and 60 attributed purchases. Observed ROAS is 2.0 and cost per attributed purchase is 20 demo USD.",
+      "contentHash": "8f847723db383e3e9bebec209e2e496a4fb77f9aa0227591830f30813598daff",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "campaign-summer:ca791b4ec8b82436070f945d:1",
+      "sourceId": "campaign-summer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-summer"
+      },
+      "heading": "Attribution",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "This scenario uses a fictional one-day view attribution window. It cannot be fairly ranked against Spring Carry seven-day click results without harmonizing measurement. Neither figure establishes incrementality.",
+      "contentHash": "16a06fe3f4ef4b363f3c8ce6d8b6a7919d1d4ee290b5e825b399a76eaa0165d9",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "campaign-summer:8f08dfb8b7c64c7460e483e3:1",
+      "sourceId": "campaign-summer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-summer"
+      },
+      "heading": "Creative and audience",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "The campaign scenario featured a discount-focused Dayline message to a mixed gifting and commuter audience. Audience composition, offer and attribution all differ from Spring Carry.",
+      "contentHash": "e6bcef3d464e8239fb105c4038d863e35a077584f57e156d0d025a72c2554abb",
+      "wordCount": 25
+    },
+    {
+      "chunkId": "campaign-summer:97e12cc3f86349514371ace0:1",
+      "sourceId": "campaign-summer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign-summer"
+      },
+      "heading": "Learning",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Do not conclude that capacity messaging beat discount messaging from these reports. Propose a controlled comparison with common measurement and audience definitions; record uncertainty in the draft brief.",
+      "contentHash": "9861a38d1fcea6a626e6b7c8a565ab31032b1839742f746fc02c89d60ecc136f",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "campaign:e8a37e066b013239e9e79099:1",
+      "sourceId": "campaign",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign"
+      },
+      "heading": "Offer and dates",
+      "sectionLine": 3,
+      "startLine": 4,
+      "endLine": 4,
+      "text": "The fictional Autumn Everyday campaign runs from October 1 through October 31, 2026. It targets city commuters. Offer code EVERYDAY10 takes 10 percent off one Switchback bottle or one Dayline pack. It does not stack with other discounts and does not apply to shipping. The free-shipping threshold is evaluated after discounts, as specified in the shipping policy.",
+      "contentHash": "3a48e8387045e4874a024c873cee9a3b3e122ee0fffa2dfd41ac3922e3cae2ac",
+      "wordCount": 57
+    },
+    {
+      "chunkId": "campaign:1199c56784976e9605665391:1",
+      "sourceId": "campaign",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "campaign"
+      },
+      "heading": "Deliverables and review",
+      "sectionLine": 5,
+      "startLine": 6,
+      "endLine": 6,
+      "text": "Draft one short social caption and one email subject line in the practical, warm brand voice. Include the offer end date when mentioning EVERYDAY10. Link factual statements to product or policy sources. A human must approve every draft before publication. Campaign Compass has no ad publishing connection and does not execute advertising spend.",
+      "contentHash": "f457e6258d9998064c6801ec92ff0fa8cfc9ca467bb83dc7de9473f667603cde",
+      "wordCount": 53
+    },
+    {
+      "chunkId": "claims-comparative:15ddb6f5b1cc38c463cc7620:1",
+      "sourceId": "claims-comparative",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-comparative"
+      },
+      "heading": "Policy scope",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "These are fictional internal editorial rules, not jurisdiction-specific law or platform policy. They supplement the core claims policy for all Luma Trail products.",
+      "contentHash": "9dfb01a4a5a9eda26f7a2f0301d3b44aaafc52010162cd33e01b4bc5cdf239ba",
+      "wordCount": 23
+    },
+    {
+      "chunkId": "claims-comparative:4de3ae801d3401f37dd27ba8:1",
+      "sourceId": "claims-comparative",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-comparative"
+      },
+      "heading": "Comparisons",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Do not use best, strongest or more comfortable than competitors without matching comparative evidence. No competitor benchmark or comfort trial is available. Product volume comparisons may use cited specifications.",
+      "contentHash": "5aae44adae30ceb15f6015352c7a058935874c14a9c456f7bb37843a120d9e7d",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "claims-comparative:abdc2789eceece848acd4bd9:1",
+      "sourceId": "claims-comparative",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-comparative"
+      },
+      "heading": "Testimonials",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "No real customer testimonials or endorsements are included. Authored audience scenarios are not testimonials. Do not turn their invented preferences into quotations attributed to real users.",
+      "contentHash": "f582cd7700e165bd2aa39357ccb661466faf7e60599923e364d09a761ae45521",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "claims-comparative:b24d2ec24aeb9b09983bb893:1",
+      "sourceId": "claims-comparative",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-comparative"
+      },
+      "heading": "Rejected example",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Rejected fictional copy: Doctors recommend Dayline for a pain-free commute. No medical endorsement or health outcome evidence exists. This sentence is a hard negative and must never be treated as approval.",
+      "contentHash": "d938ff8d1f85a0e3bdcc22759e6099212ca89a68c7bb8d802c4be18978d3f15e",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "claims-comparative:f1adb7dceb573ed93c36ed02:1",
+      "sourceId": "claims-comparative",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-comparative"
+      },
+      "heading": "Review",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Separate proposed creative language from factual assertions. Human reviewers verify claim scope, current sources and missing evidence. The application creates drafts only and has no publishing authority.",
+      "contentHash": "5f247ff9c1b0a284c6d03603f740a3ffdedc48151cacbbb91ab4f9e0cc4d7f9a",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "claims-environment:d70e5c025510d93e36580060:1",
+      "sourceId": "claims-environment",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-environment"
+      },
+      "heading": "Policy scope",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "This is an internal policy for the fictional Luma Trail exercise, not legal advice or a statement of real advertising law. It applies alongside the core advertising claims policy.",
+      "contentHash": "82af078b24d9ce6bf7ea0d292d78ba9040479ef3c98cdc3a580fbec2b2340f47",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "claims-environment:7a69eedbfb3f1225f144c5d4:1",
+      "sourceId": "claims-environment",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-environment"
+      },
+      "heading": "Evidence required",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Do not claim carbon neutrality, recycled-content percentages or lifecycle benefits without a current product-specific evidence document. No such certification or lifecycle assessment is provided in this corpus.",
+      "contentHash": "4d23ca3cf622c7557bf19f643abc952021463da3320d158af5fa6085e8688191",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "claims-environment:d2d97f8076d2ba4be58a76da:1",
+      "sourceId": "claims-environment",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-environment"
+      },
+      "heading": "Material versus outcome",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "A stainless steel body is a documented material fact for the matching bottle. That fact alone does not prove lower emissions, indefinite reuse, recyclability in every locality or an environmental advantage.",
+      "contentHash": "6e90e9cf8b9222dffc12f4e0bfa003fefbfbc07ae8921af8fdb6a773345a8eae",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "claims-environment:f3d612ff56c1ff02b58f8d44:1",
+      "sourceId": "claims-environment",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-environment"
+      },
+      "heading": "Rejected example",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Rejected fictional caption: Our carbon-neutral bottle saves the planet. This is a negative example, not an approved claim. Retrieval of this sentence must not convert it into usable product evidence.",
+      "contentHash": "f5173b3e97ecbb26c6ad5c83cd63987982767f056401d9b1c70de4ac1ecce392",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "claims-environment:f0d82ef14060945248c1d7de:1",
+      "sourceId": "claims-environment",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims-environment"
+      },
+      "heading": "Allowed approach",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Use current material and care facts without adding environmental outcomes. If a user requests a sustainability claim beyond the available evidence, state the evidence gap and request human review.",
+      "contentHash": "9e8b7d37a7c1c2e52a69166aff7a1457854c1897fb67d7c2f4ed363cd1e2f215",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "claims:5e73749ef66bc5b12401fc3c:1",
+      "sourceId": "claims",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims"
+      },
+      "heading": "Approved and prohibited claims",
+      "sectionLine": 3,
+      "startLine": 4,
+      "endLine": 4,
+      "text": "Use only documented product capacities, weights, materials, care instructions and demo prices. Neither Switchback nor Dayline may be described as waterproof, carbon neutral, medically beneficial or guaranteed to improve performance. The Switchback bottle has no approved temperature-retention duration. The Dayline pack may be described as resisting light splashes, with the limitation that it is not waterproof.",
+      "contentHash": "7ffd1321b74c8d86ed83518f5c7bc661422c380a467114f29b2efdb667ade3e8",
+      "wordCount": 56
+    },
+    {
+      "chunkId": "claims:6a0770130a0e050027b15667:1",
+      "sourceId": "claims",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "claims"
+      },
+      "heading": "Evidence and creative language",
+      "sectionLine": 5,
+      "startLine": 6,
+      "endLine": 6,
+      "text": "Factual campaign statements must cite their product specification or policy section. Creative slogans are proposals requiring human review, not facts or endorsements. Do not invent testimonials, scarcity, comparative superiority or certifications. A product fact in one document does not authorize claims about another product.",
+      "contentHash": "e4c0a44820f7656c69b4ce78ff4f7a7e5dd5826d658d3ebfddecc97a95a1a142",
+      "wordCount": 44
+    },
+    {
+      "chunkId": "dayline-v1:961cdc7c2843c15d3795f1c5:1",
+      "sourceId": "dayline-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2025-01-01",
+        "status": "superseded",
+        "supersededBy": "pack",
+        "scope": "dayline-v1"
+      },
+      "heading": "Historical capacity",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "ARCHIVED: Dayline v1 listed 16 liters during the fictional 2025 pilot. This document was superseded by the active Dayline specification. Do not use 16 liters for the current 18-liter product.",
+      "contentHash": "a9bbdabdccab1691204d2a83f6584522f88f07928eb1360e59647b03c7e7439e",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "dayline-v1:c3ecaf0759f3d517510438ae:1",
+      "sourceId": "dayline-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2025-01-01",
+        "status": "superseded",
+        "supersededBy": "pack",
+        "scope": "dayline-v1"
+      },
+      "heading": "Historical price",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The pilot list price was 42 demo USD. It was a synthetic planning value, not a measured market price. The current product document governs present basket calculations.",
+      "contentHash": "d05d6bb1df6ef9e17fa5615bceb65083883a005f71bd04ab41c13a28a3155107",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "dayline-v1:a40a796f99a0e03cd2f0fd1e:1",
+      "sourceId": "dayline-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2025-01-01",
+        "status": "superseded",
+        "supersededBy": "pack",
+        "scope": "dayline-v1"
+      },
+      "heading": "Historical care",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "The pilot instructed spot-cleaning and air drying. An unchanged care statement does not make all other historical details current. Treat facts individually within their version scope.",
+      "contentHash": "d3ee75286ecce02fe9da7a1e8ccdbb52545c7803faf2ab9eaf640d2cc24e8c3b",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "dayline-v1:d1b786bb55f167f4d96a7928:1",
+      "sourceId": "dayline-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2025-01-01",
+        "status": "superseded",
+        "supersededBy": "pack",
+        "scope": "dayline-v1"
+      },
+      "heading": "Supersession",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "The active source ID pack replaces this specification as of October 1, 2026. Current campaigns must cite pack for capacity. This archive is retained to test wrong-version retrieval.",
+      "contentHash": "8cc161142b720b1f0c6d61e56d2086b6360c3f4814c2fd0eef2e137cbb40512b",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "dayline-v1:6b8273fc626ec4d42d01faac:1",
+      "sourceId": "dayline-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2025-01-01",
+        "status": "superseded",
+        "supersededBy": "pack",
+        "scope": "dayline-v1"
+      },
+      "heading": "Archive use",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Use this document only for an explicitly historical question about the fictional pilot. It cannot establish current inventory, sales, customer preferences or product testing.",
+      "contentHash": "937620c093266d3affb0af70f2b7d1eaca9bd628fff5bd4d13de4b0227e96274",
+      "wordCount": 24
+    },
+    {
+      "chunkId": "faq:d3601a36bb2437011fad96e2:1",
+      "sourceId": "faq",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "faq"
+      },
+      "heading": "Choosing a product",
+      "sectionLine": 3,
+      "startLine": 4,
+      "endLine": 4,
+      "text": "For carrying a drink, consider the 650-milliliter Switchback bottle. For carrying everyday essentials, consider the 18-liter Dayline pack. They solve different needs; this corpus does not rank either as the best product. Ask which product and use case the customer means when a question is underspecified.",
+      "contentHash": "310abcd05f7dad75ee0a327b8960ac091d1cec96d0e2a80099d910825c2b49c2",
+      "wordCount": 46
+    },
+    {
+      "chunkId": "faq:e468d115eab87dd6af301486:1",
+      "sourceId": "faq",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "faq"
+      },
+      "heading": "Unknown information",
+      "sectionLine": 5,
+      "startLine": 6,
+      "endLine": 6,
+      "text": "No customer reviews, customer identities, inventory counts, supplier identities or competitor comparisons are provided. No conversion-lift experiment has been conducted for these fictional products. Do not infer sales forecasts or product effectiveness from the separate synthetic campaign dashboard.",
+      "contentHash": "eb2bda574dd88f471f60b65cc4f158151a438fd9a5b15d22cc171b2d7a497ae2",
+      "wordCount": 38
+    },
+    {
+      "chunkId": "measurement:3fa0bd7dd3ddab2df3e1f1bb:1",
+      "sourceId": "measurement",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "measurement"
+      },
+      "heading": "ROAS",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Observed ROAS equals attributed revenue divided by advertising spend when spend is positive. It excludes non-ad costs and does not establish incremental revenue. State the attribution window alongside a comparison.",
+      "contentHash": "aaeac32b45e2ef7d6c289c2e5bca5b9f3aa5cd31d7823509be6ec3a244d2230b",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "measurement:07a38f860778a2539b4949bb:1",
+      "sourceId": "measurement",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "measurement"
+      },
+      "heading": "Acquisition cost",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Cost per attributed purchase equals spend divided by attributed purchases when purchases are positive. If purchases are zero or missing, the ratio is undefined; do not replace it with zero.",
+      "contentHash": "c72576343e975b1f3419cdebd77b935b738c73942d586568adaf64f3b2b53dea",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "measurement:144d5b11e2c3be1a1758f3c9:1",
+      "sourceId": "measurement",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "measurement"
+      },
+      "heading": "Rate denominators",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Ad CTR uses clicks divided by impressions. Email delivered-message click rate uses unique clicks divided by delivered messages. Different denominators must be named and should not be silently compared.",
+      "contentHash": "fd5283036e2bc831e5cad287dc8fa20269e2c18fbc0565fd1ceb48b76514c851",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "measurement:d9901e16a7848d1be65d53c9:1",
+      "sourceId": "measurement",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "measurement"
+      },
+      "heading": "Causal limits",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Observational differences may reflect audience, season, offer or attribution differences. A controlled design and uncertainty analysis are needed before making causal claims. The fictional reports do not establish real effects.",
+      "contentHash": "ecfa925cb33df3eec4e05d4d58f9d8f6e65d8d43de067e683b2a7f5b2e2841af",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "measurement:baaee8014031967177d9678f:1",
+      "sourceId": "measurement",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "measurement"
+      },
+      "heading": "Dataset separation",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Luma Trail narrative campaign reports and campaigns.csv are independent synthetic datasets. Never join them on similar channel names or dates. Missing identity and measurement links make such a combination unsupported.",
+      "contentHash": "5b2ba4b96ab5cdc7a25ca92c074d6a6581fa3ef177f35ed123e82a50c8eba17d",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "offer-examples:e3aee0dee5f70b10efe7e80f:1",
+      "sourceId": "offer-examples",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "offer-examples"
+      },
+      "heading": "Scope",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "These are synthetic worked examples for the active Autumn Everyday campaign. Current campaign and shipping policy remain the authoritative terms. The examples do not introduce additional eligible products.",
+      "contentHash": "e668daba8a30b36a80ef9d02820ae3848644471bbeaba7a7d01bc405070f0f93",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "offer-examples:36e52046afdec8537cbf1ea1:1",
+      "sourceId": "offer-examples",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "offer-examples"
+      },
+      "heading": "Threshold arithmetic",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "An eligible merchandise subtotal of 80 demo USD becomes 72 after a 10 percent discount. Because 72 is below the active 75 threshold, standard shipping is not free. Cite both campaign and shipping terms when explaining.",
+      "contentHash": "05f77006143f0d5a8bed77b11592749fb24289f97d57b027ae34a3a981f6e403",
+      "wordCount": 36
+    },
+    {
+      "chunkId": "offer-examples:41ceee10d4394117fbd934ba:1",
+      "sourceId": "offer-examples",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "offer-examples"
+      },
+      "heading": "Threshold boundary",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "A post-discount merchandise subtotal exactly equal to 75 demo USD qualifies for free standard shipping. Shipping charges themselves do not count toward the merchandise threshold.",
+      "contentHash": "6d95f2b16519c7b0cd33b006f8394edecf43ecc22ab70c31be9691d6269bd919",
+      "wordCount": 25
+    },
+    {
+      "chunkId": "offer-examples:398c9e2ed56b86a7d42f6152:1",
+      "sourceId": "offer-examples",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "offer-examples"
+      },
+      "heading": "Excluded products",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Waypoint, Ridgeline and Switchback Mini are excluded from EVERYDAY10. Do not discount them because their names resemble eligible products. An example basket cannot override explicit eligibility.",
+      "contentHash": "eb8dc0e1fd952c07fb9da265b557748190f8e2c3ccd4c8c552a69825db3d332f",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "offer-examples:60e52bac175e6d66d2d527bc:1",
+      "sourceId": "offer-examples",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "offer-examples"
+      },
+      "heading": "Unknown baskets",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "For mixed baskets or multiple eligible items where the one-item offer allocation is unspecified, ask for clarification or review. Do not invent a stacking or allocation rule absent from the campaign terms.",
+      "contentHash": "211951c6127e59d92792a91bf11109774cacb8d30a563db9fcb3cae33498fff4",
+      "wordCount": 32
+    },
+    {
+      "chunkId": "pack:2efb7f525fb9bf8f852dd487:1",
+      "sourceId": "pack",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "pack"
+      },
+      "heading": "Capacity and fit",
+      "sectionLine": 3,
+      "startLine": 4,
+      "endLine": 4,
+      "text": "The fictional Dayline pack has an 18-liter capacity and weighs 540 grams. It has adjustable shoulder straps, one main compartment and a sleeve for laptops up to 13 inches. It is intended for city commutes and short day walks. Available colors are Moss and Sand.",
+      "contentHash": "4ce00fb12a2c9698b77e3bcc21f349e18c1471cc12ef45a44a0a44096524e9e5",
+      "wordCount": 45
+    },
+    {
+      "chunkId": "pack:9a3b52f9ae5513336f06ce8c:1",
+      "sourceId": "pack",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "pack"
+      },
+      "heading": "Care and price",
+      "sectionLine": 5,
+      "startLine": 6,
+      "endLine": 6,
+      "text": "The Dayline pack costs 64 demo USD before shipping. Spot-clean with mild soap and air dry. Do not machine wash. The shell resists light splashes but is not waterproof. There is no approved load rating or mountaineering safety certification.",
+      "contentHash": "2f2ac5176fc175c052ff79986d0f67a918dd94d7556727c1bb4da47cd73cbafa",
+      "wordCount": 39
+    },
+    {
+      "chunkId": "shipping-v1:45e99cc46f0108fc5866a363:1",
+      "sourceId": "shipping-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "superseded",
+        "supersededBy": "shipping",
+        "scope": "shipping-v1"
+      },
+      "heading": "Historical threshold",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "ARCHIVED: free standard shipping formerly required a 60 demo USD post-discount subtotal. This fictional rule expired September 30, 2026. The active shipping document sets the current threshold.",
+      "contentHash": "3b4f1103e5ecd2cafc10acf06e14e2a119d91b08dc29ecf2e3cf105fb331b6be",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "shipping-v1:0b0999b096130c6e45e07b74:1",
+      "sourceId": "shipping-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "superseded",
+        "supersededBy": "shipping",
+        "scope": "shipping-v1"
+      },
+      "heading": "Historical fee",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The prior standard shipping fee was 5 demo USD. Do not use that figure for current offers or compare it to a real carrier tariff. It is synthetic exercise data.",
+      "contentHash": "02de73d022a12515b058c554c6218906a18cd8381db35501c8ed58c058b90c07",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "shipping-v1:94f1be9e9b49c8284eae2694:1",
+      "sourceId": "shipping-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "superseded",
+        "supersededBy": "shipping",
+        "scope": "shipping-v1"
+      },
+      "heading": "Historical scope",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "The old policy covered the fictional domestic demonstration storefront only. It supplied no international service terms. Do not infer international eligibility from the absence of a prohibition.",
+      "contentHash": "fe9fed683554cca36cbad3276bd544abcf05654ac1c46db02a44f43ced2864b8",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "shipping-v1:dfee960e570a379826321852:1",
+      "sourceId": "shipping-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "superseded",
+        "supersededBy": "shipping",
+        "scope": "shipping-v1"
+      },
+      "heading": "Supersession",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Source ID shipping supersedes this archive effective October 1, 2026. A current basket must apply the active post-discount threshold and fee, not whichever retrieved passage appears first.",
+      "contentHash": "ebda59bad01f5cf690f7023e8b3732f6761b3526ec9560c380fcc52ee8e59ad3",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "shipping-v1:721cab811739dfc15b56930f:1",
+      "sourceId": "shipping-v1",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "superseded",
+        "supersededBy": "shipping",
+        "scope": "shipping-v1"
+      },
+      "heading": "Archive use",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Retained for version-conflict testing. This archive is evidence about an old fictional policy, not permission to advertise it today. Explicit historical filtering is required to retrieve it.",
+      "contentHash": "383ebfa3a795b94de91ec7137669fe4d26861546e273980cda60f4d1481e07d4",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "shipping:62c29fa304e099ef1352deab:1",
+      "sourceId": "shipping",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "shipping"
+      },
+      "heading": "Delivery",
+      "sectionLine": 3,
+      "startLine": 4,
+      "endLine": 4,
+      "text": "This fictional store ships only to the contiguous United States. Standard delivery takes 5 to 7 business days after dispatch. Standard shipping costs 6 demo USD per order, and is free when the merchandise subtotal after discounts is at least 75 demo USD. Taxes are not specified. No express shipping or international delivery is offered.",
+      "contentHash": "b3f7fd3c316086c4751e80e7d3c783a89de089b745703ea780059e8b465d28e4",
+      "wordCount": 55
+    },
+    {
+      "chunkId": "shipping:12056367dec2bbf5010ac6e1:1",
+      "sourceId": "shipping",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "shipping"
+      },
+      "heading": "Returns",
+      "sectionLine": 5,
+      "startLine": 6,
+      "endLine": 6,
+      "text": "Unused products can be returned within 30 calendar days of delivery with proof of purchase. Customers pay return postage unless the item arrived damaged. Contact the fictional support team before returning damaged goods. Used items and purchases without proof of purchase are outside this demo return policy. No lifetime warranty is promised.",
+      "contentHash": "3a7656d2ff45db434aba04005b815e6b34c7cada69772580b37ffa95a50f8bda",
+      "wordCount": 52
+    },
+    {
+      "chunkId": "sling:cfa05f45664f09de3db30281:1",
+      "sourceId": "sling",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "sling"
+      },
+      "heading": "Capacity and dimensions",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "The fictional Waypoint sling holds 3 liters and measures 28 by 16 by 8 centimeters. Its small volume is not equivalent to the Dayline pack. Capacity alone does not guarantee that a particular device fits.",
+      "contentHash": "9e359cf95111f0b3e31081d8fff18c557cfea8b5c87e2a66a5b641cddbac3445",
+      "wordCount": 35
+    },
+    {
+      "chunkId": "sling:7e157a93e5fc38372bf38475:1",
+      "sourceId": "sling",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "sling"
+      },
+      "heading": "Materials",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The shell is woven nylon with a polyester lining. The adjustable webbing strap fits circumferences from 70 to 120 centimeters. No waterproof coating certification is documented.",
+      "contentHash": "9a37bc8e36c23b02ac680508dbcd7afea358a61e89edf7c97cb3eaa87132400c",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "sling:1b4710605cb49a121e790395:1",
+      "sourceId": "sling",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "sling"
+      },
+      "heading": "Care and price",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Spot-clean using mild soap and air dry. Do not machine wash. The demo list price is 35 demo USD. EVERYDAY10 applies only to Switchback and Dayline, so Waypoint is excluded.",
+      "contentHash": "a31d667691a7ec139ce86eae9f544c2019b4ca141da047b2a4660ddd7544bbd0",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "sling:83bfb5f69021f0f667c8df17:1",
+      "sourceId": "sling",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "sling"
+      },
+      "heading": "Use and limits",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "Waypoint is intended for small everyday items such as keys and a wallet. There is no protective equipment certification, load rating, or theft-prevention guarantee. Do not invent one.",
+      "contentHash": "1eb3339b2a7e3c164cd9035d58deab2d01af0eac2b799248c13d76c9e0f8a2bf",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "sling:05afc9f4aed20a1995d28dc5:1",
+      "sourceId": "sling",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "sling"
+      },
+      "heading": "Selection",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "For larger carrying needs, compare the 18-liter Dayline pack or 12-liter Ridgeline tote. Ask about intended contents before recommending a fit; the fictional specifications do not describe every device.",
+      "contentHash": "1fe25cf91661cac5cb0b00d6dfded9e1e474c632d64b28cec7e87f13ef9577bb",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "source-register:0a6b64a37d828d84a803831e:1",
+      "sourceId": "source-register",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "source-register"
+      },
+      "heading": "Provenance",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Every document in this corpus is original synthetic teaching material authored for Campaign Compass. Products, research scenarios, policies and results are fictional. No Acumencia private files or real customer data are included.",
+      "contentHash": "beb8aa6113cb6d256041b6cf1696f6a63dd595ecb2ff8c95c641071be8d49031",
+      "wordCount": 32
+    },
+    {
+      "chunkId": "source-register:8f3174f45fb696d84f3dd8cb:1",
+      "sourceId": "source-register",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "source-register"
+      },
+      "heading": "Current scope",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Current questions use documents marked active. Historical records remain inspectable but are excluded from unfiltered retrieval. An explicit source selection permits historical inspection and must retain its archive label.",
+      "contentHash": "43f4fb4de84a07c768bf9914b20bc70c22e082fe92f0ddc5fbe1a112b41488ec",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "source-register:2dad0188b2584e91d76c3b8e:1",
+      "sourceId": "source-register",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "source-register"
+      },
+      "heading": "Supersession",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "The active pack document supersedes dayline-v1. The active shipping document supersedes shipping-v1. summer-offer is expired. Similar names never authorize substitution across products or versions.",
+      "contentHash": "74d31692907fdbcf887fb2c4344b3741bf3c144b5c75b23c4cb9118141766208",
+      "wordCount": 24
+    },
+    {
+      "chunkId": "source-register:3b051bea1e12f08d6f97f61b:1",
+      "sourceId": "source-register",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "source-register"
+      },
+      "heading": "Conflict handling",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "If two active sources disagree on the same scoped fact, identify the conflict and abstain instead of choosing a convenient passage. A later ingestion timestamp alone does not establish a later effective policy.",
+      "contentHash": "eca6a22a7fa81b6db1b50dc86f56dac70a37b9e8ccce1f92fbaaea6f4712462b",
+      "wordCount": 33
+    },
+    {
+      "chunkId": "source-register:dfd6ba7a77f48318ef869011:1",
+      "sourceId": "source-register",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "source-register"
+      },
+      "heading": "Evaluation boundary",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Citation quote matching verifies that text exists in a supplied passage. It does not establish that the passage supports the generated claim. Human review must check meaning, product scope and effective version.",
+      "contentHash": "84bf8f1718f40d7fe3c9d52e57b398369f764d168e9ed3a7d795ea820cd5a327",
+      "wordCount": 32
+    },
+    {
+      "chunkId": "summer-offer:d4249ca7cd1a3d3fbfab0427:1",
+      "sourceId": "summer-offer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "expired",
+        "supersededBy": "none",
+        "scope": "summer-offer"
+      },
+      "heading": "Offer period",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "EXPIRED: SUMMER15 reduced the fictional Dayline pilot price by 15 percent from July 1 through July 31, 2026. It is not an active alternative to EVERYDAY10.",
+      "contentHash": "c5986c6fdaca1a9c13a6a44b9050309de151528240cfa1207834921c90c10802",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "summer-offer:74de6fce51bc00e8fd86cd2d:1",
+      "sourceId": "summer-offer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "expired",
+        "supersededBy": "none",
+        "scope": "summer-offer"
+      },
+      "heading": "Eligibility",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The summer offer covered Dayline only and did not apply to bottles, slings, totes or shipping. Product family similarity did not broaden eligibility.",
+      "contentHash": "ded3cf88e0075bf75e84974178202e558d7411fae39b87b6d195e1f213fd9b8b",
+      "wordCount": 23
+    },
+    {
+      "chunkId": "summer-offer:ca8e2d06643e949e6dff7358:1",
+      "sourceId": "summer-offer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "expired",
+        "supersededBy": "none",
+        "scope": "summer-offer"
+      },
+      "heading": "Stacking",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "The summer code could not be stacked with other offers. Its historical percentage must not be substituted into an Autumn Everyday basket calculation.",
+      "contentHash": "2804508504f7ca432a4446d3b3bd640c0afd8f84eae2605d457c0b7a007d85cc",
+      "wordCount": 23
+    },
+    {
+      "chunkId": "summer-offer:351089fb37e5652e961a3551:1",
+      "sourceId": "summer-offer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "expired",
+        "supersededBy": "none",
+        "scope": "summer-offer"
+      },
+      "heading": "Supersession",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "The summer campaign ended without renewal. Autumn Everyday is a separate campaign with its own terms. An expired offer is not automatically extended by a later campaign.",
+      "contentHash": "6fbc2fc6617222d394f6651e955a6cc9b0393f274cab93e0b1a5af111e7d290f",
+      "wordCount": 27
+    },
+    {
+      "chunkId": "summer-offer:e2310dd282f17ea9454e5f8a:1",
+      "sourceId": "summer-offer",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-07-01",
+        "status": "expired",
+        "supersededBy": "none",
+        "scope": "summer-offer"
+      },
+      "heading": "Archive use",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "This source is a deliberate hard negative for current discount queries. It supports historical offer questions only and contains no real transaction or redemption records.",
+      "contentHash": "ecde8d8715290480727ca502a9240e59a0767f54d801cd8429cc16c160450c19",
+      "wordCount": 25
+    },
+    {
+      "chunkId": "tote:33fa59ad1b3da7bbe0a8afb9:1",
+      "sourceId": "tote",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "tote"
+      },
+      "heading": "Capacity and dimensions",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "The fictional Ridgeline tote holds 12 liters and measures 36 by 30 by 12 centimeters. Capacity is a nominal internal volume, not a certified maximum load.",
+      "contentHash": "f38cc181399b3289178c430b9528a796ebebbb42f4ccafcd6a2ae568d5f5212e",
+      "wordCount": 26
+    },
+    {
+      "chunkId": "tote:09507eef9cbfbf0b8d54bf4f:1",
+      "sourceId": "tote",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "tote"
+      },
+      "heading": "Materials",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "The tote has a cotton canvas body and fixed cotton handles. It has no closure or padded electronics compartment. Do not describe it as providing the protection of a dedicated laptop case.",
+      "contentHash": "f40f7ada865fd47166aeaacf3d30ef861adfaeb2339d805d14c62cb63cb2e64d",
+      "wordCount": 32
+    },
+    {
+      "chunkId": "tote:e650d657b6fe768e48c04a7d:1",
+      "sourceId": "tote",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "tote"
+      },
+      "heading": "Care and price",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Spot-clean and air dry. Color transfer testing has not been performed in this synthetic scenario. The demo list price is 30 demo USD and the tote is not eligible for EVERYDAY10.",
+      "contentHash": "199622f3b1c46da76fd13091900aeb30f08fd208f14cb74362ab332339a3e7f6",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "tote:f303e5e69f6bb5ce0fc194ad:1",
+      "sourceId": "tote",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "tote"
+      },
+      "heading": "Weather limits",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "No waterproof or water-resistance claim is approved for Ridgeline. Dayline light-splash resistance applies only to Dayline. Carrying a bottle in the tote does not change the tote material rating.",
+      "contentHash": "f8d0b31a5705348ea86841770f71e3e43bbb51245f9814376be1470c718dd13d",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "tote:984c1f9117e78f1df2bffe2a:1",
+      "sourceId": "tote",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "tote"
+      },
+      "heading": "Selection",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Ridgeline may suit open-access carrying needs. Ask whether closure, padding or hands-free carrying is required before choosing it over a pack or sling. No comparative comfort study is available.",
+      "contentHash": "74ffb579ce7b0f78176287513bc52479c945a4c42b63ff9ea6e4f9e383ace467",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "voice-email:af6f9f880cafd446da523e6c:1",
+      "sourceId": "voice-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-email"
+      },
+      "heading": "Subject lines",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Use a specific product or use case in subject lines, with a fictional editorial target of 45 characters or fewer. Avoid false reply prefixes, invented scarcity, and guaranteed outcomes.",
+      "contentHash": "ebf3d571f54326d4356ecccddc3e119420dcca0898be53a6489bcf0d3f1cd197",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "voice-email:0095d7519254d4252e32d4fd:1",
+      "sourceId": "voice-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-email"
+      },
+      "heading": "Offer disclosure",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "When mentioning EVERYDAY10, include its October 31, 2026 end date and non-stacking condition in the body. Do not imply that shipping is discounted. The campaign and shipping documents govern exact eligibility.",
+      "contentHash": "b35e6a3d8628fc5bbb0bf66a185c7a5e83b8f9b2aa59c8fd9ba4a796c36fed9b",
+      "wordCount": 31
+    },
+    {
+      "chunkId": "voice-email:733e55225f41c8ccc98ab483:1",
+      "sourceId": "voice-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-email"
+      },
+      "heading": "Examples",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "A style example is Everyday space for your commute. This describes a theme, not evidence of increased productivity. Any numerical capacity must come from the matching product specification.",
+      "contentHash": "9475e88147184fffc3ac0d6f9cdf02679e8eaf69e8f3ad0c3e21fb8a847b20de",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "voice-email:652a1db1e42e1f7e4679c70f:1",
+      "sourceId": "voice-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-email"
+      },
+      "heading": "Audience adaptation",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "For fictional commuter research, emphasize carrying needs and care. For occasional day hikers, explain product limitations. Do not imply that the same message was proven to work for both groups.",
+      "contentHash": "28db9e48b60bb3c16d05d811abfaf3a189d21a91f78d54beffc40dadf63ff099",
+      "wordCount": 30
+    },
+    {
+      "chunkId": "voice-email:5087829af1a1a7ed5f2410fe:1",
+      "sourceId": "voice-email",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-email"
+      },
+      "heading": "Review",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "Link factual claims to source sections in the internal draft. A human reviews tone, product scope and offer dates before release. This application does not send marketing emails.",
+      "contentHash": "db868a37d373e142ff297a8c04fbafa68c4f1f24f908e0e85da35eb34f327b27",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "voice-social:4c7ff6aab36df5c1d6268ec0:1",
+      "sourceId": "voice-social",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-social"
+      },
+      "heading": "Caption structure",
+      "sectionLine": 4,
+      "startLine": 5,
+      "endLine": 5,
+      "text": "Open with a concrete everyday use, name one supported product fact, and finish with an optional invitation. For Dayline, commuting with an 18-liter pack is supported; becoming more productive is not a measured outcome.",
+      "contentHash": "3225a1bcb5f70473acc4b7e71479b9bd1f4ea3f5a10487891d03036191028565",
+      "wordCount": 34
+    },
+    {
+      "chunkId": "voice-social:49ebb04aa0282feedc499de7:1",
+      "sourceId": "voice-social",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-social"
+      },
+      "heading": "Examples",
+      "sectionLine": 7,
+      "startLine": 8,
+      "endLine": 8,
+      "text": "Approved fictional example: Carry your everyday essentials in the 18-liter Dayline pack. Avoid: The ultimate pack that transforms every commute. Approval covers style only; offer and specification details still need their own current sources.",
+      "contentHash": "be3784106b75da236e2047eaa8c9710b2bb4b08cff3d579a44fd5dd443a201e9",
+      "wordCount": 34
+    },
+    {
+      "chunkId": "voice-social:85a5d40663465b170bbdd37c:1",
+      "sourceId": "voice-social",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-social"
+      },
+      "heading": "Accessibility",
+      "sectionLine": 10,
+      "startLine": 11,
+      "endLine": 11,
+      "text": "Use descriptive language instead of emoji-only instructions. Put essential offer conditions in readable copy. Describe the product in image alt text without adding unverified benefits or demographic assumptions.",
+      "contentHash": "6649ee5ad449a236534de7ef8ea613770e07ce5c0b6bab8dfe188c61ca1c8e09",
+      "wordCount": 28
+    },
+    {
+      "chunkId": "voice-social:17b1bdd2685e25092959a1da:1",
+      "sourceId": "voice-social",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-social"
+      },
+      "heading": "Channel limits",
+      "sectionLine": 13,
+      "startLine": 14,
+      "endLine": 14,
+      "text": "For this exercise, proposed social captions should stay below 240 characters and contain at most one optional hashtag. These are fictional editorial preferences, not platform limits or advertising law.",
+      "contentHash": "8c986a46f82a81990f214d3a8cc6f6b36a194f3a0bf0c69f4d7a0d12ef8564b0",
+      "wordCount": 29
+    },
+    {
+      "chunkId": "voice-social:92afc0fde29aba0a585ed5d2:1",
+      "sourceId": "voice-social",
+      "metadata": {
+        "provenance": "synthetic",
+        "owner": "Campaign Compass teaching corpus",
+        "version": "1.0",
+        "effective": "2026-10-01",
+        "status": "active",
+        "supersededBy": "none",
+        "scope": "voice-social"
+      },
+      "heading": "Review",
+      "sectionLine": 16,
+      "startLine": 17,
+      "endLine": 17,
+      "text": "A reviewer checks each factual phrase against current specifications and claims policy. A draft is not publication approval. Do not present invented customer quotations as testimonials.",
+      "contentHash": "21d6c2ecba90bcc1dfdcf97dfe9bbb4b0b12cca15de7b7cf6394ee815742c2b2",
+      "wordCount": 26
+    }
+  ],
+  "providers": {
+    "embeddings": "not_configured",
+    "generation": "not_configured"
+  },
+  "ingestedAt": "2026-10-18T19:16:25.240Z"
+}

@@ -73,3 +73,11 @@ test('stale session contracts fail closed while a normal API abort stays an abor
   await assert.rejects(aborted.api('/api/chatgpt/session'),error=>error.name==='AbortError');
   await assert.rejects(stale.api('https://invalid.example/api/chatgpt/session'),/Unsupported/);
 });
+
+test('late session refresh cannot replace newer provider setup or mark its service unavailable',async()=>{
+ for(const fail of [false,true]){
+  const prior={csrf:'fixture',keySettings:{available:true},connected:false,profiles:[],apiKey:{provider:'anthropic',generationConfigured:false}},current={...prior,apiKey:{provider:'anthropic',generationConfigured:true}};
+  let release;const client=new ChatGPTClient({fetcher:async route=>route==='/api/session'?new Promise((resolve,reject)=>{release=()=>fail?reject(Error('stale response')):resolve(json(prior));}):json(current)});client.available=true;client.state=prior;
+  const stale=client.refresh();client.state=await client.api('/api/provider/configure',{body:{provider:'anthropic',enabled:true,model:'claude-sonnet-4-6'}});release();await stale;assert.deepEqual(client.state,current);assert.equal(client.available,true);
+ }
+});

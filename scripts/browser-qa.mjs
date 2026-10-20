@@ -10,7 +10,7 @@ try{
   await page.goto(appURL);await page.locator('#dashboard').waitFor({state:'visible'});
   assert.match(await page.locator('#filter-summary').innerText(),/336 daily records/);record('Dataset and overview render');
   await page.locator('#brief-button').click();await page.locator('#answer .answer-card').waitFor();
-  assert.match(await page.locator('#answer').innerText(),/total.spend/);assert.match(await page.locator('.mode-banner').innerText(),/No live model/);
+  assert.match(await page.locator('#answer').innerText(),/total.spend/);assert.match(await page.locator('#assistant-dialog .mode-banner').innerText(),/No live model/);
   await page.keyboard.press('Escape');assert.equal(await page.locator('#assistant-dialog').evaluate(d=>d.open),false);assert.equal(await page.evaluate(()=>document.activeElement.id),'brief-button');record('Grounded brief, Escape, focus return');
   await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement.id),'start');record('Keyboard navigation reaches date filters');
   await page.getByLabel('Channel',{exact:true}).selectOption('Instagram');await page.getByLabel('Audience',{exact:true}).selectOption('Prospecting');

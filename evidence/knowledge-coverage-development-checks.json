@@ -1,0 +1,355 @@
+{
+  "checkedAt": "2026-10-19T14:30:47.860Z",
+  "scope": "Development checks using retained vector results; no new semantic search or generated answers. Not held-out quality evidence.",
+  "providerCalls": 0,
+  "corpusVersion": "sha256:e8aba1ac1fa4d6de6134b696780abcb065b9785f90cd8b8a0e02cd871d6798bf",
+  "records": [
+    {
+      "id": "K08",
+      "question": "What is the Switchback bottle price with EVERYDAY10, and does this order get free shipping?",
+      "baselineStatus": "insufficient_evidence",
+      "baselineMissingEvidence": [
+        {
+          "sourceId": "shipping",
+          "heading": "Delivery"
+        }
+      ],
+      "supplied": [
+        {
+          "chunkId": "campaign:e8a37e066b013239e9e79099:1",
+          "sourceId": "campaign",
+          "heading": "Offer and dates",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "bottle-mini:752b59c182efc9699705e4b5:1",
+          "sourceId": "bottle-mini",
+          "heading": "Price and eligibility",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "bottle:12157541c03e5cec04a38487:1",
+          "sourceId": "bottle",
+          "heading": "Care and price",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "sling:1b4710605cb49a121e790395:1",
+          "sourceId": "sling",
+          "heading": "Care and price",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "audience-gifting:0ef0948fbb94167716cecba3:1",
+          "sourceId": "audience-gifting",
+          "heading": "Offer limits",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "shipping:62c29fa304e099ef1352deab:1",
+          "sourceId": "shipping",
+          "heading": "Delivery",
+          "evidenceRole": "current",
+          "status": "active"
+        }
+      ],
+      "newlyCovered": [
+        {
+          "sourceId": "shipping",
+          "heading": "Delivery"
+        }
+      ],
+      "contextCharacters": 5584,
+      "clarification": null
+    },
+    {
+      "id": "K17",
+      "question": "Does Ridgeline have a padded electronics compartment?",
+      "baselineStatus": "insufficient_evidence",
+      "baselineMissingEvidence": [
+        {
+          "sourceId": "tote",
+          "heading": "Materials"
+        }
+      ],
+      "supplied": [
+        {
+          "chunkId": "tote:f303e5e69f6bb5ce0fc194ad:1",
+          "sourceId": "tote",
+          "heading": "Weather limits",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "tote:09507eef9cbfbf0b8d54bf4f:1",
+          "sourceId": "tote",
+          "heading": "Materials",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "tote:984c1f9117e78f1df2bffe2a:1",
+          "sourceId": "tote",
+          "heading": "Selection",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "pack:2efb7f525fb9bf8f852dd487:1",
+          "sourceId": "pack",
+          "heading": "Capacity and fit",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "tote:33fa59ad1b3da7bbe0a8afb9:1",
+          "sourceId": "tote",
+          "heading": "Capacity and dimensions",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "audience-gifting:0ef0948fbb94167716cecba3:1",
+          "sourceId": "audience-gifting",
+          "heading": "Offer limits",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "brand-positioning:6df3d0fcfd13a2c880ff1cd2:1",
+          "sourceId": "brand-positioning",
+          "heading": "Product families",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "sling:05afc9f4aed20a1995d28dc5:1",
+          "sourceId": "sling",
+          "heading": "Selection",
+          "evidenceRole": "current",
+          "status": "active"
+        }
+      ],
+      "newlyCovered": [
+        {
+          "sourceId": "tote",
+          "heading": "Materials"
+        }
+      ],
+      "contextCharacters": 6279,
+      "clarification": null
+    },
+    {
+      "id": "K24",
+      "question": "Which bag fits my device?",
+      "baselineStatus": "clarification",
+      "baselineMissingEvidence": [],
+      "supplied": [
+        {
+          "chunkId": "sling:cfa05f45664f09de3db30281:1",
+          "sourceId": "sling",
+          "heading": "Capacity and dimensions",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "sling:05afc9f4aed20a1995d28dc5:1",
+          "sourceId": "sling",
+          "heading": "Selection",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "pack:2efb7f525fb9bf8f852dd487:1",
+          "sourceId": "pack",
+          "heading": "Capacity and fit",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "sling:7e157a93e5fc38372bf38475:1",
+          "sourceId": "sling",
+          "heading": "Materials",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "faq:d3601a36bb2437011fad96e2:1",
+          "sourceId": "faq",
+          "heading": "Choosing a product",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "tote:09507eef9cbfbf0b8d54bf4f:1",
+          "sourceId": "tote",
+          "heading": "Materials",
+          "evidenceRole": "current",
+          "status": "active"
+        }
+      ],
+      "newlyCovered": [],
+      "contextCharacters": 5305,
+      "clarification": {
+        "answer": {
+          "status": "clarification",
+          "claims": [],
+          "citationStructureValid": null,
+          "expectedStateMatch": true,
+          "answerCorrectness": null,
+          "citationEntailment": null,
+          "clarificationQuality": null,
+          "reviewNotes": null,
+          "message": "Which device do you want to carry (for example, a laptop and its screen size), and what other items or use case do you have in mind? What are the device physical length, width and thickness (with units), and your carrying/protection needs?"
+        },
+        "completed": true
+      }
+    },
+    {
+      "id": "K28",
+      "question": "What is the current Dayline capacity, 16 or 18 liters?",
+      "baselineStatus": "answered",
+      "baselineMissingEvidence": [],
+      "supplied": [
+        {
+          "chunkId": "pack:2efb7f525fb9bf8f852dd487:1",
+          "sourceId": "pack",
+          "heading": "Capacity and fit",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "sling:cfa05f45664f09de3db30281:1",
+          "sourceId": "sling",
+          "heading": "Capacity and dimensions",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "tote:33fa59ad1b3da7bbe0a8afb9:1",
+          "sourceId": "tote",
+          "heading": "Capacity and dimensions",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "voice-social:4c7ff6aab36df5c1d6268ec0:1",
+          "sourceId": "voice-social",
+          "heading": "Caption structure",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "sling:05afc9f4aed20a1995d28dc5:1",
+          "sourceId": "sling",
+          "heading": "Selection",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "voice-social:49ebb04aa0282feedc499de7:1",
+          "sourceId": "voice-social",
+          "heading": "Examples",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "bottle-mini:752b59c182efc9699705e4b5:1",
+          "sourceId": "bottle-mini",
+          "heading": "Price and eligibility",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "dayline-v1:961cdc7c2843c15d3795f1c5:1",
+          "sourceId": "dayline-v1",
+          "heading": "Historical capacity",
+          "evidenceRole": "historical comparison only",
+          "status": "superseded"
+        },
+        {
+          "chunkId": "dayline-v1:d1b786bb55f167f4d96a7928:1",
+          "sourceId": "dayline-v1",
+          "heading": "Supersession",
+          "evidenceRole": "historical comparison only",
+          "status": "superseded"
+        }
+      ],
+      "newlyCovered": [],
+      "contextCharacters": 6998,
+      "clarification": null
+    },
+    {
+      "id": "K29",
+      "question": "Is the current free-shipping threshold 60 or 75 demo USD?",
+      "baselineStatus": "answered",
+      "baselineMissingEvidence": [],
+      "supplied": [
+        {
+          "chunkId": "offer-examples:41ceee10d4394117fbd934ba:1",
+          "sourceId": "offer-examples",
+          "heading": "Threshold boundary",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "offer-examples:36e52046afdec8537cbf1ea1:1",
+          "sourceId": "offer-examples",
+          "heading": "Threshold arithmetic",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "audience-gifting:95e825e17ec514301566e206:1",
+          "sourceId": "audience-gifting",
+          "heading": "Budget needs",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "campaign-summer:7974e0344bf33e48e4d38a37:1",
+          "sourceId": "campaign-summer",
+          "heading": "Observed metrics",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "shipping:62c29fa304e099ef1352deab:1",
+          "sourceId": "shipping",
+          "heading": "Delivery",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "brand-positioning:c27fdb603b3caed281bab44f:1",
+          "sourceId": "brand-positioning",
+          "heading": "Price language",
+          "evidenceRole": "current",
+          "status": "active"
+        },
+        {
+          "chunkId": "shipping-v1:45e99cc46f0108fc5866a363:1",
+          "sourceId": "shipping-v1",
+          "heading": "Historical threshold",
+          "evidenceRole": "historical comparison only",
+          "status": "superseded"
+        },
+        {
+          "chunkId": "shipping-v1:0b0999b096130c6e45e07b74:1",
+          "sourceId": "shipping-v1",
+          "heading": "Historical fee",
+          "evidenceRole": "historical comparison only",
+          "status": "superseded"
+        }
+      ],
+      "newlyCovered": [],
+      "contextCharacters": 6602,
+      "clarification": null
+    }
+  ]
+}

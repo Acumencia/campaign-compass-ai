@@ -1,0 +1,19 @@
+{
+  "execution": "TEST ONLY synthetic temporary keys and mocked provider responses; zero real requests",
+  "checks": [
+    "anthropic: one provider selector, no login controls, documented generation-only suggestions",
+    "anthropic: key and model saved without calls; generation consent needs neither embeddings nor another key",
+    "anthropic: explicit consent plus explicit brief produces a validated mocked answer and verified-response state",
+    "anthropic: page refresh preserves server configuration and session permission without calls",
+    "anthropic: switching clears incompatible model choice and permission",
+    "anthropic: custom IDs work; mocked denial shows a safe useful fallback and paused status with no retries",
+    "anthropic: restart retains key/model, requires new permission; missing suggestion catalog retains custom-ID fallback",
+    "openai: one provider selector, no login controls, documented generation-only suggestions",
+    "openai: key and model saved without calls; generation consent needs neither embeddings nor another key",
+    "openai: explicit consent plus explicit brief produces a validated mocked answer and verified-response state",
+    "openai: page refresh preserves server configuration and session permission without calls",
+    "openai: switching clears incompatible model choice and permission",
+    "openai: custom IDs work; mocked denial shows a safe useful fallback and paused status with no retries",
+    "openai: restart retains key/model, requires new permission; missing suggestion catalog retains custom-ID fallback"
+  ]
+}

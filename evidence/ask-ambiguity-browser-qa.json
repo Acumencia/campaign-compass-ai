@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-10-19T20:49:24.881Z",
+  "providerCalls": 0,
+  "execution": "Offline canned fixtures; no live safety-answer verification",
+  "checks": [
+    "Exact ambiguous safety question displays local product/use clarification, no claims or provider calls",
+    "Analogous standalone questions ask for details without model calls",
+    "Explicit product/use question uses normal mocked retrieval/generation, not keyword interception",
+    "New chat clears the previous product and use",
+    "Explicit source scope identifies product but still asks missing use",
+    "Specific question with zero evidence abstains with actionable source guidance",
+    "Local clarification and disclosure fit a 390px viewport",
+    "Context-size rejection has distinct heading and expandable technical reason, no generation",
+    "Missing providers remain a setup state, not a claim of empty evidence",
+    "Provider failure stays an error with no substitute clarification or answer"
+  ],
+  "errors": []
+}

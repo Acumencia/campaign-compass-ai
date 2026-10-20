@@ -1,0 +1,56 @@
+{
+  "capturedAt": "2026-10-17T14:30:55.462Z",
+  "browser": "155.0.8059.40",
+  "automation": "Playwright using installed Chrome in an isolated context; separate from user-browser CUA inspection",
+  "checks": [
+    {
+      "check": "Dataset and overview render",
+      "status": "passed"
+    },
+    {
+      "check": "Grounded brief, Escape, focus return",
+      "status": "passed"
+    },
+    {
+      "check": "Keyboard navigation reaches date filters",
+      "status": "passed"
+    },
+    {
+      "check": "Shared filters persist across all five views",
+      "status": "passed"
+    },
+    {
+      "check": "Campaign search empty result",
+      "status": "passed"
+    },
+    {
+      "check": "Global empty state disables brief",
+      "status": "passed"
+    },
+    {
+      "check": "Review gate enables proposal export",
+      "status": "passed"
+    },
+    {
+      "check": "Reviewed proposal downloads locally",
+      "status": "passed"
+    },
+    {
+      "check": "All views fit mobile viewport; metric buttons remain inside viewport",
+      "status": "passed"
+    },
+    {
+      "check": "Mobile copilot fits viewport",
+      "status": "passed"
+    },
+    {
+      "check": "Real browser handles dataset loading failure",
+      "status": "passed"
+    },
+    {
+      "check": "No uncaught application errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

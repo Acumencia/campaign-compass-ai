@@ -1,0 +1,14 @@
+import {createKeyStore} from '../server/key-store.mjs';
+import {createAPIProviders} from '../server/api-providers.mjs';
+import {fileURLToPath} from 'node:url';
+import {readFile,writeFile} from 'node:fs/promises';
+import {loadKnowledge} from '../server/knowledge.mjs';
+import {createRagService} from '../server/rag.mjs';
+import {ragOptions} from '../server/rag-config.mjs';
+import {evaluateComparisons} from '../server/rag-evaluation.mjs';
+const args=process.argv.slice(2);
+if(args.some(a=>a!=='--allow-provider-calls'))throw new Error('Only --allow-provider-calls is supported. Default evaluation is offline.');
+const corpus=await loadKnowledge(),fixtures=JSON.parse(await readFile(new URL('../eval/knowledge-questions.json',import.meta.url),'utf8'));
+const apiKey=args.includes('--allow-provider-calls')?(await createKeyStore({filename:fileURLToPath(new URL('../key.json',import.meta.url)),environment:process.env})).providers:createAPIProviders({environment:{}});
+const report=await evaluateComparisons(corpus,fixtures,{service:createRagService(ragOptions(apiKey)),allowProviderCalls:args.includes('--allow-provider-calls')});
+await writeFile(new URL('../eval/rag-comparison.json',import.meta.url),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({execution:report.execution,...report.summary},null,2));

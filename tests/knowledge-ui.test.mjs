@@ -1,0 +1,31 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {JSDOM} from 'jsdom';
+import {wireKnowledge} from '../src/knowledge-ui.mjs';
+const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+const tick=()=>new Promise(r=>setImmediate(r));
+function setup(fetcher){const dom=new JSDOM(html,{url:'http://127.0.0.1:4173'}),w=dom.window;w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;};wireKnowledge(w.document,(url,options)=>url==='/api/session'?Promise.resolve(json({csrf:'test-csrf'})):fetcher(url,options));return {dom,w,$:s=>w.document.querySelector(s)};}
+const manifest={schemaVersion:1,corpusVersion:'v1',chunkCount:1,ingestedAt:'today',documents:[{sourceId:'demo',title:'<img src=x>',chunkCount:1}]};
+const json=data=>new Response(JSON.stringify(data),{headers:{'Content-Type':'application/json'}});
+const match={sourceId:'demo',chunkId:'demo:1',heading:'<script>alert(1)</script>',text:'<img src=x onerror=alert(1)>',startLine:3,endLine:3,score:.5};
+test('Knowledge renders sources and matches as inert text with explicit lexical limitations',async()=>{
+ const {dom,$,w}=setup(async url=>json(url.endsWith('manifest')?manifest:url.endsWith('source')?{corpusVersion:'v1',document:{sourceId:'demo',title:'Demo',filename:'demo.md',contentHash:'hash',text:'<script>evil</script>'}}:{corpusVersion:'v1',mode:'lexical',answer:null,notice:'Generation not configured.',retrieval:{matches:[match],elapsedMs:1}}));
+ $('#knowledge-button').click();await tick();assert.equal($('#knowledge-dialog').open,true);assert.equal($('#knowledge-submit').disabled,false);assert.equal($('#knowledge-documents img'),null);$('#knowledge-question').value='capacity';$('#knowledge-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await tick();assert.match($('#knowledge-results').textContent,/Scores are similarities/);assert.equal($('#knowledge-results img'),null);assert.equal($('#knowledge-results script'),null);$('#knowledge-results button').click();await tick();assert.match($('#knowledge-source pre').textContent,/<script>evil/);assert.equal($('#knowledge-source script'),null);dom.window.close();
+});
+test('static HTML fallback reports local server requirement and cannot submit',async()=>{const{dom,$}=setup(async()=>new Response('<html>',{headers:{'Content-Type':'text/html'}}));$('#knowledge-button').click();await tick();assert.match($('#knowledge-status').textContent,/local Node server/);assert.equal($('#knowledge-submit').disabled,true);dom.window.close();});
+test('new question and dialog close cancel pending requests and suppress stale completion',async()=>{
+ let resolve,signal;const{dom,$,w}=setup(async(url,options)=>{if(url.endsWith('manifest'))return json(manifest);signal=options.signal;return new Promise(r=>resolve=r);});$('#knowledge-button').click();await tick();$('#knowledge-question').value='old';$('#knowledge-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await tick();$('#knowledge-question').value='new';$('#knowledge-question').dispatchEvent(new w.Event('input'));assert.equal(signal.aborted,true);resolve(json({corpusVersion:'v1',mode:'lexical',answer:null,retrieval:{matches:[match],elapsedMs:1}}));await tick();assert.equal($('#knowledge-results').textContent,'');$('#knowledge-close').click();assert.equal($('#knowledge-dialog').open,false);dom.window.close();
+});
+
+test('typing while the initial corpus loads does not cancel bootstrap',async()=>{
+ let resolve,signal;const{dom,$,w}=setup(async(url,options)=>{signal=options.signal;return new Promise(r=>resolve=r);});$('#knowledge-button').click();$('#knowledge-question').value='capacity';$('#knowledge-question').dispatchEvent(new w.Event('input'));assert.equal(signal.aborted,false);resolve(json(manifest));await tick();assert.equal($('#knowledge-submit').disabled,false);dom.window.close();
+});
+
+test('RAG mode shows not-configured explicitly, never a lexical or generated fallback',async()=>{
+ const {dom,$,w}=setup(async url=>json(url.endsWith('manifest')?manifest:{corpusVersion:'v1',mode:'rag',status:'not_configured',answer:null,retrieval:null,diagnostics:null,notice:'RAG requires separately configured providers. No model request was made.'}));$('#knowledge-button').click();await tick();$('#knowledge-mode').value='rag';$('#knowledge-mode').dispatchEvent(new w.Event('change'));$('#knowledge-question').value='capacity';$('#knowledge-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await tick();assert.match($('#knowledge-results').textContent,/RAG is not configured/);assert.equal($('#knowledge-results article'),null);assert.match($('#knowledge-status').textContent,/No model request/);dom.window.close();
+});
+test('TEST ONLY generated answer UI validates citations, displays safe quotes and diagnostics',async()=>{
+ const result={corpusVersion:'v1',mode:'rag',status:'answered',answer:{corpusVersion:'v1',status:'answered',message:'',claims:[{text:'<script>unsafe</script>',citations:[{chunkId:match.chunkId,quote:match.text}]}]},retrieval:{matches:[match]},diagnostics:{execution:'TEST ONLY fixtures',embeddingMs:1,searchMs:1,generationMs:1,totalMs:3,contextChunkIds:[match.chunkId],contextCharacters:2000,omittedChunks:0,threshold:.2},notice:'Structure validated only.'};
+ const {dom,$,w}=setup(async url=>json(url.endsWith('manifest')?manifest:result));$('#knowledge-button').click();await tick();$('#knowledge-mode').value='rag';$('#knowledge-question').value='capacity';$('#knowledge-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await tick();assert.match($('#knowledge-results').textContent,/Cited answer/);assert.match($('#knowledge-results').textContent,/TEST ONLY/);assert.equal($('#knowledge-results script'),null);assert.equal($('#knowledge-results img'),null);assert.ok($('#knowledge-results blockquote'));result.answer.claims[0].citations[0].chunkId='forged';$('#knowledge-form').dispatchEvent(new w.Event('submit',{cancelable:true}));await tick();assert.equal($('#knowledge-results').textContent,'');assert.match($('#knowledge-status').textContent,/Invalid citation/);dom.window.close();
+});

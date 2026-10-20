@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "Broad waterproof query supplies Ridgeline and Dayline qualifications in real corpus, canned generation",
+    "Rejection shows rule, positions and supplied sources without rejected output",
+    "Failure sources remain inspectable",
+    "Failure diagnostics fit mobile viewport",
+    "Failed turn is excluded from next generation context",
+    "Conversation subject change is explicit and preserved"
+  ],
+  "errors": [],
+  "externalProviderCalls": 0,
+  "scope": "Real local corpus and application; mocked search/generation, external traffic blocked"
+}
