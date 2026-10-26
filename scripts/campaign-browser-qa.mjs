@@ -1,0 +1,56 @@
+import {chromium} from 'playwright';
+
+import assert from 'node:assert/strict';
+
+import {mkdtemp,rm,writeFile,mkdir} from 'node:fs/promises';
+
+import os from 'node:os';import path from 'node:path';
+
+import {createServer} from '../server.mjs';
+
+import {createCampaignService} from '../server/campaign.mjs';
+
+import {loadTrails} from '../server/trails.mjs';
+
+import {createChatGPTService} from '../server/chatgpt.mjs';
+
+import {MemoryStore,mockProtocol} from '../tests/chatgpt-fixtures.mjs';
+
+const dir=await mkdtemp(path.join(os.tmpdir(),'cc-week3-ui-')),checks=[],errors=[];
+
+const server=createServer({campaignDirectory:dir,chatgpt:createChatGPTService({store:new MemoryStore(),protocol:mockProtocol(),supported:false})});
+
+let browser,slowServer;
+
+try{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}`;browser=await chromium.launch({channel:'chrome',headless:true});const context=await browser.newContext({viewport:{width:1440,height:1050}});await context.route('**/*',route=>route.request().url().startsWith(base+'/')?route.continue():route.abort());const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base+'/campaign.html');await page.waitForFunction(()=>document.querySelector('#counts').textContent.includes('25 curated'));assert.equal(await page.locator('#walking-trail').inputValue(),'nps-ever-anhinga');assert.equal(await page.locator('#cycling-trail').inputValue(),'nps-ever-shark-valley');checks.push('Pilot correctly selects allowed walking and cycling trails');await page.locator('#generation-mode').selectOption('live-grounded');await page.locator('#create').click();assert.match(await page.locator('#notice').innerText(),/not ready/);assert.match(await page.locator('#readiness-content').innerText(),/permission is off/);await page.locator('#generation-mode').selectOption('offline-template');checks.push('Missing live configuration and consent are explicit blockers without provider calls');
+
+await page.locator('#hood-open').click();assert.ok(await page.locator('#hood').evaluate(d=>d.open));await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>document.activeElement.id),'hood-open');checks.push('Inspector keyboard Escape returns focus before execution');
+
+await page.locator('#create').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='AWAITING APPROVAL');assert.equal(await page.locator('[data-artifact]').count(),7);assert.ok(await page.locator('#export').isDisabled());checks.push('One brief completes seven offline drafts and pauses before export');
+
+await page.locator('#hood-open').click();assert.ok(await page.locator('#timeline li').count()>=4);assert.match(await page.locator('#timeline').innerText(),/MCP \/ stdio/);assert.match(await page.locator('#metrics').innerText(),/Recorded protocol events/);assert.match(await page.locator('#frozen-evidence').textContent(),/brand/);await page.locator('#hood').screenshot({path:'evidence/week3-inspector.png'});checks.push('Real local MCP stdio events and frozen brand/trail evidence appear in inspector');assert.doesNotMatch(await page.locator('#graph').innerText(),/\brunning\b/);await page.locator('#replay').click();assert.match(await page.locator('#event-mode').innerText(),/REPLAY/);await page.locator('#animation-toggle').click();await page.keyboard.press('Escape');checks.push('Actual event timeline supports read-only replay label and animation pause');
+
+await page.locator('#approval-check').check();await page.locator('#approve').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='APPROVED');const downloadPromise=page.waitForEvent('download');await page.locator('#export').click();const download=await downloadPromise;assert.match(download.suggestedFilename(),/luma-trail-demo/);checks.push('Human approval unlocks JSON export');
+
+await page.locator('#artifact-text').fill((await page.locator('#artifact-text').inputValue())+'\nEditorial note for human review.');assert.ok(await page.locator('#export').isDisabled());await page.locator('#hood-open').click();await page.keyboard.press('Escape');assert.match(await page.locator('#artifact-text').inputValue(),/Editorial note/);await page.locator('#save-artifact').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='NEEDS REVISION');assert.match(await page.locator('#findings').innerText(),/changed|stale|dependent/i);await page.reload();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='NEEDS REVISION');assert.match(await page.locator('#artifact-text').inputValue(),/Editorial note/);checks.push('Product edit invalidates approval and survives refresh; inspector preserves unsaved text');
+
+await page.locator('#revise').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='AWAITING APPROVAL');await page.locator('#request-evidence').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='WAITING EVIDENCE');await page.locator('#resume').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='AWAITING APPROVAL');checks.push('Evidence request creates true paused state and resumes');
+
+await page.locator('#reject').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='REJECTED');assert.ok(await page.locator('#export').isDisabled());checks.push('Rejection ends attempt without export');
+
+await page.setViewportSize({width:320,height:800});await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.locator('#hood-open').click();assert.equal(await page.locator('#hood').evaluate(d=>d.scrollWidth<=d.clientWidth),true);await page.keyboard.press('Escape');await mkdir('evidence',{recursive:true});await page.evaluate(()=>{document.activeElement?.blur();scrollTo(0,0);});await page.screenshot({path:'evidence/week3-campaign-mobile.png',fullPage:true});checks.push('320px reduced-motion layout and inspector have no horizontal overflow');
+
+await page.setViewportSize({width:1440,height:1050});await page.evaluate(()=>{document.activeElement?.blur();scrollTo(0,0);});await page.screenshot({path:'evidence/week3-campaign-desktop.png',fullPage:true});
+
+await page.locator('#new-run').click();await page.locator('#generation-mode').selectOption('offline-template');await page.locator('#create').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='AWAITING APPROVAL');await page.reload();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='AWAITING APPROVAL');assert.ok(await page.locator('#saved-runs option').count()>=3);checks.push('Repeated collection creation and reload preserve distinct saved runs');
+
+await page.locator('#artifact-text').fill((await page.locator('#artifact-text').inputValue())+'\nUnsaved recovery note.');await page.reload();await page.waitForFunction(()=>document.querySelector('#edit-state').textContent==='UNSAVED');assert.match(await page.locator('#artifact-text').inputValue(),/Unsaved recovery note/);await page.locator('#restore-artifact').click();checks.push('Unsaved editor text recovers after refresh and can restore saved version');
+
+await page.locator('#new-run').click();await page.locator('#generation-mode').selectOption('offline-template');let advances=0;await page.route('**/api/campaign/*/advance',async route=>{advances++;await new Promise(r=>setTimeout(r,250));await route.continue();});await page.locator('#create').click();await page.waitForFunction(()=>!document.querySelector('#run-actions').hidden);await page.locator('#brief-form').evaluate(f=>f.dispatchEvent(new Event('submit',{cancelable:true})));await page.locator('#stop').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='STOPPED');assert.equal(advances,1);await page.reload();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='STOPPED');await page.locator('#resume').click();await page.waitForFunction(()=>document.querySelector('#run-state').textContent==='AWAITING APPROVAL');checks.push('Repeated submit is ignored; stop request persists and resumes without duplicate drafting');
+
+const slowService=createCampaignService({directory:path.join(dir,'slow'),loadCatalog:async()=>{await new Promise(r=>setTimeout(r,1800));return loadTrails();}});slowServer=createServer({campaignDirectory:path.join(dir,'slow-http'),campaignService:slowService,chatgpt:createChatGPTService({store:new MemoryStore(),protocol:mockProtocol(),supported:false})});await new Promise(r=>slowServer.listen(0,'127.0.0.1',r));const slowBase=`http://127.0.0.1:${slowServer.address().port}`;const slowContext=await browser.newContext();await slowContext.route('**/*',r=>r.request().url().startsWith(slowBase+'/')?r.continue():r.abort());const slowPage=await slowContext.newPage();slowPage.on('pageerror',e=>errors.push(e.message));await slowPage.goto(slowBase+'/campaign.html');await slowPage.waitForFunction(()=>document.querySelector('#counts').textContent.includes('25 curated'));await slowPage.locator('#generation-mode').selectOption('offline-template');await slowPage.locator('#create').click();await slowPage.waitForFunction(()=>document.querySelector('#run-state').textContent==='RUNNING');await slowPage.locator('#hood-open').click();assert.ok(await slowPage.locator('.node.running').count()>0);await slowPage.locator('#replay').click();const frozen=await slowPage.locator('#timeline').innerText();await slowPage.keyboard.press('Escape');await slowPage.locator('#stop').click();await slowPage.waitForFunction(()=>document.querySelector('#run-state').textContent==='STOPPED');await slowPage.locator('#hood-open').click();assert.equal(await slowPage.locator('#timeline').innerText(),frozen);assert.match(await slowPage.locator('#event-mode').innerText(),/REPLAY/);await slowPage.locator('#replay').click();assert.notEqual(await slowPage.locator('#timeline').innerText(),frozen);assert.equal(await slowPage.locator('.node.running').count(),0);const ids=await slowPage.locator('#timeline [data-event-id]').evaluateAll(nodes=>nodes.map(n=>n.dataset.eventId));assert.equal(new Set(ids).size,ids.length);await slowPage.keyboard.press('Escape');await slowPage.locator('#resume').click();await slowPage.waitForFunction(()=>document.querySelector('#run-state').textContent==='AWAITING APPROVAL');checks.push('Actual pending checkpoint polling drives active nodes; immediate backend stop aborts work; frozen replay ignores new events until live return');assert.deepEqual(errors,[]);
+
+await writeFile('evidence/week3-campaign-browser.json',JSON.stringify({timestamp:new Date().toISOString(),scope:'Local offline templates only; external traffic blocked; no provider calls',checks,errors},null,2));console.log(JSON.stringify({passed:checks.length,checks},null,2));
+
+}finally{await browser?.close();if(slowServer){slowServer.closeAllConnections();await new Promise(r=>slowServer.close(r));}server.closeAllConnections();await new Promise(r=>server.close(r));await rm(dir,{recursive:true,force:true});}
+

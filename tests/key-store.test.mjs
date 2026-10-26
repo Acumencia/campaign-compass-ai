@@ -5,6 +5,7 @@ import {mkdtemp,readFile,writeFile,rm,readdir,link} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 import {createKeyStore} from '../server/key-store.mjs';
 import {createServer} from '../server.mjs';
 import {createChatGPTService} from '../server/chatgpt.mjs';
@@ -27,7 +28,7 @@ test('malformed, oversized, linked files and invalid keys fail closed without ov
 });
 test('save lock prevents overlapping writers from silently replacing another key',async t=>{const f=await fixture(t);await writeFile(f.filename+'.lock','');await assert.rejects(f.store.save('openai',FIRST,false),{code:'store_busy'});assert.equal(f.calls(),0);});
 test('real key filename and temporary variants are ignored and untracked; example is blank',async()=>{
- const cwd=new URL('../',import.meta.url);const git=args=>spawnSync('git',['-c','safe.directory=D:/codex/campaign-compass-ai',...args],{cwd,encoding:'utf8'});
+ const cwd=new URL('../',import.meta.url);const git=args=>spawnSync('git',['-c',`safe.directory=${fileURLToPath(cwd).replaceAll('\\','/')}`,...args],{cwd,encoding:'utf8'});
  const ignored=git(['check-ignore','key.json','key.json.lock','key.json.test.tmp']);assert.equal(ignored.status,0);assert.equal(ignored.stdout.trim().split(/\r?\n/).length,3);assert.equal(git(['ls-files','--','key.json']).stdout.trim(),'');assert.notEqual(git(['check-ignore','key.example.json']).status,0);assert.deepEqual(JSON.parse(await readFile(new URL('../key.example.json',import.meta.url),'utf8')),{version:1,openai:'',anthropic:'',pinecone:''});
 });
 test('credential HTTP endpoint protects writes, redacts responses and never serves secret paths',async t=>{

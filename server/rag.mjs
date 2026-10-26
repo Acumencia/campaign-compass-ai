@@ -173,6 +173,45 @@ export function createRagService({config={},embedding=null,generation=null,stora
       return {corpusVersion:corpus.corpusVersion,namespace:key,chunks:rows.length,cacheHits,providerBatches,embedding:embeddingSpec,testOnly};
     },{signal,timeoutMs:settings.buildTimeoutMs});
   }
+  // Generation-free vector retrieval for the campaign workflow. This intentionally
+  // does not use Ask's lexical coverage expansion or conversational clarification.
+  // Authorize here, rather than relying on the HTTP caller, so direct adapters
+  // cannot bypass the provider/read boundary when generation is absent.
+  async function retrieveOnly(corpus,request,{signal,session,...context}={}){
+    validateSearch(corpus,request);aborted(signal);
+    if(!usesProviders)throw fail('retrieval_not_configured','Configure the existing vector retrieval backend before grounding a live campaign.',503);
+    const runId=randomUUID(),startedAt=new Date().toISOString();
+    return withDeadline(async signal=>{
+      const started=performance.now();
+      const permit=async()=>{aborted(signal);if(typeof authorizeAccess!=='function'||await authorizeAccess({...context,session,signal,operation:'retrieval',retrievalOnly:true})!==true)throw fail('provider_access_required','Vector retrieval requires explicitly authorized access.',403);aborted(signal);};
+      await permit();
+      await ensureFresh(corpus.corpusVersion,signal);
+      let matches,embeddingMs=0,searchMs=0,indexNamespace,method='vector-cosine-v1',integratedEmbedding=false;
+      const authorizedEmbedding=embedding?{...embedding,embed:async(texts,options)=>{await permit();const result=await embedding.embed(texts,options);await permit();return result;}}:null;
+      if(storage){
+        await permit();
+        const result=await storage.search(corpus,request.question,{directory:storeDirectory,embedding:authorizedEmbedding,signal,topK:request.topK,sourceIds:request.sourceIds,minScore:settings.minScore});
+        await permit();
+        ({matches,embeddingMs,searchMs,method,integratedEmbedding}=result);indexNamespace=result.namespace;
+      }else{
+        await permit();
+        const index=validateVectorIndex(await readJSON(indexFile,signal),corpus,embeddingSpec);
+        const embeddingStart=performance.now();let response;
+        try{response=await authorizedEmbedding.embed([request.question],{signal,purpose:'query'});}catch(error){aborted(signal);if(error instanceof KnowledgeError)throw error;throw fail('embedding_failed','Query embedding failed. No substitute retrieval was used.',502);}
+        aborted(signal);const [query]=checkVectors(response,embeddingSpec,1);embeddingMs=performance.now()-embeddingStart;
+        const searchStart=performance.now();matches=rankVectors(corpus,index,query,{topK:request.topK,sourceIds:request.sourceIds,minScore:settings.minScore});searchMs=performance.now()-searchStart;indexNamespace=index.namespace;
+      }
+      if(!['vector-cosine-v1','pinecone-integrated-cosine','pinecone-vector-cosine'].includes(method)||typeof indexNamespace!=='string'||!/^[A-Za-z0-9_-]{1,200}$/.test(indexNamespace)||![embeddingMs,searchMs].every(value=>Number.isFinite(value)&&value>=0)||!Array.isArray(matches)||matches.length>request.topK)throw fail('retrieval_contract','Vector retrieval returned invalid metadata or evidence bounds.',502);
+      const byId=new Map(corpus.chunks.map(chunk=>[chunk.chunkId,chunk])),seen=new Set();
+      const canonical=matches.map(match=>{
+        const chunk=byId.get(match?.chunkId);
+        if(!chunk||seen.has(match.chunkId)||match.sourceId!==chunk.sourceId||match.contentHash!==chunk.contentHash||match.text!==chunk.text||hash(match.metadata??null)!==hash(chunk.metadata??null)||!Number.isFinite(match.score)||match.score< -1||match.score>1||(request.sourceIds.length?!request.sourceIds.includes(chunk.sourceId):(chunk.metadata?.status||'active')!=='active'))throw fail('retrieval_contract','Vector evidence failed canonical source, version or filter validation.',502);
+        seen.add(match.chunkId);return {...chunk,score:match.score};
+      }).filter(match=>match.score>=settings.minScore);
+      await permit();await ensureFresh(corpus.corpusVersion,signal);await permit();
+      return {schemaVersion:1,mode:'retrieval-only',retrievalMode:'vector-only',runId,startedAt,corpusVersion:corpus.corpusVersion,status:canonical.length?'retrieved':'insufficient_evidence',providers:state(),retrieval:{method,matches:canonical,topK:request.topK,sourceIds:[...request.sourceIds],namespace:indexNamespace},diagnostics:{backend:storage?'pinecone':'local',integratedEmbedding:integratedEmbedding===true,embeddingMs,searchMs,generationMs:null,totalMs:performance.now()-started,indexNamespace,threshold:settings.minScore,thresholdCalibrated:false,execution:testOnly?'TEST ONLY fixtures':'configured vector retrieval'},notice:canonical.length?'Vector passages validated against the current local corpus. No generation or lexical fallback was used.':'No vector passages met the configured threshold. No generation or lexical fallback was used.'};
+    },{signal,timeoutMs:settings.timeoutMs});
+  }
   async function ask(corpus,request,{signal}={}){
     validateSearch(corpus,request);aborted(signal);
     const base={schemaVersion:1,mode:'rag',runId:randomUUID(),startedAt:new Date().toISOString(),corpusVersion:corpus.corpusVersion,providers:state(),answer:null,retrieval:null,diagnostics:null};
@@ -225,5 +264,5 @@ export function createRagService({config={},embedding=null,generation=null,stora
       return {...base,status:answer.status,basis:'generated',answer,retrieval,diagnostics,notice:answer.status==='answered'?'Citations and quotes were structurally validated. Semantic support still requires review.':answer.message};
     },{signal,timeoutMs:settings.timeoutMs});
   }
-  return {status:state,usesProviders:ready,testOnly,authorize,buildIndex,ask,compare,readiness,checkConnection};
+  return {status:state,usesProviders:ready,usesRetrievalProviders:usesProviders,testOnly,authorize,buildIndex,retrieveOnly,ask,compare,readiness,checkConnection};
 }

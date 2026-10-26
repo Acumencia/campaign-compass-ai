@@ -61,7 +61,7 @@ export function createOpenAIKeyService({environment=process.env,fetcher=globalTh
     const vectors=new Array(texts.length),seen=new Set();for(const row of response.data){if(row.object!=='embedding'||!Number.isInteger(row.index)||row.index<0||row.index>=texts.length||seen.has(row.index)||!Array.isArray(row.embedding)||row.embedding.length!==dimensions||row.embedding.some(n=>typeof n!=='number'||!Number.isFinite(n)))throw error('api_invalid_response');seen.add(row.index);vectors[row.index]=row.embedding;}
     return {model:embeddingModel,revision:'embeddings-http-contract-v1',dimensions,vectors};
   }}:null;
-  const generation=generationConfigured?{spec:{provider:'openai-api-key',model:generationModel,revision:'responses-json-schema-v1'},generate:({system,input,maxOutputCharacters},{signal}={})=>generateJSON(system,input,RAG_SCHEMA,'campaign_knowledge',maxOutputCharacters,signal)}:null;
+  const generation=generationConfigured?{spec:{provider:'openai-api-key',model:generationModel,revision:'responses-json-schema-v1'},generate:({system,input,maxOutputCharacters},{signal}={})=>generateJSON(system,input,RAG_SCHEMA,'campaign_knowledge',maxOutputCharacters,signal),generateStructured:({system,input,schema,name,maxOutputCharacters=16000},{signal}={})=>generateJSON(system,input,schema,name,maxOutputCharacters,signal)}:null;
   async function invokeMetric(request,{signal}={}){return generateJSON(request.system,JSON.stringify({question:request.question,contextId:request.contextId,snapshotId:request.snapshotId,facts:request.facts}),METRIC_SCHEMA,'campaign_metrics',16000,signal);}
   return {status,embedding,generation,invokeMetric};
 }

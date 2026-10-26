@@ -6,14 +6,14 @@
   "description": "A synthetic campaign intelligence dashboard with evidence-grounded assistance.",
   "type": "module",
   "engines": {
-    "node": ">=22.9"
+    "node": ">=22.13"
   },
   "scripts": {
     "start": "node --env-file-if-exists=.env server.mjs",
     "generate": "node scripts/generate.mjs",
     "test": "node --test tests/*.test.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node --check server/pinecone.mjs && node --check server/key-store.mjs && node --check server/anthropic-api-key.mjs && node --check server/api-providers.mjs && node --check server/openai-api-key.mjs && node --check server/rag.mjs && node --check server/rag-evaluation.mjs && node --check server/knowledge.mjs && node --check src/knowledge-ui.mjs && node --check src/app.mjs && node --check src/chatgpt-client.mjs && node --check src/connection-ui.mjs && node --check server/inference.mjs && node --check server/chatgpt.mjs && node --check server/chatgpt-protocol.mjs && node --check server/chatgpt-store.mjs && node --check server.mjs && npm test && npm run build",
+    "check": "node --check server/evidence-mcp-server.mjs && node --check server/evidence-mcp-client.mjs && node --check server/campaign-budget.mjs && node --check server/campaign-runtime.mjs && node --check server/campaign.mjs && node --check server/campaign-http.mjs && node --check server/campaign-generation.mjs && node --check server/trails.mjs && node --check src/campaign-ui.mjs && node --check server/pinecone.mjs && node --check server/key-store.mjs && node --check server/anthropic-api-key.mjs && node --check server/api-providers.mjs && node --check server/openai-api-key.mjs && node --check server/rag.mjs && node --check server/rag-evaluation.mjs && node --check server/knowledge.mjs && node --check src/knowledge-ui.mjs && node --check src/app.mjs && node --check src/chatgpt-client.mjs && node --check src/connection-ui.mjs && node --check server/inference.mjs && node --check server/chatgpt.mjs && node --check server/chatgpt-protocol.mjs && node --check server/chatgpt-store.mjs && node --check server.mjs && npm test && npm run build",
     "test:browser": "node scripts/browser-qa.mjs",
     "privacy-check": "node scripts/privacy-check.mjs",
     "knowledge:ingest": "node scripts/ingest-knowledge.mjs",
@@ -28,7 +28,13 @@
     "test:browser:consent-flow": "node scripts/consent-flow-browser-qa.mjs",
     "test:browser:api-only": "node scripts/api-only-browser-qa.mjs",
     "test:browser:rag-live-setup": "node scripts/rag-live-setup-browser-qa.mjs",
-    "test:browser:pinecone": "node scripts/pinecone-browser-qa.mjs"
+    "test:browser:pinecone": "node scripts/pinecone-browser-qa.mjs",
+    "test:browser:campaign": "node scripts/campaign-browser-qa.mjs",
+    "trails:validate": "node scripts/validate-trails.mjs",
+    "test:browser:proposals": "node scripts/campaign-proposal-browser-qa.mjs",
+    "campaign:rehearsal": "node scripts/campaign-live-rehearsal.mjs",
+    "test:browser:campaign-actions": "node scripts/campaign-action-feedback-browser-qa.mjs",
+    "test:browser:campaign-budget": "node scripts/campaign-budget-browser-qa.mjs"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",

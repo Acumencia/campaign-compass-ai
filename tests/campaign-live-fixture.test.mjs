@@ -1,0 +1,25 @@
+import {campaignVectorFixture,withCampaignVectorFixture} from './campaign-vector-fixture.mjs';
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {createCampaignService} from '../server/campaign.mjs';
+import {createCampaignGeneration} from '../server/campaign-generation.mjs';
+const owner='isolated-mock-browser-session';
+const brief={audience:'Adults',goal:'Awareness',tone:'Warm',cta:'Explore the demo collection',walkingTrailId:'walk',cyclingTrailId:'cycle'};
+const catalog={version:'test-only',trails:['walk','cycle'].map((id,i)=>({id,name:id,state:'FL',permissions:{[i?'cycling':'walking']:{status:'allowed'}},sources:[{id:id+'-source',url:'https://www.nps.gov/'}],facts:[{id:id+'-fact',text:'Official route name.',sourceId:id+'-source'}]}))};
+async function fixture(t){const directory=await mkdtemp(path.join(os.tmpdir(),'campaign-model-fixture-'));const vector=campaignVectorFixture(async()=>catalog);const service=withCampaignVectorFixture(createCampaignService({directory,loadCatalog:async()=>catalog,evidenceTools:vector.evidenceTools}),vector);t.after(async()=>{service.close();await rm(directory,{recursive:true,force:true});});return service;}
+function generator({findings=[],wait=false}={}){return createCampaignGeneration({generation:{spec:{provider:'mock-only',model:'canned-test-output'},generateStructured:async(req,{signal})=>{if(wait)return new Promise((_,reject)=>signal.addEventListener('abort',()=>reject(Object.assign(Error('Cancelled'),{code:'cancelled'})),{once:true}));const input=JSON.parse(req.input);return req.name==='campaign_critic'?{findings}:{artifacts:input.artifacts.map(a=>{const fact=input.evidence.flatMap(t=>t.facts).find(f=>a.permittedFactIds.includes(f.id));return {artifactId:a.id,fields:a.requiredFields.map(name=>({name,text:'Consider a reflective introduction to the fictional collection, shaped around shared curiosity and a practical conversation about the route.',...(a.kind==='ads'?{factIds:[fact.id]}:{})})),claims:[{text:fact.text,quote:fact.text,factId:fact.id,sourceId:fact.sourceId}],assumptions:['A proposed reflective conversation.']};})};}},authorize:()=>true});}
+test('live-mode fixture makes six bounded specialist calls; seven complete grounded artifacts with disclosures (no vendor calls)',async t=>{
+ const s=await fixture(t);let r=await s.create(owner,brief,{mode:'live-editorial'});assert.equal(r.mode,'live-editorial');for(let i=0;i<4;i++)r=await s.advance(owner,r.id,{expectedVersion:r.version,generator:generator()});assert.equal(r.status,'awaiting_approval',JSON.stringify(r.findings));assert.equal(r.budgets.modelCalls,6);assert.equal(r.artifacts.length,7);assert.ok(r.artifacts.every(a=>a.modelGenerated));assert.equal(r.metrics.cost,null);assert.equal(r.events.filter(e=>e.status==='running'&&e.summary.includes('Tool-less model')).length,6);r=await s.decide(owner,r.id,{expectedVersion:r.version,decision:'approve'});assert.match((await s.exportBundle(owner,r.id,{expectedVersion:r.version})).execution,/Model/);
+});
+test('model critique cannot be bypassed by approve or deterministic revision',async t=>{
+ const s=await fixture(t);let r=await s.create(owner,brief,{mode:'live-editorial'});for(let i=0;i<4;i++)r=await s.advance(owner,r.id,{expectedVersion:r.version,generator:generator({findings:[{artifactId:'linkedin',issue:'Tone needs revision.',suggestion:'Use a warmer opening.'}]})});assert.equal(r.status,'needs_revision');await assert.rejects(s.decide(owner,r.id,{expectedVersion:r.version,decision:'approve'}),{code:'validation_failed'});r=await s.revise(owner,r.id,{expectedVersion:r.version,generator:generator({findings:[{artifactId:'linkedin',issue:'Tone needs revision.',suggestion:'Use a warmer opening.'}]})});await assert.rejects(s.decide(owner,r.id,{expectedVersion:r.version,decision:'approve'}),{code:'validation_failed'});
+});
+test('missing provider stays live-mode error without silent offline fallback',async t=>{
+ const s=await fixture(t);let r=await s.create(owner,brief,{mode:'live-editorial'});r=await s.advance(owner,r.id,{expectedVersion:r.version});r=await s.advance(owner,r.id,{expectedVersion:r.version});assert.equal(r.status,'error');assert.equal(r.error.code,'model_unavailable');assert.equal(r.mode,'live-editorial');assert.equal(r.step,1);assert.equal(r.approval,null);
+});
+test('stop aborts in-flight mock specialist; retained checkpoint does not accept late completion',async t=>{
+ const s=await fixture(t);let r=await s.create(owner,brief,{mode:'live-editorial'});r=await s.advance(owner,r.id,{expectedVersion:r.version});const pending=s.advance(owner,r.id,{expectedVersion:r.version,generator:generator({wait:true})});await new Promise(resolve=>setTimeout(resolve,5));const stopped=await s.decide(owner,r.id,{expectedVersion:r.version,decision:'stop'});await pending;assert.equal(stopped.status,'stopped');assert.equal(stopped.step,1);assert.equal(stopped.approval,null);
+});

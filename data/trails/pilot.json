@@ -1,0 +1,2405 @@
+{
+  "schemaVersion": 1,
+  "version": "pilot-2026-10-24.1",
+  "target": 1000,
+  "selectionRubric": "official-identity-activity-rights-v1",
+  "description": "25 distinct curated named routes across five states, including two flagged evidence-review cases. Not a popularity ranking. Zero vector-indexed trail dossiers; target 1000. Factual sources remain separate from fictional offers and generated copy.",
+  "trails": [
+    {
+      "id": "nps-ever-anhinga",
+      "name": "Anhinga Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/ever/planyourvisit/anhinga-trail.htm",
+      "state": "FL",
+      "region": "Everglades National Park, Florida",
+      "landManager": "National Park Service",
+      "entityType": "connected-route",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.8,
+        "unit": "mi",
+        "basis": "round trip as reported by NPS",
+        "sourceId": "nps-anhinga-2022"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-anhinga-2022",
+          "note": "Recreational activity only; check current park conditions."
+        },
+        "cycling": {
+          "status": "prohibited",
+          "sourceId": "nps-anhinga-2022",
+          "note": "NPS explicitly states bicycles are not allowed."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-anhinga-2022",
+          "title": "Anhinga Trail \u2014 Everglades National Park",
+          "url": "https://www.nps.gov/ever/planyourvisit/anhinga-trail.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2022-01-16",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-ever-anhinga-f1",
+          "text": "Anhinga Trail is in Everglades National Park, Florida.",
+          "sourceId": "nps-anhinga-2022"
+        },
+        {
+          "id": "nps-ever-anhinga-f2",
+          "text": "The route is 0.8 miles round trip.",
+          "sourceId": "nps-anhinga-2022"
+        },
+        {
+          "id": "nps-ever-anhinga-f3",
+          "text": "The walking trail passes through sawgrass marsh and begins at Royal Palm Visitor Center.",
+          "sourceId": "nps-anhinga-2022"
+        },
+        {
+          "id": "nps-ever-anhinga-f4",
+          "text": "Bicycles are not allowed.",
+          "sourceId": "nps-anhinga-2022"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Distinct named route with official activity and distance evidence; small demonstration pilot, not a popularity ranking.",
+      "version": "2026-10-24.1",
+      "conditionsSource": "https://www.nps.gov/ever/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "reported-accessible",
+        "sourceId": "nps-anhinga-2022",
+        "note": "NPS lists wheelchair accessibility; this is a dated source statement, not a current-condition guarantee."
+      }
+    },
+    {
+      "id": "nps-ever-shark-valley",
+      "name": "Shark Valley Tram Road",
+      "aliases": [
+        "Shark Valley Loop"
+      ],
+      "canonicalIdentity": "https://www.nps.gov/thingstodo/biking-at-shark-valley.htm",
+      "state": "FL",
+      "region": "Everglades National Park, Florida",
+      "landManager": "National Park Service",
+      "entityType": "connected-route",
+      "identityVerified": true,
+      "activity": "cycling",
+      "length": {
+        "value": 15,
+        "unit": "mi",
+        "basis": "complete loop as reported by NPS",
+        "sourceId": "nps-shark-valley-2023"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "cycling": {
+          "status": "allowed",
+          "sourceId": "nps-shark-valley-2023",
+          "note": "Recreational activity only; check current park conditions."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-shark-valley-2023",
+          "title": "Biking at Shark Valley \u2014 Everglades National Park",
+          "url": "https://www.nps.gov/thingstodo/biking-at-shark-valley.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2023-11-30",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-ever-shark-valley-f1",
+          "text": "Shark Valley Tram Road is in Everglades National Park, Florida.",
+          "sourceId": "nps-shark-valley-2023"
+        },
+        {
+          "id": "nps-ever-shark-valley-f2",
+          "text": "The complete cycling loop is 15 miles.",
+          "sourceId": "nps-shark-valley-2023"
+        },
+        {
+          "id": "nps-ever-shark-valley-f3",
+          "text": "The route is paved and includes the Shark Valley Observation Tower.",
+          "sourceId": "nps-shark-valley-2023"
+        },
+        {
+          "id": "nps-ever-shark-valley-f4",
+          "text": "The park advises checking weather and bringing drinking water.",
+          "sourceId": "nps-shark-valley-2023"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established.",
+        "The source gives inconsistent duration ranges; no route duration is asserted.",
+        "Source describes e-bikes by power and operation, not classes; class-specific permissions remain unknown."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested",
+        "duration-conflict-within-source",
+        "ebike-class-mapping-unresolved"
+      ],
+      "selectionRationale": "Distinct named route with official activity and distance evidence; small demonstration pilot, not a popularity ranking.",
+      "version": "2026-10-24.1",
+      "conditionsSource": "https://www.nps.gov/ever/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-zion-parus",
+      "name": "Pa'rus Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/zion/planyourvisit/bicycling.htm#route-zion-parus",
+      "state": "UT",
+      "region": "Zion National Park, UT",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "cycling",
+      "length": {
+        "value": 1.75,
+        "unit": "mi",
+        "basis": "one way from visitor center to Canyon Junction",
+        "sourceId": "nps-zion-bicycling-2026"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-zion-bicycling-2026",
+          "note": "NPS explicitly describes pedestrian and bicycle use."
+        },
+        "cycling": {
+          "status": "allowed",
+          "sourceId": "nps-zion-bicycling-2026",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "ebike1": {
+          "status": "allowed",
+          "sourceId": "nps-zion-bicycling-2026",
+          "note": "NPS allows only Class 1 pedal-assist e-bikes; follow posted conditions."
+        },
+        "ebike2": {
+          "status": "prohibited",
+          "sourceId": "nps-zion-bicycling-2026",
+          "note": "NPS allows only Class 1 pedal-assist e-bikes; follow posted conditions."
+        },
+        "ebike3": {
+          "status": "prohibited",
+          "sourceId": "nps-zion-bicycling-2026",
+          "note": "NPS allows only Class 1 pedal-assist e-bikes; follow posted conditions."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-zion-bicycling-2026",
+          "title": "Bicycling \u2014 Zion National Park",
+          "url": "https://www.nps.gov/zion/planyourvisit/bicycling.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2026-09-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-zion-parus-f1",
+          "text": "Pa'rus Trail: 1.75 miles, one way from visitor center to Canyon Junction.",
+          "sourceId": "nps-zion-bicycling-2026"
+        },
+        {
+          "id": "nps-zion-parus-f2",
+          "text": "Located in Zion National Park, UT.",
+          "sourceId": "nps-zion-bicycling-2026"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/zion/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-cuva-towpath",
+      "name": "Ohio & Erie Canal Towpath Trail (national park section)",
+      "aliases": [
+        "Cuyahoga Valley Towpath"
+      ],
+      "canonicalIdentity": "https://www.nps.gov/cuva/planyourvisit/ohio-and-erie-canal-towpath-trail.htm#route-cuva-towpath",
+      "state": "OH",
+      "region": "Cuyahoga Valley National Park, OH",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "cycling",
+      "length": {
+        "value": 20,
+        "unit": "mi",
+        "basis": "national park section only, not the entire regional trail",
+        "sourceId": "nps-cuva-towpath-2026"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-cuva-towpath-2026",
+          "note": "NPS explicitly describes pedestrian and bicycle use."
+        },
+        "cycling": {
+          "status": "allowed",
+          "sourceId": "nps-cuva-towpath-2026",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "ebike1": {
+          "status": "allowed",
+          "sourceId": "nps-cuva-towpath-2026",
+          "note": "NPS explicitly allows Classes 1 and 2 within the national park."
+        },
+        "ebike2": {
+          "status": "allowed",
+          "sourceId": "nps-cuva-towpath-2026",
+          "note": "NPS explicitly allows Classes 1 and 2 within the national park."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-cuva-towpath-2026",
+          "title": "Ohio & Erie Canal Towpath Trail \u2014 Cuyahoga Valley",
+          "url": "https://www.nps.gov/cuva/planyourvisit/ohio-and-erie-canal-towpath-trail.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2026-04-15",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-cuva-towpath-f1",
+          "text": "Ohio & Erie Canal Towpath Trail (national park section): 20 miles, national park section only, not the entire regional trail.",
+          "sourceId": "nps-cuva-towpath-2026"
+        },
+        {
+          "id": "nps-cuva-towpath-f2",
+          "text": "Located in Cuyahoga Valley National Park, OH.",
+          "sourceId": "nps-cuva-towpath-2026"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested",
+        "bounded-named-route-section"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/cuva/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-mini",
+      "name": "Mini Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-mini",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.1,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-mini-f1",
+          "text": "Mini Trail: 0.1 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-mini-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-hall-mosses",
+      "name": "Hall of Mosses Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-hall-mosses",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.8,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-hall-mosses-f1",
+          "text": "Hall of Mosses Trail: 0.8 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-hall-mosses-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-spruce-nature",
+      "name": "Spruce Nature Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-spruce-nature",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 1.2,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-spruce-nature-f1",
+          "text": "Spruce Nature Trail: 1.2 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-spruce-nature-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-maple-glade",
+      "name": "Maple Glade Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-maple-glade",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.5,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-maple-glade-f1",
+          "text": "Maple Glade Trail: 0.5 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-maple-glade-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-kestner",
+      "name": "Kestner Homestead Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-kestner",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 1.3,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-kestner-f1",
+          "text": "Kestner Homestead Trail: 1.3 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-kestner-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-rainshadow",
+      "name": "Rainshadow Loop",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-rainshadow",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.5,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-rainshadow-f1",
+          "text": "Rainshadow Loop: 0.5 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-rainshadow-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-ancient-groves",
+      "name": "Ancient Groves Nature Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-ancient-groves",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.6,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-ancient-groves-f1",
+          "text": "Ancient Groves Nature Trail: 0.6 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-ancient-groves-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-sol-duc-falls",
+      "name": "Sol Duc Falls Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-sol-duc-falls",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.8,
+        "unit": "mi",
+        "basis": "one way",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-sol-duc-falls-f1",
+          "text": "Sol Duc Falls Trail: 0.8 miles, one way.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-sol-duc-falls-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-mink-lake",
+      "name": "Mink Lake Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-mink-lake",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 2.6,
+        "unit": "mi",
+        "basis": "one way",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-mink-lake-f1",
+          "text": "Mink Lake Trail: 2.6 miles, one way.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-mink-lake-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-moments-time",
+      "name": "Moments in Time Nature Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-moments-time",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.6,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-moments-time-f1",
+          "text": "Moments in Time Nature Trail: 0.6 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-moments-time-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-marymere",
+      "name": "Marymere Falls Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-marymere",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.9,
+        "unit": "mi",
+        "basis": "one way",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-marymere-f1",
+          "text": "Marymere Falls Trail: 0.9 miles, one way.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-marymere-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-heart-forest",
+      "name": "Heart O'the Forest Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-heart-forest",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 2.3,
+        "unit": "mi",
+        "basis": "one way",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-heart-forest-f1",
+          "text": "Heart O'the Forest Trail: 2.3 miles, one way.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-heart-forest-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-peabody",
+      "name": "Peabody Creek Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-peabody",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.5,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-peabody-f1",
+          "text": "Peabody Creek Trail: 0.5 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-peabody-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-living-forest",
+      "name": "Living Forest Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-living-forest",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.4,
+        "unit": "mi",
+        "basis": "loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-living-forest-f1",
+          "text": "Living Forest Trail: 0.4 miles, loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-living-forest-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-madison",
+      "name": "Madison Falls Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-madison",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.1,
+        "unit": "mi",
+        "basis": "one way",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-olym-hikes-2025",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-madison-f1",
+          "text": "Madison Falls Trail: 0.1 miles, one way.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-madison-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-olym-cascading-terraces",
+      "name": "Cascading Terraces Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm#route-olym-cascading-terraces",
+      "state": "WA",
+      "region": "Olympic National Park, WA",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.5,
+        "unit": "mi",
+        "basis": "reported trail length; damaged former loop",
+        "sourceId": "nps-olym-hikes-2025"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-olym-hikes-2025",
+          "title": "Day Hiking at Olympic",
+          "url": "https://www.nps.gov/olym/planyourvisit/day-hiking-at-olympic.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2025-02-21",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-olym-cascading-terraces-f1",
+          "text": "Cascading Terraces Trail: 0.5 miles, reported trail length; damaged former loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-cascading-terraces-f2",
+          "text": "Located in Olympic National Park, WA.",
+          "sourceId": "nps-olym-hikes-2025"
+        },
+        {
+          "id": "nps-olym-cascading-terraces-f3",
+          "text": "NPS reports flood damage to the former loop.",
+          "sourceId": "nps-olym-hikes-2025"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established.",
+        "NPS reports flood destruction of the riverside portion of this former loop. Current connected access is unresolved; not eligible for an offer."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested",
+        "damaged-route-access-unresolved",
+        "not-offer-eligible"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/olym/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-brca-rim",
+      "name": "Rim Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/tripideas/easy-hikes-in-bryce-canyon.htm#route-brca-rim",
+      "state": "UT",
+      "region": "Bryce Canyon National Park, UT",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 5.5,
+        "unit": "mi",
+        "basis": "one way from Bryce Point to Fairyland Point",
+        "sourceId": "nps-brca-easy-2023"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-brca-easy-2023",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-brca-easy-2023",
+          "title": "Easy Hikes in Bryce Canyon",
+          "url": "https://www.nps.gov/tripideas/easy-hikes-in-bryce-canyon.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2023-06-29",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-brca-rim-f1",
+          "text": "Rim Trail: 5.5 miles, one way from Bryce Point to Fairyland Point.",
+          "sourceId": "nps-brca-easy-2023"
+        },
+        {
+          "id": "nps-brca-rim-f2",
+          "text": "Located in Bryce Canyon National Park, UT.",
+          "sourceId": "nps-brca-easy-2023"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/brca/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-brca-mossy",
+      "name": "Mossy Cave Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/thingstodo/mossy-cave-trail.htm#route-brca-mossy",
+      "state": "UT",
+      "region": "Bryce Canyon National Park, UT",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 0.8,
+        "unit": "mi",
+        "basis": "round trip",
+        "sourceId": "nps-brca-mossy-2024"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-brca-mossy-2024",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-brca-mossy-2024",
+          "title": "Mossy Cave Trail",
+          "url": "https://www.nps.gov/thingstodo/mossy-cave-trail.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2024-10-10",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-brca-mossy-f1",
+          "text": "Mossy Cave Trail: 0.8 miles, round trip.",
+          "sourceId": "nps-brca-mossy-2024"
+        },
+        {
+          "id": "nps-brca-mossy-f2",
+          "text": "Located in Bryce Canyon National Park, UT.",
+          "sourceId": "nps-brca-mossy-2024"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/brca/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-brca-bristlecone",
+      "name": "Bristlecone Loop Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/thingstodo/bristlecone-loop-trail.htm#route-brca-bristlecone",
+      "state": "UT",
+      "region": "Bryce Canyon National Park, UT",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 1,
+        "unit": "mi",
+        "basis": "round trip; miles agree but metric conversion conflicts",
+        "sourceId": "nps-brca-bristlecone-2024"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-brca-bristlecone-2024",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-brca-bristlecone-2024",
+          "title": "Bristlecone Loop Trail",
+          "url": "https://www.nps.gov/thingstodo/bristlecone-loop-trail.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2024-10-10",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-brca-bristlecone-f1",
+          "text": "Bristlecone Loop Trail: 1 miles, round trip; miles agree but metric conversion conflicts.",
+          "sourceId": "nps-brca-bristlecone-2024"
+        },
+        {
+          "id": "nps-brca-bristlecone-f2",
+          "text": "Located in Bryce Canyon National Park, UT.",
+          "sourceId": "nps-brca-bristlecone-2024"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established.",
+        "NPS gives 1.0 mile consistently but conflicting 1.6 km and 0.8 km conversions. Retain miles as source-reported, block drafting pending reconciliation."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested",
+        "conflicting_facts",
+        "not-offer-eligible"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/brca/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      },
+      "conflicts": [
+        "Metric distance conversion conflict in source."
+      ]
+    },
+    {
+      "id": "nps-cong-boardwalk",
+      "name": "Boardwalk Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/cong/planyourvisit/trail-information.htm#route-cong-boardwalk",
+      "state": "SC",
+      "region": "Congaree National Park, SC",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 2.6,
+        "unit": "mi",
+        "basis": "round trip (approximate)",
+        "sourceId": "nps-cong-trails-2026"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-cong-trails-2026",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "prohibited",
+          "sourceId": "nps-cong-trails-2026",
+          "note": "NPS describes park trails as foot travel only."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-cong-trails-2026",
+          "title": "Trail Information \u2014 Congaree National Park",
+          "url": "https://www.nps.gov/cong/planyourvisit/trail-information.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2026-07-10",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-cong-boardwalk-f1",
+          "text": "Boardwalk Trail: 2.6 miles, round trip (approximate).",
+          "sourceId": "nps-cong-trails-2026"
+        },
+        {
+          "id": "nps-cong-boardwalk-f2",
+          "text": "Located in Congaree National Park, SC.",
+          "sourceId": "nps-cong-trails-2026"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established.",
+        "Trail page cautions that flooding information may lag actual conditions."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/cong/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    },
+    {
+      "id": "nps-cong-bluff",
+      "name": "Bluff Trail",
+      "aliases": [],
+      "canonicalIdentity": "https://www.nps.gov/cong/planyourvisit/trail-information.htm#route-cong-bluff",
+      "state": "SC",
+      "region": "Congaree National Park, SC",
+      "landManager": "National Park Service",
+      "entityType": "trail",
+      "identityVerified": true,
+      "activity": "walking",
+      "length": {
+        "value": 1.8,
+        "unit": "mi",
+        "basis": "round trip (approximate)",
+        "sourceId": "nps-cong-trails-2026"
+      },
+      "geometryReference": null,
+      "permissions": {
+        "walking": {
+          "status": "allowed",
+          "sourceId": "nps-cong-trails-2026",
+          "note": "Dated recreational evidence; current conditions require checking."
+        },
+        "cycling": {
+          "status": "prohibited",
+          "sourceId": "nps-cong-trails-2026",
+          "note": "NPS describes park trails as foot travel only."
+        },
+        "ebike1": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike2": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "ebike3": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        },
+        "commercialGuiding": {
+          "status": "unknown",
+          "sourceId": null,
+          "note": "Not established by this pilot evidence."
+        }
+      },
+      "sources": [
+        {
+          "id": "nps-cong-trails-2026",
+          "title": "Trail Information \u2014 Congaree National Park",
+          "url": "https://www.nps.gov/cong/planyourvisit/trail-information.htm",
+          "retrievedAt": "2026-10-24",
+          "updatedAt": "2026-07-10",
+          "license": "US Government public domain (NPS-authored factual text only)",
+          "rightsURL": "https://www.nps.gov/aboutus/disclaimer.htm",
+          "attribution": "National Park Service. No claim to original U.S. Government works.",
+          "scope": "Paraphrased factual text; no photographs, maps, marks, reviews or third-party assets."
+        }
+      ],
+      "facts": [
+        {
+          "id": "nps-cong-bluff-f1",
+          "text": "Bluff Trail: 1.8 miles, round trip (approximate).",
+          "sourceId": "nps-cong-trails-2026"
+        },
+        {
+          "id": "nps-cong-bluff-f2",
+          "text": "Located in Congaree National Park, SC.",
+          "sourceId": "nps-cong-trails-2026"
+        }
+      ],
+      "gaps": [
+        "Commercial guiding authorization is unknown; no guided departure is offered.",
+        "Current conditions were not checked; consult the park before travel.",
+        "Price, dates, availability, equipment and insurance are not established.",
+        "Trail page cautions that flooding information may lag actual conditions."
+      ],
+      "qualityFlags": [
+        "source-is-not-live-conditions",
+        "guiding-unknown",
+        "geometry-not-ingested"
+      ],
+      "selectionRationale": "Individually named official route; identity, distance basis and activity checked. Geographic pilot expansion, not a popularity ranking.",
+      "version": "2026-10-24.2",
+      "conditionsSource": "https://www.nps.gov/cong/planyourvisit/conditions.htm",
+      "accessibility": {
+        "status": "unknown",
+        "sourceId": null,
+        "note": "No accessibility guarantee; consult current official information."
+      }
+    }
+  ],
+  "snapshotRevision": "seed-25-2026-10-24.2"
+}

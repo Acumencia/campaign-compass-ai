@@ -1,4 +1,4 @@
-import {mkdir,copyFile} from 'node:fs/promises';
-const files=['index.html','styles.css','src/app.mjs','src/metrics.mjs','src/assistant.mjs','src/glossary.mjs','src/chatgpt-client.mjs','src/connection-ui.mjs','src/knowledge-ui.mjs','data/campaigns.csv'];
-for(const file of files){const output=new URL(`../dist/${file}`,import.meta.url);await mkdir(new URL('.',output),{recursive:true});await copyFile(new URL(`../${file}`,import.meta.url),output);}
+import {mkdir,copyFile,readFile,writeFile} from 'node:fs/promises';
+const files=['campaign.html','campaign.css','src/campaign-ui.mjs','src/campaign-readiness.mjs','index.html','styles.css','src/app.mjs','src/metrics.mjs','src/assistant.mjs','src/glossary.mjs','src/chatgpt-client.mjs','src/connection-ui.mjs','src/knowledge-ui.mjs','data/campaigns.csv'];
+for(const file of files){const output=new URL(`../dist/${file}`,import.meta.url);await mkdir(new URL('.',output),{recursive:true});if(file==='campaign.html'){const html=await readFile(new URL(`../${file}`,import.meta.url),'utf8');await writeFile(output,html.replace(/<a\s+[^>]*data-local-review[^>]*>[^<]*<\/a>/g,''));}else await copyFile(new URL(`../${file}`,import.meta.url),output);}
 console.log(`Static build complete: ${files.length} allowlisted assets; no secrets or development evidence bundled.`);

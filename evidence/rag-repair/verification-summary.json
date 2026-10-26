@@ -1,0 +1,34 @@
+{
+  "status": "approved",
+  "testsPassed": 389,
+  "modelCalls": 25,
+  "modelKnownActualUsd": 1.520772,
+  "modelReservedUsd": 5.631048,
+  "retrievalReservedUsd": 0.24,
+  "totalReservedUsd": 5.871048,
+  "workCapUsd": 10.0,
+  "escalationUsed": true,
+  "retrievalRequests": 24,
+  "retrievalQueries": 2,
+  "retrievalReadUnits": 2,
+  "retrievalEmbeddingTokens": 28,
+  "newUncertainRequests": 0,
+  "reviewPassed": true,
+  "exportPassed": true,
+  "localEditorialCorrection": "Testing-assistant local editorial corrections across all seven model-generated artifacts: removed unsupported ad stopping permission, blog generalizations and LinkedIn day-length framing; clarified imagined hosts and shared discussions without implying stopping locations. Original model drafts, two revision proposals, citations and histories retained. These are local edits, not user acceptance of a real campaign or invented model revisions.",
+  "artifactCount": 7,
+  "revisionRounds": 2,
+  "codeChecksPassed": true,
+  "brandRetrieval": {
+    "retrievalMode": "vector-only",
+    "backend": "pinecone",
+    "method": "pinecone-integrated-cosine"
+  },
+  "evidenceTransport": {
+    "protocol": "MCP",
+    "version": "2025-11-25",
+    "transport": "stdio",
+    "tool": "fetch_source"
+  },
+  "scope": "Sanitized verification summary; no private ledger or automatic live-access authorization."
+}

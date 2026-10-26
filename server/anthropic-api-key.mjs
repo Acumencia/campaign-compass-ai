@@ -23,7 +23,7 @@ export function createAnthropicKeyService({environment=process.env,fetcher=globa
     active=true;const controller=new AbortController();let timedOut=false;const abort=()=>controller.abort();signal?.addEventListener('abort',abort,{once:true});
     const timer=setTimeout(()=>{timedOut=true;controller.abort();},timeoutMs);
     try{
-      let response;try{response=await fetcher('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01'},body:JSON.stringify(body),signal:controller.signal,redirect:'error'});}catch{if(timedOut)throw error('api_timeout',504);if(signal?.aborted)throw error('api_cancelled',499);throw error('api_network');}
+      let response;try{response=await fetcher('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01'},body:JSON.stringify(body),signal:controller.signal,redirect:'error'});}catch(e){if(e?.code?.startsWith('campaign_budget_'))throw e;if(timedOut)throw error('api_timeout',504);if(signal?.aborted)throw error('api_cancelled',499);throw error('api_network');}
       diagnostic.httpStatus=response.status;
       const requestId=response.headers.get('request-id');if(typeof requestId==='string'&&/^req_[A-Za-z0-9]{8,96}$/.test(requestId)&&!requestId.includes(apiKey))diagnostic.requestId=requestId;
       if(response.redirected||response.status>=300&&response.status<400)throw error('api_invalid_response');
@@ -35,7 +35,7 @@ export function createAnthropicKeyService({environment=process.env,fetcher=globa
       // Never release a reflected secret, even in a successful upstream response.
       if(text.includes(apiKey))throw error('api_invalid_response');
       let data;try{data=JSON.parse(text);}catch{throw error('api_invalid_response');}if(!data||typeof data!=='object'||Array.isArray(data)||JSON.stringify(data).includes(apiKey))throw error('api_invalid_response');return data;
-    }catch(e){if(e instanceof KnowledgeError)throw e;if(timedOut)throw error('api_timeout',504);if(signal?.aborted)throw error('api_cancelled',499);throw error('api_failed');}
+    }catch(e){if(e instanceof KnowledgeError||e?.code?.startsWith('campaign_budget_'))throw e;if(timedOut)throw error('api_timeout',504);if(signal?.aborted)throw error('api_cancelled',499);throw error('api_failed');}
     finally{clearTimeout(timer);signal?.removeEventListener('abort',abort);controller.abort();active=false;}
   }
   async function post(route,body,signal,maxBytes,diagnostic){
@@ -53,7 +53,7 @@ export function createAnthropicKeyService({environment=process.env,fetcher=globa
   }
   async function generateJSON(...args){const diagnostic={};try{return await generateJSONInner(...args,diagnostic);}catch(e){if(e instanceof KnowledgeError){e.diagnostic=diagnostic;lastIssue={code:e.code,message:e.message,...diagnostic};}throw e;}}
   const embedding=null;
-  const generation=generationConfigured?{spec:{provider:'anthropic-api-key',model:generationModel,revision:'messages-json-schema-v1'},generate:({system,input,maxOutputCharacters},{signal}={})=>generateJSON(system,input,RAG_SCHEMA,'campaign_knowledge',maxOutputCharacters,signal)}:null;
+  const generation=generationConfigured?{withTransport:({fetcher:scopedFetch,timeoutMs:scopedTimeout=60000,maxOutputTokens:scopedTokens=6144})=>{if(typeof scopedFetch!=='function'||![2048,6144].includes(scopedTokens))throw error('api_configuration');const scopedEnvironment=Object.create(environment);Object.defineProperty(scopedEnvironment,'CAMPAIGN_ANTHROPIC_MAX_OUTPUT_TOKENS',{value:String(scopedTokens)});return createAnthropicKeyService({environment:scopedEnvironment,fetcher:scopedFetch,timeoutMs:scopedTimeout}).generation;},spec:{provider:'anthropic-api-key',model:generationModel,revision:'messages-json-schema-v1'},generate:({system,input,maxOutputCharacters},{signal}={})=>generateJSON(system,input,RAG_SCHEMA,'campaign_knowledge',maxOutputCharacters,signal),generateStructured:({system,input,schema,name,maxOutputCharacters=16000},{signal}={})=>generateJSON(system,input,schema,name,maxOutputCharacters,signal)}:null;
   async function invokeMetric(request,{signal}={}){return generateJSON(request.system,JSON.stringify({question:request.question,contextId:request.contextId,snapshotId:request.snapshotId,facts:request.facts}),METRIC_SCHEMA,'campaign_metrics',16000,signal);}
   return {status,embedding,generation,invokeMetric};
 }

@@ -1,0 +1,84 @@
+{
+  "artifacts": [
+    {
+      "artifactId": "ads",
+      "fields": [
+        {
+          "name": "Variation A",
+          "text": "Headline: Slow down and notice more. Fictional demo \u00e2\u20ac\u201d not bookable. Luma Trail Guided Discovery \u00c2\u00b7 Walk imagines an unhurried, host-led stroll on Anhinga Trail for adults who like to ask questions as they go. Picture a welcome circle where everyone picks one thing to listen for, pauses the group chooses together, and a closing share where each person names one observation. These moments are proposed, fictional ideas; only the cited claims are route facts.",
+          "factIds": [
+            "nps-ever-anhinga-f1",
+            "nps-ever-anhinga-f2",
+            "nps-ever-anhinga-f3",
+            "nps-ever-anhinga-f4"
+          ]
+        },
+        {
+          "name": "Variation B",
+          "text": "Headline: Roll, stop, talk, repeat. Fictional demo \u00e2\u20ac\u201d not bookable. Luma Trail Guided Discovery \u00c2\u00b7 Cycle imagines a sociable group ride on Shark Valley Tram Road for adults who enjoy conversation as much as the pedalling. Imagine a welcome chat about what drew each rider in, stops the group agrees on together, and a relaxed debrief where everyone names a favourite moment. The ride plan is a fictional concept; only the cited claims are route facts.",
+          "factIds": [
+            "nps-ever-shark-valley-f1",
+            "nps-ever-shark-valley-f2",
+            "nps-ever-shark-valley-f3",
+            "nps-ever-shark-valley-f4"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "text": "Anhinga Trail is in Everglades National Park, Florida.",
+          "factId": "nps-ever-anhinga-f1",
+          "sourceId": "nps-anhinga-2022",
+          "quote": "Anhinga Trail is in Everglades National Park, Florida."
+        },
+        {
+          "text": "The route is 0.8 miles round trip.",
+          "factId": "nps-ever-anhinga-f2",
+          "sourceId": "nps-anhinga-2022",
+          "quote": "The route is 0.8 miles round trip."
+        },
+        {
+          "text": "The walking trail passes through sawgrass marsh and begins at Royal Palm Visitor Center.",
+          "factId": "nps-ever-anhinga-f3",
+          "sourceId": "nps-anhinga-2022",
+          "quote": "The walking trail passes through sawgrass marsh and begins at Royal Palm Visitor Center."
+        },
+        {
+          "text": "Bicycles are not allowed.",
+          "factId": "nps-ever-anhinga-f4",
+          "sourceId": "nps-anhinga-2022",
+          "quote": "Bicycles are not allowed."
+        },
+        {
+          "text": "Shark Valley Tram Road is in Everglades National Park, Florida.",
+          "factId": "nps-ever-shark-valley-f1",
+          "sourceId": "nps-shark-valley-2023",
+          "quote": "Shark Valley Tram Road is in Everglades National Park, Florida."
+        },
+        {
+          "text": "The complete cycling loop is 15 miles.",
+          "factId": "nps-ever-shark-valley-f2",
+          "sourceId": "nps-shark-valley-2023",
+          "quote": "The complete cycling loop is 15 miles."
+        },
+        {
+          "text": "The route is paved and includes the Shark Valley Observation Tower.",
+          "factId": "nps-ever-shark-valley-f3",
+          "sourceId": "nps-shark-valley-2023",
+          "quote": "The route is paved and includes the Shark Valley Observation Tower."
+        },
+        {
+          "text": "The park advises checking weather and bringing drinking water.",
+          "factId": "nps-ever-shark-valley-f4",
+          "sourceId": "nps-shark-valley-2023",
+          "quote": "The park advises checking weather and bringing drinking water."
+        }
+      ],
+      "assumptions": [
+        "Variation A speaks only to the fictional walking concept and Variation B only to the fictional cycling concept, so route facts never cross between them.",
+        "The fictional host in both concepts favours conversation and shared observation over a fitness focus.",
+        "Stops and pauses in both concepts are imagined as group choices made in the moment rather than a fixed plan."
+      ]
+    }
+  ]
+}

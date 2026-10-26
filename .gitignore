@@ -1,4 +1,6 @@
 node_modules/
+.tmp/
+data/campaign-private/
 dist/
 .env
 .env.*

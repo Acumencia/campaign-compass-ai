@@ -6,10 +6,25 @@ import {randomUUID} from 'node:crypto';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 import {createAPIProviders} from './api-providers.mjs';
+import {createAnthropicKeyService} from './anthropic-api-key.mjs';
 const exec=promisify(execFile);
 export class KeyStoreError extends Error {constructor(code,status=400){super({invalid_settings:'Local nonsecret settings are invalid or could not be saved. No existing file was overwritten; review key.json.settings.json locally.',invalid_model:'Choose a valid model identifier for the selected provider. A model is required when the adapter is enabled.',invalid_key:'Enter a valid key without spaces (20-512 characters).',invalid_store:'Local key.json is invalid or unsafe. Repair it locally; it was not overwritten.',replace_required:'Confirm replacement of the existing saved key.',store_busy:'Credential storage is busy. Retry after the current save completes.',save_failed:'The key could not be saved. No credential details are included.'}[code]||'Credential settings are unavailable.');this.code=code;this.status=status;}}
 const valid=value=>typeof value==='string'&&value.length>=20&&value.length<=512&&!/\s|[^\x21-\x7e]/.test(value);
 const blank=()=>({version:1,openai:'',anthropic:''});
+// Startup-only, read-only campaign scope. No provider registry or mutation methods escape.
+export async function createReadOnlyAnthropicStore({filename,environment={}}){
+ try{
+  const state=await read(path.resolve(filename));
+  const settings=readSettings(path.resolve(filename)+'.settings.json');
+  const g=settings.generation.anthropic;
+  const scoped={};
+  for(const suffix of ['ENABLED','API_KEY','GENERATION_MODEL','MAX_OUTPUT_TOKENS'])scoped['CAMPAIGN_ANTHROPIC_'+suffix]=environment['CAMPAIGN_ANTHROPIC_'+suffix];
+  if(state.anthropic)scoped.CAMPAIGN_ANTHROPIC_API_KEY=state.anthropic;
+  if(g){scoped.CAMPAIGN_ANTHROPIC_ENABLED=g.enabled?'1':'0';scoped.CAMPAIGN_ANTHROPIC_GENERATION_MODEL=g.model;scoped.CAMPAIGN_ANTHROPIC_MAX_OUTPUT_TOKENS=String(g.maxOutputTokens);}
+  const service=createAnthropicKeyService({environment:scoped,fetcher:async()=>{throw Error('Campaign budget transport required');}});
+  return Object.freeze({status:()=>({...service.status(),provider:'anthropic',credentialAccess:'startup-read-only',embeddingsConfigured:false}),generation:service.generation?Object.freeze({withTransport:service.generation.withTransport}):null});
+ }catch{return Object.freeze({status:()=>({provider:'anthropic',generationConfigured:false,keyPresent:false,blocked:'The read-only campaign configuration is unavailable. Review the local source and restart.'}),generation:null});}
+}
 async function protect(filename){
  if(process.platform==='win32'){
   const {stdout}=await exec('whoami.exe',['/user','/fo','csv','/nh'],{windowsHide:true});const sid=stdout.match(/S-1-5-[0-9-]+/)?.[0];if(!sid)throw Error();
@@ -19,11 +34,12 @@ async function protect(filename){
 async function regular(filename){const stat=await fs.lstat(filename);if(!stat.isFile()||stat.isSymbolicLink()||stat.nlink!==1||stat.size>8192)throw new KeyStoreError('invalid_store',409);return stat;}
 async function read(filename){try{await regular(filename);const handle=await fs.open(filename,'r');try{const stat=await handle.stat();if(!stat.isFile()||stat.nlink!==1||stat.size>8192)throw Error();const value=JSON.parse(await handle.readFile('utf8'));if(!value||!['anthropic,openai,version','anthropic,openai,pinecone,version'].includes(Object.keys(value).sort().join(','))||value.version!==1||!['openai','anthropic',...(Object.hasOwn(value,'pinecone')?['pinecone']:[])].every(p=>value[p]===''||valid(value[p])))throw Error();return value;}finally{await handle.close();}}catch(e){if(e.code==='ENOENT')return blank();throw new KeyStoreError('invalid_store',409);}}
 // Only caller-selected local paths; never accept paths or endpoints from HTTP input.
-export async function createKeyStore({filename,environment={},fetcher=globalThis.fetch,commit=fs.rename,settingsFilename}={}){
+export async function createKeyStore({filename,environment={},fetcher=globalThis.fetch,commit=fs.rename,settingsFilename,transientGeneration=null,timeoutMs=30000}={}){
  filename=path.resolve(filename);let state,invalid=false,revision=0,providers;let storageConfig={backend:'local'},settings=blankSettings(),settingsInvalid=false,storageCache=null,storageIdentity='';const overrides={};settingsFilename ||= filename+'.settings.json';
  try{state=await read(filename);}catch{state=blank();invalid=true;}
- function rebuild(){const effective=Object.create(environment);for(const [name,value]of Object.entries(overrides))Object.defineProperty(effective,name,{value,configurable:true});if(invalid){Object.defineProperty(effective,'CAMPAIGN_OPENAI_ENABLED',{value:'0'});Object.defineProperty(effective,'CAMPAIGN_ANTHROPIC_ENABLED',{value:'0'});}for(const [p,key]of [['openai','CAMPAIGN_OPENAI_API_KEY'],['anthropic','CAMPAIGN_ANTHROPIC_API_KEY']])if(state[p])Object.defineProperty(effective,key,{value:state[p],enumerable:true});const identity=JSON.stringify([storageConfig,invalid?'':state.pinecone||'',storageConfig.mode==='external'?[effective.CAMPAIGN_OPENAI_EMBEDDING_MODEL,effective.CAMPAIGN_OPENAI_EMBEDDING_DIMENSIONS]:null]);if(identity!==storageIdentity)storageCache=null;
- providers=createAPIProviders({environment:effective,fetcher,storageConfig:invalid?{backend:'local'}:storageConfig,pineconeKey:invalid?'':state.pinecone||'',storageOverride:storageCache});storageCache=providers.storage;storageIdentity=identity;}
+ if(transientGeneration&&(!['anthropic'].includes(transientGeneration.provider)||!Number.isInteger(transientGeneration.maxOutputTokens)||transientGeneration.maxOutputTokens<128||transientGeneration.maxOutputTokens>8192))throw new KeyStoreError('invalid_model');
+ function rebuild(){const effective=Object.create(environment);for(const [name,value]of Object.entries(overrides))Object.defineProperty(effective,name,{value,configurable:true});if(transientGeneration)Object.defineProperty(effective,'CAMPAIGN_ANTHROPIC_MAX_OUTPUT_TOKENS',{value:String(transientGeneration.maxOutputTokens),configurable:true});if(invalid){Object.defineProperty(effective,'CAMPAIGN_OPENAI_ENABLED',{value:'0'});Object.defineProperty(effective,'CAMPAIGN_ANTHROPIC_ENABLED',{value:'0'});}for(const [p,key]of [['openai','CAMPAIGN_OPENAI_API_KEY'],['anthropic','CAMPAIGN_ANTHROPIC_API_KEY']])if(state[p])Object.defineProperty(effective,key,{value:state[p],enumerable:true});const identity=JSON.stringify([storageConfig,invalid?'':state.pinecone||'',storageConfig.mode==='external'?[effective.CAMPAIGN_OPENAI_EMBEDDING_MODEL,effective.CAMPAIGN_OPENAI_EMBEDDING_DIMENSIONS]:null]);if(identity!==storageIdentity)storageCache=null;
+ providers=createAPIProviders({environment:effective,fetcher,timeoutMs,storageConfig:invalid?{backend:'local'}:storageConfig,pineconeKey:invalid?'':state.pinecone||'',storageOverride:storageCache});storageCache=providers.storage;storageIdentity=identity;}
  function applySettings(){storageConfig=settings.storage;for(const k of Object.keys(overrides))delete overrides[k];if(settings.selectedProvider!==null)overrides.CAMPAIGN_GENERATION_PROVIDER=settings.selectedProvider;for(const [provider,g]of Object.entries(settings.generation)){const prefix=provider==='openai'?'CAMPAIGN_OPENAI_':'CAMPAIGN_ANTHROPIC_';overrides[prefix+'ENABLED']=g.enabled?'1':'0';overrides[prefix+'GENERATION_MODEL']=g.model;overrides[prefix+'MAX_OUTPUT_TOKENS']=String(g.maxOutputTokens);}if(settings.embedding){overrides.CAMPAIGN_EMBEDDING_PROVIDER='openai';overrides.CAMPAIGN_OPENAI_ENABLED='1';overrides.CAMPAIGN_OPENAI_EMBEDDING_MODEL=settings.embedding.model;overrides.CAMPAIGN_OPENAI_EMBEDDING_DIMENSIONS=String(settings.embedding.dimensions);}}
  try{settings=readSettings(settingsFilename);if(Object.values(state).some(key=>typeof key==='string'&&key&&JSON.stringify(settings).includes(key)))throw Error();applySettings();}catch{settingsInvalid=true;settings=blankSettings();}
  function persist(next){if(settingsInvalid)throw new KeyStoreError('invalid_settings',409);try{writeSettings(settingsFilename,next);}catch{throw new KeyStoreError('invalid_settings',409);}settings=next;}

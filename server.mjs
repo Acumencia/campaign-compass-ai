@@ -1,4 +1,8 @@
 import {publicValidationDiagnostics} from './server/rag.mjs';
+import {createCampaignRetrieval} from './server/campaign-retrieval.mjs';
+import {createCampaignHTTP} from './server/campaign-http.mjs';
+import {CAMPAIGN_DEFAULTS,campaignReadiness,createBudgetedCampaignGeneration} from './server/campaign-runtime.mjs';
+import {loadCampaignStartup} from './server/campaign-startup.mjs';
 import {resolveConversation} from './server/conversation.mjs';
 import {evaluateComparisons} from './server/rag-evaluation.mjs';
 import {createKeyStore,KeyStoreError} from './server/key-store.mjs';
@@ -17,7 +21,7 @@ import {ChatGPTError} from './server/chatgpt-protocol.mjs';
 import {timingSafeEqual} from 'node:crypto';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
-const allowed = new Set(['index.html','styles.css','src/app.mjs','src/metrics.mjs','src/assistant.mjs','src/glossary.mjs','src/chatgpt-client.mjs','src/connection-ui.mjs','src/knowledge-ui.mjs','data/campaigns.csv']);
+const allowed = new Set(['local-review.css','local-review.html','index.html','styles.css','src/app.mjs','src/metrics.mjs','src/assistant.mjs','src/glossary.mjs','src/chatgpt-client.mjs','src/connection-ui.mjs','src/knowledge-ui.mjs','data/campaigns.csv','campaign.html','campaign.css','src/campaign-ui.mjs','src/campaign-readiness.mjs']);
 const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.csv':'text/csv; charset=utf-8'};
 const loadDataset = async () => parseCSV(await readFile(path.join(root, 'data/campaigns.csv'), 'utf8'));
 const isRecord = value => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -29,25 +33,25 @@ function fields(value, expected) {
   }
 }
 
-async function readText(req, type = 'application/json') {
+async function readText(req, type = 'application/json', maxBytes = 8192) {
   if ((req.headers['content-type'] || '').split(';')[0].trim().toLowerCase() !== type) {
     throw new InferenceError(415, 'content_type_required', `Use ${type}.`);
   }
-  if (Number(req.headers['content-length']) > 8192) {
-    throw new InferenceError(413, 'request_too_large', 'Request exceeds 8192 bytes.');
+  if (Number(req.headers['content-length']) > maxBytes) {
+    throw new InferenceError(413, 'request_too_large', `Request exceeds ${maxBytes} bytes.`);
   }
   let bytes = 0;
   const chunks = [];
   // Keep the connection available for a bounded JSON error on chunked bodies.
   for await (const chunk of req.iterator({destroyOnReturn: false})) {
     bytes += chunk.length;
-    if (bytes > 8192) throw new InferenceError(413, 'request_too_large', 'Request exceeds 8192 bytes.');
+    if (bytes > maxBytes) throw new InferenceError(413, 'request_too_large', `Request exceeds ${maxBytes} bytes.`);
     chunks.push(chunk);
   }
   return Buffer.concat(chunks).toString('utf8');
 }
-async function readJSON(req) {
-  try { return JSON.parse(await readText(req)); }
+async function readJSON(req, maxBytes = 8192) {
+  try { return JSON.parse(await readText(req,'application/json',maxBytes)); }
   catch (error) { if (error instanceof InferenceError) throw error; throw new InferenceError(400, 'invalid_json', 'Request must contain valid JSON.'); }
 }
 function csrf(session, value) {
@@ -72,13 +76,30 @@ function json(res, status, value) {
   }
 }
 
-export function createServer({invoke, timeoutMs = 30000, loadRows = loadDataset, loadCorpus = loadKnowledge, apiKey = createAPIProviders(), credentials = null, rag, ragStoreDirectory, chatgpt = createChatGPTService()} = {}) {
+export function createServer({invoke, timeoutMs = 30000, loadRows = loadDataset, loadCorpus = loadKnowledge, apiKey = createAPIProviders(), credentials = null, rag, ragStoreDirectory, campaignDirectory=path.join(root,'data/campaign-private'), campaignService, campaignDefaultsEnabled=true, campaignFetch=globalThis.fetch, campaignAPI=null, campaignRetrievalAPI=null, campaignRetrievalAuthorize=null, campaignIndexedCorpus=null, campaignRetrieveBrand=null, campaignBudgetPolicy, campaignGenerationFactory=createBudgetedCampaignGeneration, chatgpt = createChatGPTService()} = {}) {
   if ((invoke !== undefined && typeof invoke !== 'function') || !Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 30000) {
     throw new Error('Invalid inference configuration.');
   }
   const apiFor=session=>{const service=credentials?.providers||apiKey;return service.forSession?service.forSession(session):service;};
+  const campaignAPIFor=session=>campaignAPI||apiFor(session);
+  const retrievalAPIFor=session=>campaignRetrievalAPI||apiFor(session);
+  const retrievalAuthorized=session=>{
+    const api=retrievalAPIFor(session),state=api.status();
+    if(campaignRetrievalAuthorize)return campaignRetrievalAuthorize({session,api})===true;
+    return !!session&&(!credentials||session.keyRevision===credentials.revision)&&
+      (state.storage?.backend==='pinecone'?session.pineconeConsent===true:true)&&
+      (state.storage?.config?.mode==='integrated'||session.embeddingConsent===true);
+  };
+  const retrievalReadiness=session=>{
+    const state=retrievalAPIFor(session).status(),backend=state.storage?.backend||'local',integrated=state.storage?.config?.mode==='integrated';
+    const configured=state.retrievalConfigured===true&&!state.embeddingBlocked;
+    const authorized=retrievalAuthorized(session);
+    return {configured,authorized,backend,method:backend==='pinecone'?(integrated?'pinecone-integrated-cosine':'pinecone-vector-cosine'):'vector-cosine',
+      blocked:!configured?'Configure the existing vector backend in Knowledge. Campaigns do not substitute lexical retrieval.':!authorized?'Allow retrieval in Knowledge settings for this browser session.':backend==='pinecone'&&!state.storage.checked?'Run Check connection in Knowledge before creating a live campaign.':null};
+  };
   const connectionStatus=async session=>({...session?.apiOnly?{csrf:session.csrf}:await chatgpt.status(session),keySettings:credentials?.status()||{available:false},apiKey:{...apiFor(session).status(),pineconeConsent:session?.pineconeConsent===true,embeddingConsent:session?.embeddingConsent===true,consent:session?.apiKeyConsent===true}});
   const knowledgeBusy=new Set();
+  const campaignHTTP=createCampaignHTTP({directory:campaignDirectory,service:campaignService});
   const server = http.createServer(async (req, res) => {
     res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'");
     res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -102,6 +123,22 @@ export function createServer({invoke, timeoutMs = 30000, loadRows = loadDataset,
     const cookie = (req.headers.cookie || '').split(';').map(part => part.trim()).find(part => part.startsWith('cc_session='))?.slice(11);
     let session = chatgpt.sessionFor(cookie);
     if(session&&credentials&&session.keyRevision!==credentials.revision){session.apiKeyConsent=false;session.embeddingConsent=false;session.pineconeConsent=false;session.keyRevision=credentials.revision;}
+
+    const requestKeyRevision=credentials?.revision;
+    if(await campaignHTTP({name,req,res,session,sameOrigin,csrf,readJSON:req=>readJSON(req,65536),json,
+      campaignDefaults:{...CAMPAIGN_DEFAULTS,...(campaignBudgetPolicy?{capUsd:campaignBudgetPolicy.ceilingUsd,policyVersion:campaignBudgetPolicy.policyVersion}:{}),enabled:campaignDefaultsEnabled},readiness:()=>({...campaignReadiness(campaignAPIFor(session),campaignDefaultsEnabled),settingsAvailable:!campaignAPI&&(credentials?.status().available??false),retrieval:retrievalReadiness(session)}),
+      generator:name.startsWith('api/campaign/') ? (run,save)=>campaignGenerationFactory({run,save,policy:campaignBudgetPolicy,api:campaignAPIFor(session),fetcher:campaignFetch,authorize:()=>campaignDefaultsEnabled&&campaignReadiness(campaignAPIFor(session)).configured&&(!!campaignAPI||!credentials||(credentials.revision===requestKeyRevision&&session.keyRevision===credentials.revision))}) : undefined,
+      retrieveBrand:campaignRetrieveBrand|| (async ({query,limit,signal})=>{
+        const api=retrievalAPIFor(session),revision=credentials?.revision;
+        const retrieval=createCampaignRetrieval({api,session,getCorpus:loadCorpus,...(campaignIndexedCorpus?{getIndexedCorpus:campaignIndexedCorpus}:{}),storeDirectory:ragStoreDirectory,
+          authorize:()=>retrievalAuthorized(session)&&(!credentials||credentials.revision===revision)});
+        return retrieval.retrieveBrand({query,limit,signal});
+      }),
+      ensureSession:()=>{
+      session ||= chatgpt.sessionFor(null,true);session.apiOnly=true;
+      res.setHeader('Set-Cookie',`cc_session=${session.id}; HttpOnly; SameSite=Lax; Path=/; Max-Age=28800`);
+      return session;
+    }})) return;
 
 
 
@@ -313,11 +350,13 @@ export function createServer({invoke, timeoutMs = 30000, loadRows = loadDataset,
   });
   server.requestTimeout = 10000;
   server.headersTimeout = 10000;
+  server.on('close',()=>campaignHTTP.close());
   return server;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 4173);
   const credentials=await createKeyStore({filename:path.join(root,'key.json'),environment:process.env});
-  createServer({credentials}).listen(port, '127.0.0.1', () => console.log(`Campaign Compass: http://127.0.0.1:${port} (loopback only; deterministic demo)`));
+  const campaignAPI=await loadCampaignStartup(root);
+  createServer({credentials,campaignAPI}).listen(port, '127.0.0.1', () => console.log(`Campaign Compass: http://127.0.0.1:${port} (loopback only; campaign calls require user action and persisted budget)`));
 }
